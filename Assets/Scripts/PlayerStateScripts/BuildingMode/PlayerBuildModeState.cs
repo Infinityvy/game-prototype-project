@@ -14,7 +14,7 @@ public class PlayerBuildModeState : IPlayerState
     private Transform raftParent;
     private Transform raftTilePrefab;
 
-    private Transform tileHighlighter;
+    private TileMarkerController tileMarkerController;
 
     public void initialize()
     {
@@ -23,30 +23,31 @@ public class PlayerBuildModeState : IPlayerState
         raftParent = GameObject.Find("Raft").transform;
         raftTilePrefab = Resources.Load<Transform>("RaftTile");
 
-        tileHighlighter = GameObject.Instantiate(Resources.Load<Transform>("TileHighlighter"), Vector3.zero, Quaternion.identity);
+        tileMarkerController = GameObject.Instantiate(Resources.Load<Transform>("TileHighlighter"), Vector3.zero, Quaternion.identity).GetComponent<TileMarkerController>();
     }
 
     public void finalize()
     {
-        // tileHighlighter.GetComponent<TileHighlighter>().destroy();
-        GameObject.Destroy(tileHighlighter.gameObject);
+        GameObject.Destroy(tileMarkerController.gameObject);
     }
 
     public void update()
     {
-        if (Input.GetMouseButtonDown(0))
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, LayerMask.GetMask("Highlight")))
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            tileMarkerController.setHighlightedMarker(hit.transform);
+            Vector2Int tilePos = hit.point.toTilePosition();
 
-            if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, LayerMask.GetMask("Highlight")))
+            if (Input.GetMouseButtonDown(0) && !getTile(tilePos.x, tilePos.y))
             {
-                Vector2Int tilePos = hit.point.toTilePosition();
-
-                if(!getTile(tilePos.x, tilePos.y))
-                {
-                    placeTile(tilePos.x, tilePos.y);
-                }
+                placeTile(tilePos.x, tilePos.y);
             }
+        }
+        else
+        {
+            tileMarkerController.setHighlightedMarker(null);
         }
     }
 
@@ -54,6 +55,7 @@ public class PlayerBuildModeState : IPlayerState
     {
         if(!raftTiles.ContainsKey(x)) raftTiles.Add(x, new Dictionary<int, Transform>());
         raftTiles[x].Add(z, GameObject.Instantiate(raftTilePrefab, new Vector3(x * tileSize, -0.25f, z * tileSize), Quaternion.identity, raftParent));
+        tileMarkerController.GetComponent<TileMarkerController>().notifyTileChange();
     }
 
     private void removeTile(int x, int z)

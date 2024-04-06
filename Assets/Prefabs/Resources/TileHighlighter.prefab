@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7316883502451503809}
-  - component: {fileID: 6237713536876778315}
+  - component: {fileID: 8068596307909702393}
   m_Layer: 0
   m_Name: TileHighlighter
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6237713536876778315
+--- !u!114 &8068596307909702393
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,8 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce4e10b2cc9a53d429eda85eebef1675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileHighlightPrefab: {fileID: 7394497630670565719, guid: c0e9f3b15479faa47bc24fd38d701456,
+  tileMarkerPrefab: {fileID: 7394497630670565719, guid: c0e9f3b15479faa47bc24fd38d701456,
     type: 3}
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 64
+  texMarkerEmpty: {fileID: 2800000, guid: 02428d5937946f543b999c0cff24c503, type: 3}
+  texMarkerOccupied: {fileID: 2800000, guid: 0f195d3c23cd17e43b64fa2036f7a34a, type: 3}

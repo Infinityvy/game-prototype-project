@@ -6,6 +6,9 @@ MonoImporter:
   defaultReferences:
   - tileHighlightPrefab: {fileID: 7394497630670565719, guid: c0e9f3b15479faa47bc24fd38d701456,
       type: 3}
+  - texHighlightEmpty: {fileID: 2800000, guid: 02428d5937946f543b999c0cff24c503, type: 3}
+  - texHighlightOccupied: {fileID: 2800000, guid: 0f195d3c23cd17e43b64fa2036f7a34a,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
