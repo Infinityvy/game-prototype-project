@@ -4,5 +4,7 @@ using UnityEngine;
 
 public interface IPlayerState
 {
-    public void initialize();
+    public abstract void initialize();
+    public abstract void finalize();
+    public abstract void update();
 }
