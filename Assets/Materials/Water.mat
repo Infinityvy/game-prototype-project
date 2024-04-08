@@ -96,6 +96,8 @@ Material:
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
+    - _FoamAmount: 0.69
+    - _FoamCutoff: 2.36
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
@@ -118,6 +120,8 @@ Material:
     - _Surface: 0
     - _WaterOpacity: 0.717
     - _WaveAmplitude: 0.3
+    - _WaveCrownBrightness: 7.54
+    - _WaveCrownSize: 0.094
     - _WaveDensity: 50
     - _WaveSize: 50
     - _WaveSpeed: 0.01
@@ -127,6 +131,7 @@ Material:
     - _BaseColor: {r: 0, g: 0.3773585, b: 0.2270516, a: 1}
     - _Color: {r: 0, g: 0.3396226, b: 0.096813835, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FoamColor: {r: 1, g: 1, b: 1, a: 1}
     - _RippleColor: {r: 0.1503032, g: 2.050566, b: 0.7523846, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []

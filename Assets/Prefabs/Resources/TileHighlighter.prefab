@@ -46,5 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileMarkerPrefab: {fileID: 7394497630670565719, guid: c0e9f3b15479faa47bc24fd38d701456,
     type: 3}
-  texMarkerEmpty: {fileID: 2800000, guid: 02428d5937946f543b999c0cff24c503, type: 3}
-  texMarkerOccupied: {fileID: 2800000, guid: 0f195d3c23cd17e43b64fa2036f7a34a, type: 3}
+  texMarkerOnEmpty: {fileID: 2800000, guid: 02428d5937946f543b999c0cff24c503, type: 3}
+  texMarkerOnTile: {fileID: 2800000, guid: 0f195d3c23cd17e43b64fa2036f7a34a, type: 3}
+  texMarkerOnPlaceable: {fileID: 2800000, guid: cbfc5b20ba3373f419953078ac79488f,
+    type: 3}

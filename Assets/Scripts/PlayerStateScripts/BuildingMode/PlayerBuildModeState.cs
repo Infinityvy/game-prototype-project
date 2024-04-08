@@ -62,6 +62,7 @@ public class PlayerBuildModeState : IPlayerState
         }
     }
 
+    public void placeTile(Vector2Int pos) { placeTile(pos.x, pos.y); }
     public void placeTile(int x, int z)
     {
         if(!raftTiles.ContainsKey(x)) raftTiles.Add(x, new Dictionary<int, Transform>());
@@ -69,24 +70,30 @@ public class PlayerBuildModeState : IPlayerState
         tileMarkerController.GetComponent<TileMarkerController>().notifyTileChange();
     }
 
+    private void removeTile(Vector2Int pos) { removeTile(pos.x, pos.y); }
     private void removeTile(int x, int z)
     {
         GameObject.Destroy(raftTiles[x][z].gameObject);
         raftTiles[x].Remove(z);
         if (raftTiles[x].Count == 0 ) raftTiles.Remove(x);
+        tileMarkerController.GetComponent<TileMarkerController>().notifyTileChange();
     }
 
+    private void placePlaceable(PlaceableType type, Vector2Int pos) { placePlaceable(type, pos.x, pos.y); }
     private void placePlaceable(PlaceableType type, int x, int z)
     {
         if (!placeables.ContainsKey(x)) placeables.Add(x, new Dictionary<int, IPlaceable>());
         placeables[x].Add(z, GameObject.Instantiate(placeablePrefabs[type], new Vector3(x * tileSize, 0.29f, z * tileSize), Quaternion.identity, raftParent).GetComponent<IPlaceable>());
+        tileMarkerController.GetComponent<TileMarkerController>().notifyTileChange();
     }
 
     private void removePlaceable(int x, int z)
     {
 
+        tileMarkerController.GetComponent<TileMarkerController>().notifyTileChange();
     }
 
+    public static Transform getTile(Vector2Int pos) { return getTile(pos.x, pos.y); }
     public static Transform getTile(int x, int z)
     {
         if (!raftTiles.ContainsKey(x)) return null;
@@ -94,10 +101,22 @@ public class PlayerBuildModeState : IPlayerState
         else return raftTiles[x][z];
     }
 
+    public static IPlaceable getPlaceable(Vector2Int pos) { return getPlaceable(pos.x, pos.y); }
     public static IPlaceable getPlaceable(int x, int z)
     {
         if (!placeables.ContainsKey(x)) return null;
         else if (!placeables[x].ContainsKey(z)) return null;
         else return placeables[x][z];
+    }
+
+    public static bool hasAdjacentTile(Vector2Int pos) { return hasAdjacentTile(pos.x, pos.y); }
+    public static bool hasAdjacentTile(int x, int z)
+    {
+        if (getTile(x + 1, z) != null) return true;
+        if (getTile(x - 1, z) != null) return true;
+        if (getTile(x, z + 1) != null) return true;
+        if (getTile(x, z - 1) != null) return true;
+
+        return false;
     }
 }

@@ -7,8 +7,9 @@ public class TileMarkerController : MonoBehaviour
 {
     // public:
     public Transform tileMarkerPrefab;
-    public Texture2D texMarkerEmpty;
-    public Texture2D texMarkerOccupied;
+    public Texture2D texMarkerOnEmpty;
+    public Texture2D texMarkerOnTile;
+    public Texture2D texMarkerOnPlaceable;
 
     // private:
     private Transform[] tileMarkers;
@@ -16,11 +17,18 @@ public class TileMarkerController : MonoBehaviour
     private Transform player;
     private Vector2Int previousPlayerTilePosition;
 
-    private bool tilesChanged = false;
+    private bool tilesChanged = true;
 
     private Transform highlightedMarker;
-    private Color defaultColor = new Color(0.8f, 0.8f, 0.8f, 0.2f);
+    private Color defaultColor = new Color(0.8f, 0.8f, 0.8f, 0f);
     private Color highlightColor = new Color(3, 3, 3, 1);
+
+    private enum MarkerType
+    {
+        OnEmpty,
+        OnTile,
+        OnPlaceable
+    }
 
     void Start()
     {
@@ -52,20 +60,28 @@ public class TileMarkerController : MonoBehaviour
                 {
                     if (x == 0 && z == 0) continue;
 
-                    float y = 0;
-                    if (PlayerBuildModeState.getTile(playerTilePosition.x + x, playerTilePosition.y + z))
-                    {                        
-                        y = 0.5f;
-                        setMarkerTexture(tileMarkers[tileMarkerIndex], texMarkerOccupied);
+                    Vector2Int tilePosition = new Vector2Int(playerTilePosition.x + x, playerTilePosition.y + z);
+                    Transform tileMarker = tileMarkers[tileMarkerIndex];
+                    tileMarker.gameObject.SetActive(true);
+
+                    if (PlayerBuildModeState.getPlaceable(tilePosition) != null)
+                    {
+                        setMarkerType(MarkerType.OnPlaceable, tileMarker);
+                    }
+                    else if (PlayerBuildModeState.getTile(tilePosition) != null)
+                    {
+                        setMarkerType(MarkerType.OnTile, tileMarker);
                     }
                     else
                     {
-                        setMarkerTexture(tileMarkers[tileMarkerIndex], texMarkerEmpty);
+                        if(PlayerBuildModeState.hasAdjacentTile(tilePosition))
+                            setMarkerType(MarkerType.OnEmpty, tileMarker);
+                        else
+                            tileMarker.gameObject.SetActive(false);
                     }
 
-                    tileMarkers[tileMarkerIndex].gameObject.SetActive(true);
-                    tileMarkers[tileMarkerIndex].position = new Vector3((playerTilePosition.x + x) * PlayerBuildModeState.tileSize, y,
-                                                                              (playerTilePosition.y + z) * PlayerBuildModeState.tileSize);
+                    tileMarker.position = new Vector3(tilePosition.x * PlayerBuildModeState.tileSize, 0,
+                                                                        tilePosition.y * PlayerBuildModeState.tileSize);
                     tileMarkerIndex++;
                 }
             }
@@ -89,13 +105,40 @@ public class TileMarkerController : MonoBehaviour
         highlightedMarker = marker;
     }
 
-    private void setMarkerTexture(Transform tile, Texture2D texture)
+    private void setMarkerTexture(Transform marker, Texture2D texture)
     {
-        tile.GetComponentInChildren<MeshRenderer>().material.SetTexture("_Texture2D", texture);
+        marker.GetComponentInChildren<MeshRenderer>().material.SetTexture("_Texture2D", texture);
     }
 
-    private void setMarkerColor(Transform tile, Color color)
+    private void setMarkerColor(Transform marker, Color color)
     {
-        tile.GetComponentInChildren<MeshRenderer>().material.SetColor("_BaseColor", color);
+        marker.GetComponentInChildren<MeshRenderer>().material.SetColor("_BaseColor", color);
+    }
+
+    private void setMarkerType(MarkerType type, Transform marker)
+    {
+        switch (type) 
+        {
+            case MarkerType.OnEmpty:
+                setMarkerTexture(marker, texMarkerOnEmpty);
+                marker.GetComponent<BoxCollider>().center = new Vector3(0f, -0.5f, 0f);
+                marker.GetComponent<BoxCollider>().size = new Vector3(1.6f, 0.1f, 1.6f);
+                marker.GetChild(0).localPosition = Vector3.zero;
+                break;
+            case MarkerType.OnTile:
+                setMarkerTexture(marker, texMarkerOnTile);
+                marker.GetComponent<BoxCollider>().center = new Vector3(0f, -0.13f, 0f);
+                marker.GetComponent<BoxCollider>().size = new Vector3(1.6f, 0.9f, 1.6f);
+                marker.GetChild(0).localPosition = new Vector3(0, 0.5f, 0);
+                break;
+            case MarkerType.OnPlaceable:
+                setMarkerTexture(marker, texMarkerOnPlaceable);
+                marker.GetComponent<BoxCollider>().center = new Vector3(0f, -0.13f, 0f);
+                marker.GetComponent<BoxCollider>().size = new Vector3(1.6f, 0.9f, 1.6f);
+                marker.GetChild(0).localPosition = new Vector3(0, 0.5f, 0);
+                break;
+            default:
+                break;
+        }
     }
 }
