@@ -13,4 +13,9 @@ public static class GameUtility
     {
         return Mathf.RoundToInt(coordinate / PlayerBuildModeState.tileSize);
     }
+
+    public static bool isMouseOnScreen()
+    { 
+        return !(0 > Input.mousePosition.x || 0 > Input.mousePosition.y || Screen.width < Input.mousePosition.x || Screen.height < Input.mousePosition.y); 
+    }
 }
