@@ -15,15 +15,9 @@ public class Session : MonoBehaviour
         instance = this;
 
         // initializing the start platform
-        PlayerBuildModeState playerBuildModeState = new PlayerBuildModeState();
+        PlayerBuildModeState playerBuildModeState = new();
         playerBuildModeState.initialize();
-        for (int x = -1; x < 2; x++)
-        {
-            for (int z = -1; z < 2; z++)
-            {
-                playerBuildModeState.placeTile(x, z);
-            }
-        }
+        playerBuildModeState.createStartPlatform();
         playerBuildModeState.finalize();
 
         playerState = new PlayerBuildModeState();

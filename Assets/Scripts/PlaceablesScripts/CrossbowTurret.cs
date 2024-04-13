@@ -15,4 +15,9 @@ public class CrossbowTurret : MonoBehaviour, ITurret, IPlaceable
     {
         crossbow.Rotate(0, Time.deltaTime * 10, 0);
     }
+
+    Transform IPlaceable.transform()
+    {
+        return transform;
+    }
 }

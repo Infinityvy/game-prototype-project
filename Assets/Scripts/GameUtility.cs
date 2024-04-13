@@ -11,7 +11,7 @@ public static class GameUtility
 
     public static int toTileCoordinate(this float coordinate)
     {
-        return Mathf.RoundToInt(coordinate / PlayerBuildModeState.tileSize);
+        return Mathf.RoundToInt(coordinate / TileBuilder.tileSize);
     }
 
     public static bool isMouseOnScreen()

@@ -61,7 +61,7 @@ Material:
     - _CenterOffset: {r: 0, g: 0, b: 0, a: 0}
     - _DeepWater: {r: 0.105882354, g: 0.32156864, b: 0.16059306, a: 0}
     - _FoamColor: {r: 0.6717858, g: 1.1839373, b: 0.39650735, a: 0.4392157}
-    - _RaftSpeed: {r: 0, g: 0.02, b: 0, a: 0}
+    - _RaftSpeed: {r: 0, g: 0.025, b: 0, a: 0}
     - _RippleColor: {r: 0.06151839, g: 2.0941951, b: 0, a: 0.078431375}
     - _ShallowWater: {r: 0.21960782, g: 0.6039216, b: 0.30599436, a: 0}
   m_BuildTextureStacks: []

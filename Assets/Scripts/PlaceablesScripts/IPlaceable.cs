@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IPlaceable
 {
-
+    public Transform transform();
 }

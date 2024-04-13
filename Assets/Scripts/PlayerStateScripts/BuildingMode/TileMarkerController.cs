@@ -32,8 +32,8 @@ public class TileMarkerController : MonoBehaviour
 
     void Start()
     {
-        tileMarkers = new Transform[8];
-        for (int i = 0; i < 8; i++)
+        tileMarkers = new Transform[9];
+        for (int i = 0; i < 9; i++)
         {
             tileMarkers[i] = GameObject.Instantiate(tileMarkerPrefab, this.transform);
             tileMarkers[i].gameObject.SetActive(false);
@@ -58,37 +58,35 @@ public class TileMarkerController : MonoBehaviour
             {
                 for (int z = -1; z < 2; z++)
                 {
-                    if (x == 0 && z == 0) continue;
-
                     Vector2Int tilePosition = new Vector2Int(playerTilePosition.x + x, playerTilePosition.y + z);
                     Transform tileMarker = tileMarkers[tileMarkerIndex];
                     tileMarker.gameObject.SetActive(true);
 
-                    if (PlayerBuildModeState.getPlaceable(tilePosition) != null)
+                    if (PlaceableBuilder.getPlaceable(tilePosition) != null)
                     {
                         setMarkerType(MarkerType.OnPlaceable, tileMarker);
                     }
-                    else if (PlayerBuildModeState.getTile(tilePosition) != null)
+                    else if (TileBuilder.getTile(tilePosition) != null)
                     {
                         setMarkerType(MarkerType.OnTile, tileMarker);
                     }
                     else
                     {
-                        if(PlayerBuildModeState.hasAdjacentTile(tilePosition))
+                        if(TileBuilder.hasAdjacentTile(tilePosition))
                             setMarkerType(MarkerType.OnEmpty, tileMarker);
                         else
                             tileMarker.gameObject.SetActive(false);
                     }
 
-                    tileMarker.position = new Vector3(tilePosition.x * PlayerBuildModeState.tileSize, 0,
-                                                                        tilePosition.y * PlayerBuildModeState.tileSize);
+                    tileMarker.position = new Vector3(tilePosition.x * TileBuilder.tileSize, 0,
+                                                                        tilePosition.y * TileBuilder.tileSize);
                     tileMarkerIndex++;
                 }
             }
         }
     }
 
-    public void notifyTileChange()
+    public void notifyWorldChange()
     {
         tilesChanged = true;
     }

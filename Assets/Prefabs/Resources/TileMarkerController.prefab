@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7316883502451503809}
   - component: {fileID: 8068596307909702393}
   m_Layer: 0
-  m_Name: TileHighlighter
+  m_Name: TileMarkerController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
