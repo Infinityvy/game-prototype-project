@@ -7,11 +7,13 @@ public class TileBuilder
 {
     // public:
     public static readonly float tileSize = 1.6f;
+    public static readonly uint maxSize = 15;
 
     // private:
     private PlayerBuildModeState buildModeState;
 
     private static Dictionary<int, Dictionary<int, Transform>> tiles;
+    private static Transform[,] tilesMatrix;
     private Transform parent;
     private Transform tilePrefab;
 
@@ -20,6 +22,7 @@ public class TileBuilder
         this.buildModeState = buildModeState;
 
         tiles ??= new Dictionary<int, Dictionary<int, Transform>>();
+        tilesMatrix = new Transform[15, 15];
 
         parent = GameObject.Find("Raft").transform;
         tilePrefab = Resources.Load<Transform>("RaftTile");
