@@ -13,7 +13,6 @@ public class TileBuilder
     private PlayerBuildModeState buildModeState;
 
     private static Dictionary<int, Dictionary<int, Transform>> tiles;
-    private static Transform[,] tilesMatrix;
     private Transform parent;
     private Transform tilePrefab;
 
@@ -22,7 +21,6 @@ public class TileBuilder
         this.buildModeState = buildModeState;
 
         tiles ??= new Dictionary<int, Dictionary<int, Transform>>();
-        tilesMatrix = new Transform[15, 15];
 
         parent = GameObject.Find("Raft").transform;
         tilePrefab = Resources.Load<Transform>("RaftTile");
@@ -118,5 +116,14 @@ public class TileBuilder
 
         // sanity check; if it get to this point this check should always be false, then again if its true it should be fine anyways
         return visited.Count == tiles.Count;
+    }
+
+    public static bool isInBounds(Vector2Int pos) { return isInBounds(pos.x, pos.y); }
+    public static bool isInBounds(int x, int y)
+    {
+        if (x < -maxSize/2 || y < -maxSize/2 || x > maxSize/2 || y > maxSize/2)
+            return false;
+
+        return true;
     }
 }

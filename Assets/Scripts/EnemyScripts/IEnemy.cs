@@ -4,6 +4,7 @@ using UnityEngine;
 
 public interface IEnemy
 {
+    public EnemyState getEnemyState();
     public float getHealth();
     public void dealDamage(float damage);
 }

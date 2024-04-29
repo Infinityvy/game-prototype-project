@@ -81,6 +81,8 @@ public class TileMarkerController : MonoBehaviour
                     tileMarker.position = new Vector3(tilePosition.x * TileBuilder.tileSize, 0,
                                                                         tilePosition.y * TileBuilder.tileSize);
                     tileMarkerIndex++;
+
+                    if(!TileBuilder.isInBounds(tilePosition)) tileMarker.gameObject.SetActive(false);
                 }
             }
         }
