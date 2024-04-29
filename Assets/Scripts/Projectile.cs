@@ -9,7 +9,7 @@ public class Projectile : MonoBehaviour
     public LayerMask mask;
     public float aliveTimeInSeconds = 6f;
 
-    private Vector3 lastPosition = Vector3.zero;
+    private Vector3 lastPosition;
     private float timeAtSpawn;
 
     private bool destroyed = false;
@@ -17,6 +17,7 @@ public class Projectile : MonoBehaviour
     void Start()
     {      
         timeAtSpawn = Time.time;
+        lastPosition = transform.position;
     }
 
     void Update()

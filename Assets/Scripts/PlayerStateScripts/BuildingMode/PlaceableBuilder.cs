@@ -32,7 +32,7 @@ public class PlaceableBuilder
     public void removePlaceable(Vector2Int pos) { removePlaceable(pos.x, pos.y); }
     public void removePlaceable(int x, int z)
     {
-        GameObject.Destroy(placeables[x][z].transform().gameObject);
+        GameObject.Destroy(placeables[x][z].transform.gameObject);
         placeables[x].Remove(z);
         if (placeables[x].Count == 0) placeables.Remove(x);
         buildModeState.notifyWorldChange();

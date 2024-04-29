@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IPlaceable
+public enum TurretTargetingMode
 {
-    public Transform transform { get; }
+    NEAREST,
+    STRONGEST,
+    WEAKEST
 }

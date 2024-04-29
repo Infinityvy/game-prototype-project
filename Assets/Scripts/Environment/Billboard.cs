@@ -6,7 +6,7 @@ using Unity.Mathematics;
 public class Billboard : MonoBehaviour
 {
     public bool3 freezeRotation = new bool3(true, false, true);
-    private Vector3 billboardNormal = new Vector3(0, 0, -1);
+    public Vector3 billboardNormal = new Vector3(0, 0, -1);
     private Transform cam;
 
     // Start is called before the first frame update

@@ -15,6 +15,7 @@ public class ImpEnemy : MonoBehaviour, IEnemy
     private float currentHealth;
 
     private readonly float movementSpeed = 2f;
+    private readonly float altitude = 1.6f;
 
     private Vector3 targetDestination;
     private Transform player;
@@ -28,9 +29,11 @@ public class ImpEnemy : MonoBehaviour, IEnemy
     private readonly float attackCooldownInSeconds = 1.5f;
     private float lastTimeAttacked = 0;
 
+    Vector3 IEnemy.position { get { return transform.position; } }
+
     void Start()
     {
-        state = EnemyState.ATTACKING;
+        state = EnemyState.SPAWNING;
 
         currentHealth = maxHealth;
 
@@ -43,24 +46,19 @@ public class ImpEnemy : MonoBehaviour, IEnemy
 
     void Update()
     {
-        if(Vector3.Distance(transform.position, targetDestination) > toleranceDistance)
-        {
-            state = EnemyState.MOVING;
-        }
-        else state = EnemyState.ATTACKING;
-
         switch (state) 
         {
             case EnemyState.ATTACKING:
                 attack();
                 break;
             case EnemyState.MOVING:
-                transform.Translate((targetDestination - transform.position).normalized * movementSpeed * Time.deltaTime);
+                move();
                 break;
-            case EnemyState.SPAWNING: 
+            case EnemyState.SPAWNING:
+                spawn();
                 break;
-            default: 
-                break;
+            default:
+                throw new Exception("Unknown enemy state.");
         }
     }
 
@@ -106,22 +104,69 @@ public class ImpEnemy : MonoBehaviour, IEnemy
 
     private void attack()
     {
+        if (Vector3.Distance(transform.position, targetDestination) > toleranceDistance)
+        {
+            state = EnemyState.MOVING;
+            return;
+        }
+
         if (Time.time - lastTimeAttacked < attackCooldownInSeconds) return;
 
         lastTimeAttacked = Time.time;
 
-        Vector2 playerPos = new Vector2(player.position.x, player.position.z);
-        Vector2 impPos = new Vector2(transform.position.x, transform.position.z);
+        Vector3 directionToPlayer = player.position - transform.position + Vector3.up;
 
-        Vector2 vectorToPlayer = playerPos - impPos;
-        Vector3 projectileDirection = new Vector3(vectorToPlayer.x, 0, vectorToPlayer.y);
+        Transform projectile = Instantiate(projectilePrefab, transform.position, Quaternion.LookRotation(directionToPlayer));
+    }
 
-        Transform projectile = Instantiate(projectilePrefab, transform.position, Quaternion.LookRotation(projectileDirection));
+    private void move()
+    {
+        if (Vector3.Distance(transform.position, targetDestination) <= toleranceDistance)
+        {
+            state = EnemyState.ATTACKING;
+            return;
+        }
+        
+        transform.Translate((targetDestination - transform.position).normalized * movementSpeed * Time.deltaTime);
+    }
+
+    private void spawn()
+    {
+        if (altitude - transform.position.y <= toleranceDistance)
+        {
+            transform.position = new Vector3(transform.position.x, altitude, transform.position.z);
+            state = EnemyState.ATTACKING;
+            return;
+        }
+
+        transform.Translate(Vector3.up * movementSpeed * Time.deltaTime);
     }
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.yellow;
+        Gizmos.color = Color.cyan;
         Gizmos.DrawLine(transform.position, targetDestination);
+    }
+
+    public static Transform getPrefab()
+    {
+        Transform prefab = Resources.Load<Transform>("ImpEnemy");
+
+        return prefab;
+    }
+
+    EnemyState IEnemy.getEnemyState()
+    {
+        throw new NotImplementedException();
+    }
+
+    float IEnemy.getHealth()
+    {
+        throw new NotImplementedException();
+    }
+
+    void IEnemy.dealDamage(float damage)
+    {
+        throw new NotImplementedException();
     }
 }

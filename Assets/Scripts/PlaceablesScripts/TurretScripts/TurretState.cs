@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IPlaceable
+public enum TurretState
 {
-    public Transform transform { get; }
+    IDLING,
+    AIMING,
+    SHOOTING
 }

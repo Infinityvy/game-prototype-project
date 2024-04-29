@@ -11,7 +11,7 @@ public class PlayerCamera : MonoBehaviour
     // private:
     private readonly float minCameraZoom = -5.0f;
     private readonly float maxCameraZoom = -60.0f;
-    private readonly float defaultCameraZoom = -20.0f;
+    private readonly float defaultCameraZoom = -40.0f;
 
     void Start()
     {
