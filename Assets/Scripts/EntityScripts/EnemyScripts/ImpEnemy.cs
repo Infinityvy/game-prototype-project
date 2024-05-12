@@ -1,17 +1,17 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class ImpEnemy : MonoBehaviour, IEnemy
+public class ImpEnemy : MonoBehaviour, IEnemy, IEntity
 {
     // public:
+    public EnemyState state;
+    public UnityEvent deathEvent { get { return _deathEvent; } }
+    public UnityEvent _deathEvent;
 
     // private:
-    public EnemyState state;
-
-    private readonly float maxHealth = 100f;
+    private readonly float maxHealth = 20f;
     private float currentHealth;
 
     private readonly float movementSpeed = 2f;
@@ -29,7 +29,15 @@ public class ImpEnemy : MonoBehaviour, IEnemy
     private readonly float attackCooldownInSeconds = 1.5f;
     private float lastTimeAttacked = 0;
 
+    Transform IEnemy.transform { get { return transform; } }
     Vector3 IEnemy.position { get { return transform.position; } }
+    Vector3 IEnemy.velocity { get { return _velocity; } }
+    private Vector3 _velocity = Vector3.zero;
+
+    void Awake()
+    {
+        _deathEvent = new UnityEvent();
+    }
 
     void Start()
     {
@@ -40,13 +48,16 @@ public class ImpEnemy : MonoBehaviour, IEnemy
         targetDestination = transform.position;
         player = GameObject.Find("Player").transform;
         projectilePrefab = Resources.Load<Transform>("MudProjectile");
+        
+        // initiating pathing after a random delay to prevent all enemies pathing in the same frame
+        InvokeRepeating(nameof(findTargetDestination), Random.Range(0f, 1f), 1.0f);
 
-        InvokeRepeating("findTargetDestination", 0f, 1.0f);
+        InvokeRepeating(nameof(updateTextureOrientation), Random.Range(0f, 0.2f), 0.2f);
     }
 
     void Update()
     {
-        switch (state) 
+        switch (state)
         {
             case EnemyState.ATTACKING:
                 attack();
@@ -58,7 +69,7 @@ public class ImpEnemy : MonoBehaviour, IEnemy
                 spawn();
                 break;
             default:
-                throw new Exception("Unknown enemy state.");
+                throw new System.Exception("Unknown enemy state.");
         }
     }
 
@@ -81,7 +92,9 @@ public class ImpEnemy : MonoBehaviour, IEnemy
 
     private void die()
     {
-        throw new NotImplementedException();
+        EnemyDirector.instance.enemies.Remove(this);
+        _deathEvent.Invoke();
+        Destroy(gameObject);
     }
 
     private void findTargetDestination()
@@ -126,8 +139,10 @@ public class ImpEnemy : MonoBehaviour, IEnemy
             state = EnemyState.ATTACKING;
             return;
         }
-        
-        transform.Translate((targetDestination - transform.position).normalized * movementSpeed * Time.deltaTime);
+
+        _velocity = (targetDestination - transform.position).normalized * movementSpeed;
+
+        transform.Translate(_velocity * Time.deltaTime);
     }
 
     private void spawn()
@@ -142,6 +157,18 @@ public class ImpEnemy : MonoBehaviour, IEnemy
         transform.Translate(Vector3.up * movementSpeed * Time.deltaTime);
     }
 
+    private int lastSide = 1;
+    private void updateTextureOrientation()
+    {
+        int side = PlayerCamera.instance.getSideOfCamera(transform.position);
+
+        if (side == lastSide) return;
+
+        transform.Find("Model").localScale = new Vector3(side, 1, 1);
+
+        lastSide = side;
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.cyan;
@@ -153,20 +180,5 @@ public class ImpEnemy : MonoBehaviour, IEnemy
         Transform prefab = Resources.Load<Transform>("ImpEnemy");
 
         return prefab;
-    }
-
-    EnemyState IEnemy.getEnemyState()
-    {
-        throw new NotImplementedException();
-    }
-
-    float IEnemy.getHealth()
-    {
-        throw new NotImplementedException();
-    }
-
-    void IEnemy.dealDamage(float damage)
-    {
-        throw new NotImplementedException();
     }
 }

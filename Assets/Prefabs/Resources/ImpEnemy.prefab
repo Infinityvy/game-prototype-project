@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   freezeRotation:
-    x: 0
+    x: 1
     y: 0
     z: 1
   billboardNormal: {x: 0, y: 0, z: -1}

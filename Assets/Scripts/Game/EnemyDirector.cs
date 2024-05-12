@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.NetworkInformation;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -18,7 +19,8 @@ public class EnemyDirector : MonoBehaviour
     {
         instance = this;
 
-        spawnEnemy(EnemyType.IMP);
+        InvokeRepeating(nameof(spawnImp), 0.0f, 15.0f);
+
     }
 
     void Update()
@@ -26,6 +28,7 @@ public class EnemyDirector : MonoBehaviour
         
     }
 
+    private void spawnImp() { spawnEnemy(EnemyType.IMP); }
     private void spawnEnemy(EnemyType type)
     {
         switch (type) 

@@ -9,7 +9,7 @@ public abstract class Turret : MonoBehaviour
 
     protected TurretState state = TurretState.IDLING;
 
-    protected IEnemy target;
+    public IEnemy target;
 
     protected abstract float range { get; set; }
     protected abstract float turnSpeed { get; set; }
@@ -28,24 +28,28 @@ public abstract class Turret : MonoBehaviour
                 shoot();
                 break;
             default:
-                throw new Exception("Unkown turret state.");
+                throw new System.Exception("Unkown turret state.");
         }
     }
 
     protected void findTarget()
     {
+        if (target != null) target.deathEvent.RemoveListener(removeTarget);
+
         switch (targetingMode)
         {
             case TurretTargetingMode.NEAREST:
                 target = getNearestTarget();
                 break;
             case TurretTargetingMode.STRONGEST:
-                throw new NotImplementedException();
+                throw new System.NotImplementedException();
             case TurretTargetingMode.WEAKEST:
-                throw new NotImplementedException();
+                throw new System.NotImplementedException();
             default:
-                throw new Exception("Unknown turret targeting mode.");
+                throw new System.Exception("Unknown turret targeting mode.");
         }
+
+        if (target != null) target.deathEvent.AddListener(removeTarget);
     }
 
     protected IEnemy getNearestTarget()
@@ -69,6 +73,12 @@ public abstract class Turret : MonoBehaviour
 
 
         return nearestEnemy;
+    }
+
+    public void removeTarget()
+    {
+        target = null;
+        state = TurretState.IDLING;
     }
 
     protected abstract void idle();

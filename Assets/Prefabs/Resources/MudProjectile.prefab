@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2383487549947471459}
   - component: {fileID: 2030958142874452088}
   m_Layer: 0
-  m_Name: SplatterEffect
+  m_Name: DestructionEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -13,6 +13,7 @@ public class CrossbowTurret : Turret, IPlaceable
     protected override float turnSpeed { get; set; } = 4f;
 
     private float accuracyTolerance = 1f;
+    private float maxFiringAngle = 15f;
 
     private Transform projectilePrefab;
     private readonly float attackCooldownInSeconds = 1.5f;
@@ -21,9 +22,6 @@ public class CrossbowTurret : Turret, IPlaceable
     public void Start()
     {
         projectilePrefab = Resources.Load<Transform>("ArrowProjectile");
-
-        // since the turrets are placed by the player it should not be necessary to stagger the execution of findTarget as the player already adds randomness to it. hopefully
-        InvokeRepeating("findTarget", 0f, 0.2f);
     }
 
     protected override void idle()
@@ -34,9 +32,15 @@ public class CrossbowTurret : Turret, IPlaceable
             return;
         }
 
+        if(((int)(Time.time*10))*0.1f % 0.2f == 0)
+        {
+            findTarget();
+        }
+
         crossbow.Rotate(0, Time.deltaTime * 20, 0);
     }
 
+    Vector3 targetPositionAtImpactTime = Vector3.zero;
     protected override void aim()
     {
         if (target == null)
@@ -46,6 +50,10 @@ public class CrossbowTurret : Turret, IPlaceable
         }
 
         Vector3 directionToTarget = target.position - crossbow.position;
+        float projectileTravelTime = directionToTarget.magnitude / projectilePrefab.GetComponent<Projectile>().speed;
+        targetPositionAtImpactTime = target.velocity * projectileTravelTime + target.position;
+
+        directionToTarget = targetPositionAtImpactTime - crossbow.position;
 
         float angleToTarget = Vector3.Angle(crossbow.forward, directionToTarget);
 
@@ -71,14 +79,24 @@ public class CrossbowTurret : Turret, IPlaceable
         }
 
         Vector3 directionToTarget = target.position - crossbow.position;
+
         float angleToTarget = Vector3.Angle(crossbow.forward, directionToTarget);
 
         if (angleToTarget > accuracyTolerance) state = TurretState.AIMING;
 
+        if (angleToTarget > maxFiringAngle) return;
         if (Time.time - lastTimeAttacked < attackCooldownInSeconds) return;
 
         lastTimeAttacked = Time.time;
 
         Instantiate(projectilePrefab, crossbow.position, crossbow.rotation);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawLine(crossbow.position, crossbow.forward * 20f);
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(crossbow.position, targetPositionAtImpactTime);
     }
 }
