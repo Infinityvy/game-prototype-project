@@ -129,7 +129,7 @@ public class ImpEnemy : MonoBehaviour, IEnemy, IEntity
 
         Vector3 directionToPlayer = player.position - transform.position + Vector3.up;
 
-        Transform projectile = Instantiate(projectilePrefab, transform.position, Quaternion.LookRotation(directionToPlayer));
+        Instantiate(projectilePrefab, transform.position, Quaternion.LookRotation(directionToPlayer));
     }
 
     private void move()
@@ -137,6 +137,7 @@ public class ImpEnemy : MonoBehaviour, IEnemy, IEntity
         if (Vector3.Distance(transform.position, targetDestination) <= toleranceDistance)
         {
             state = EnemyState.ATTACKING;
+            _velocity = Vector3.zero;
             return;
         }
 

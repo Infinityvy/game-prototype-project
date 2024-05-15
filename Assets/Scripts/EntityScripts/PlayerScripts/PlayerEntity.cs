@@ -28,6 +28,6 @@ public class PlayerEntity : MonoBehaviour, IEntity
 
     private void die()
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Player died.");
     }
 }
