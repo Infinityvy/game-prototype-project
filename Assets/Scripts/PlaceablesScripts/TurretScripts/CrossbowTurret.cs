@@ -5,15 +5,17 @@ using UnityEngine;
 
 public class CrossbowTurret : Turret, IPlaceable
 {
-    public Transform crossbow;
+    PlaceableType IPlaceable.type { get; set; } = PlaceableType.CROSSBOW;
 
     Transform IPlaceable.transform { get { return transform; } }
+
+    public Transform crossbow;
 
     protected override float range { get; set; } = 10f;
     protected override float turnSpeed { get; set; } = 4f;
 
     private float accuracyTolerance = 1f;
-    private float maxFiringAngle = 15f;
+    private float maxFiringAngle = 5f;
 
     private Transform projectilePrefab;
     private readonly float attackCooldownInSeconds = 1.5f;

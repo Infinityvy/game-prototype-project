@@ -47,4 +47,23 @@ public class PlaceableBuilder
         else if (!placeables[x].ContainsKey(z)) return null;
         else return placeables[x][z];
     }
+
+    public static ResourceBlock getPlaceableCost(PlaceableType type)
+    {
+        switch(type) 
+        {
+            case PlaceableType.CROSSBOW:
+                return new ResourceBlock(5, 1);
+            case PlaceableType.SNIPER:
+                return new ResourceBlock(2, 5);
+            case PlaceableType.MACHINEGUN:
+                return new ResourceBlock(2, 5);
+            case PlaceableType.NET:
+                return new ResourceBlock(5, 1);
+            case PlaceableType.WALL:
+                return new ResourceBlock(5, 0);
+            default:
+                throw new System.Exception("Unkown PlaceableType");
+        }
+    }
 }

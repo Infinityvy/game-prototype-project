@@ -8,6 +8,7 @@ public class TileBuilder
     // public:
     public static readonly float tileSize = 1.6f;
     public static readonly uint maxSize = 15;
+    public static readonly ResourceBlock tileCost = new ResourceBlock(2, 0);
 
     // private:
     private PlayerBuildModeState buildModeState;

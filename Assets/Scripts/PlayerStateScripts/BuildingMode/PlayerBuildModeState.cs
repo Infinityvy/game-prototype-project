@@ -8,6 +8,8 @@ using UnityEngine.Rendering;
 public class PlayerBuildModeState : IPlayerState
 {
     // public:
+    public static ResourceInventory resourceInventory { get; private set; }
+
     // private:
     private TileMarkerController tileMarkerController;
 
@@ -23,6 +25,9 @@ public class PlayerBuildModeState : IPlayerState
 
         placeableBuilder = new();
         placeableBuilder.initialize(this);
+
+        resourceInventory = new ResourceInventory();
+        resourceInventory.initialize();
     }
 
     public void finalize()
@@ -64,11 +69,15 @@ public class PlayerBuildModeState : IPlayerState
     {
         if (TileBuilder.getTile(pos) == null)
         {
+            if(!resourceInventory.subtractResources(TileBuilder.tileCost)) return false;
+
             tileBuilder.placeTile(pos);
             return true;
         }
         else if (PlaceableBuilder.getPlaceable(pos) == null)
         {
+            if(!resourceInventory.subtractResources(PlaceableBuilder.getPlaceableCost(PlaceableType.CROSSBOW))) return false;
+
             placeableBuilder.placePlaceable(PlaceableType.CROSSBOW, pos);
             return true;
         }
@@ -80,11 +89,13 @@ public class PlayerBuildModeState : IPlayerState
     {
         if (PlaceableBuilder.getPlaceable(pos) != null)
         {
+            resourceInventory.addResources(PlaceableBuilder.getPlaceableCost(PlaceableBuilder.getPlaceable(pos).type) / 2);
             placeableBuilder.removePlaceable(pos);
             return true;
         }
         else if (TileBuilder.getTile(pos) != null)
         {
+            resourceInventory.addResources(TileBuilder.tileCost / 2);
             return tileBuilder.removeTile(pos);
         }
 

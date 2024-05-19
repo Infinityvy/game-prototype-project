@@ -62,6 +62,8 @@ public abstract class Turret : MonoBehaviour
         float shortestDistance = Vector3.Distance(transform.position, nearestEnemy.position);
         for (int i = 1; i < enemies.Count; i++)
         {
+            if (enemies[i].getEnemyState() == EnemyState.SPAWNING) continue;
+
             float distanceToEnemy = Vector3.Distance(transform.position, enemies[i].position);
             if (distanceToEnemy < shortestDistance)
             {
@@ -70,7 +72,7 @@ public abstract class Turret : MonoBehaviour
             }
         }
 
-
+        if (nearestEnemy.getEnemyState() == EnemyState.SPAWNING) return null;
 
         return nearestEnemy;
     }

@@ -92,6 +92,11 @@ public class ImpEnemy : MonoBehaviour, IEnemy, IEntity
 
     private void die()
     {
+        float woodChance = Random.Range(0f, 1f);
+        float metalChance = Random.Range(0f, 1f);
+        if (woodChance < 0.30f) PlayerBuildModeState.resourceInventory.addResources(new ResourceBlock(1, 0));
+        if (metalChance < 0.05f) PlayerBuildModeState.resourceInventory.addResources(new ResourceBlock(0, 1));
+
         EnemyDirector.instance.enemies.Remove(this);
         _deathEvent.Invoke();
         Destroy(gameObject);
