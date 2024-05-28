@@ -5,6 +5,7 @@ using UnityEngine;
 public class AnimationController : MonoBehaviour
 {
     public Animator animator;
+    //0 is standstill, 1 is forward, 2 is back, 3 is left, 4 is right
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -15,26 +16,27 @@ public class AnimationController : MonoBehaviour
     {
         if (Input.GetKey(GameInputs.keys["Forward"]))
         {
-            animator.Play("WalkBack");
+            animator.SetInteger("Direction", 1);
+            animator.SetBool("KeyPressed", true);
         }
         if (Input.GetKey(GameInputs.keys["Back"]))
         {
-            animator.Play("WalkFront");
+            animator.SetInteger("Direction", 2);
+            animator.SetBool("KeyPressed", true);
         }
         if (Input.GetKey(GameInputs.keys["Left"]))
         {
-            animator.SetBool("Mirror", false);
-            animator.Play("WalkSideLeft");
+            animator.SetInteger("Direction", 3);
+            animator.SetBool("KeyPressed", true);
         }
         if (Input.GetKey(GameInputs.keys["Right"]))
         {
-            animator.SetBool("Mirror", true);
-            animator.Play("WalkSideRight");
+            animator.SetInteger("Direction", 4);
+            animator.SetBool("KeyPressed", true);
         }
-        if(!Input.GetKey(GameInputs.keys["Forward"])&&!Input.GetKey(GameInputs.keys["Back"])&&!Input.GetKey(GameInputs.keys["Left"])&&!Input.GetKey(GameInputs.keys["Right"]))
+        if(!Input.anyKey)
         {
-            animator.Play("StandStill");
+            animator.SetBool("KeyPressed", false);
         }
-
     }
 }
