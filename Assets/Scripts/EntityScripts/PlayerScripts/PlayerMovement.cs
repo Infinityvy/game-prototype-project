@@ -30,6 +30,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if(PlayerEntity.instance.isDead) return;
+
         if(checkIfGrounded())
         {
             if (!isGrounded)

@@ -56,7 +56,7 @@ public class Projectile : MonoBehaviour
     {
         destroyed = true;
         transform.Find("Model").gameObject.SetActive(false);
-        transform.Find("DestructionEffect").GetComponent<ParticleSystem>().Play();
+        transform.GetComponentInChildren<ParticleSystem>().Play();
         Invoke("destroy", 1);
     }
 

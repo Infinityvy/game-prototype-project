@@ -5,14 +5,20 @@ using UnityEngine.Events;
 
 public class PlayerEntity : MonoBehaviour, IEntity
 {
+    public static PlayerEntity instance;
+
+    public bool isDead = false;
+
     private float maxHealth = 100;
     private float currentHealth;
 
-    public CanvasGroup GameOverPanel;
+    public GameObject GameOverPanel;
 
 
     void Start()
     {
+        instance = this;
+
         currentHealth = maxHealth;
     }
 
@@ -30,9 +36,9 @@ public class PlayerEntity : MonoBehaviour, IEntity
 
     private void die()
     {
-        Debug.Log("Player died.");
-        Time.timeScale = 0f;
-        GameOverPanel.alpha = 1;
-        GameOverPanel.blocksRaycasts = true;
+        isDead = true;
+        transform.GetComponentInChildren<MeshRenderer>().enabled = false;
+        transform.GetComponentInChildren<ParticleSystem>().Play();
+        GameOverPanel.SetActive(true);
     }
 }

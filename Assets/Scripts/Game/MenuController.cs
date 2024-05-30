@@ -1,41 +1,32 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class NewBehaviourScript : MonoBehaviour
+public class MenuController : MonoBehaviour
 {
-    public CanvasGroup OptionPanel;
-    public CanvasGroup MenuPanel;
-    private bool isPaused;
+    public GameObject OptionPanel;
+    public GameObject MenuPanel;
 
     public void OpenMenuPauseGame()
     {
-        MenuPanel.alpha = 1;
-        MenuPanel.blocksRaycasts = true;
-        Time.timeScale = 0f;
-        isPaused = true;
+        MenuPanel.SetActive(true);
+        Session.instance.setPaused(true);
+        Session.instance.isPaused = true;
     }
     public void ResumeGame()
     {
-        MenuPanel.alpha = 0;
-        MenuPanel.blocksRaycasts = false;
-        Time.timeScale = 1f;
-        isPaused = false;
+        MenuPanel.SetActive(false);
+        Session.instance.setPaused(false);
+        Session.instance.isPaused = false;
     }
 
     public void OpenOptions()
     {
-        OptionPanel.alpha = 1;
-        OptionPanel.blocksRaycasts = true;
+        OptionPanel.SetActive(true);
     }
 
     public void CloseOptions()
     {
-        OptionPanel.alpha = 0;
-        OptionPanel.blocksRaycasts = false;
-    }
-    public void BackToMainMenu()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        OptionPanel.SetActive(false);
     }
 
     public void QuitGame()
@@ -43,16 +34,17 @@ public class NewBehaviourScript : MonoBehaviour
         Application.Quit();
     }
 
-    public void ReloadGame()
+    public void LoadScene(string name)
     {
-        SceneManager.LoadScene(1);
+        Session.instance.setPaused(false);
+        SceneManager.LoadScene(name);
     }
 
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            if (isPaused)
+            if (Session.instance.isPaused)
                 ResumeGame();
             else
                 OpenMenuPauseGame();

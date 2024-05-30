@@ -11,7 +11,7 @@ public class CrossbowTurret : Turret, IPlaceable
 
     public Transform crossbow;
 
-    protected override float range { get; set; } = 10f;
+    protected override float range { get; set; } = 15f;
     protected override float turnSpeed { get; set; } = 4f;
 
     private float accuracyTolerance = 1f;

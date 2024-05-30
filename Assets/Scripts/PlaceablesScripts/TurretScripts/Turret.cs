@@ -72,6 +72,7 @@ public abstract class Turret : MonoBehaviour
             }
         }
 
+        if (shortestDistance > range) return null;
         if (nearestEnemy.getEnemyState() == EnemyState.SPAWNING) return null;
 
         return nearestEnemy;

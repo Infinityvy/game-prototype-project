@@ -27,6 +27,11 @@ public class TileBuilder
         tilePrefab = Resources.Load<Transform>("RaftTile");
     }
 
+    public static void flush()
+    {
+        tiles = null;
+    }
+
     public void placeTile(Vector2Int pos) { placeTile(pos.x, pos.y); }
     public void placeTile(int x, int y)
     {

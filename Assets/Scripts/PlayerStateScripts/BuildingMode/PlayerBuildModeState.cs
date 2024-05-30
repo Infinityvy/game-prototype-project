@@ -37,7 +37,10 @@ public class PlayerBuildModeState : IPlayerState
 
     public void update()
     {
+        if (Session.instance.isPaused) return;
+        if(PlayerEntity.instance.isDead) return;
         if (!GameUtility.isMouseOnScreen()) return;
+
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, LayerMask.GetMask("TileMarker")))

@@ -8,12 +8,12 @@ public static class GameInputs
 
     public static void initialize()
     {
-        keys.Add("Forward", KeyCode.W);
-        keys.Add("Left", KeyCode.A);
-        keys.Add("Back", KeyCode.S);
-        keys.Add("Right", KeyCode.D);
-        keys.Add("Jump", KeyCode.Space);
+        keys.TryAdd("Forward", KeyCode.W);
+        keys.TryAdd("Left", KeyCode.A);
+        keys.TryAdd("Back", KeyCode.S);
+        keys.TryAdd("Right", KeyCode.D);
+        keys.TryAdd("Jump", KeyCode.Space);
 
-        keys.Add("Reset Camera", KeyCode.Mouse2);
+        keys.TryAdd("Reset Camera", KeyCode.Mouse2);
     }
 }

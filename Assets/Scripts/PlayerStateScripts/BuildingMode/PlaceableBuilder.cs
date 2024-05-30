@@ -21,6 +21,11 @@ public class PlaceableBuilder
         placeablePrefabs.Add(PlaceableType.CROSSBOW, Resources.Load<Transform>("crossbow-turret"));
     }
 
+    public static void flush()
+    {
+        placeables = null;
+    }
+
     public void placePlaceable(PlaceableType type, Vector2Int pos) { placePlaceable(type, pos.x, pos.y); }
     public void placePlaceable(PlaceableType type, int x, int z)
     {
