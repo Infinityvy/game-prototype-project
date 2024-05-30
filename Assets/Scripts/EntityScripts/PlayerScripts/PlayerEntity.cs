@@ -8,6 +8,8 @@ public class PlayerEntity : MonoBehaviour, IEntity
     private float maxHealth = 100;
     private float currentHealth;
 
+    public CanvasGroup GameOverPanel;
+
 
     void Start()
     {
@@ -29,5 +31,8 @@ public class PlayerEntity : MonoBehaviour, IEntity
     private void die()
     {
         Debug.Log("Player died.");
+        Time.timeScale = 0f;
+        GameOverPanel.alpha = 1;
+        GameOverPanel.blocksRaycasts = true;
     }
 }
