@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Net.NetworkInformation;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public float maxSpeed = 2.5f;
     public float jumpStrength = 1f;
 
+    [HideInInspector]
     public bool isGrounded = false;
 
     public LayerMask layerMaskGround;
@@ -23,9 +25,13 @@ public class PlayerMovement : MonoBehaviour
     private float timeWhenLastJumped = 0f;
     private readonly float timeBeforeNextJump = 0.1f;
 
+    private Sound[] splashSounds;
+
     void Start()
     {
-        
+        splashSounds = GameUtility.loadSounds("Watersplash", VolumeManager.splashVolume, 1);
+        gameObject.createAudioSources(splashSounds);
+        VolumeManager.splashSounds = splashSounds;
     }
 
     void Update()
@@ -35,7 +41,10 @@ public class PlayerMovement : MonoBehaviour
         if(checkIfGrounded())
         {
             if (!isGrounded)
+            {
                 timeWhenLastGrounded = Time.time;
+                if (transform.position.y < 0) splashSounds[1].play();
+            }
 
             isGrounded = true;
         }
@@ -96,6 +105,7 @@ public class PlayerMovement : MonoBehaviour
         {
             timeWhenLastJumped = Time.time;
             rigidbody.AddForce(Vector3.up * jumpStrength, ForceMode.Impulse);
+            if (transform.position.y < 0) splashSounds[0].play();
         }
     }
 

@@ -7,7 +7,10 @@ public class PlayerEntity : MonoBehaviour, IEntity
 {
     public static PlayerEntity instance;
 
+    [HideInInspector]
     public bool isDead = false;
+    [HideInInspector]
+    public PlayerMovement movement;
 
     private float maxHealth = 100;
     private float currentHealth;
@@ -18,6 +21,7 @@ public class PlayerEntity : MonoBehaviour, IEntity
     void Start()
     {
         instance = this;
+        movement = GetComponent<PlayerMovement>();
 
         currentHealth = maxHealth;
     }
