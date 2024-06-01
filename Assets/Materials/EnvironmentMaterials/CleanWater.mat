@@ -131,7 +131,7 @@ Material:
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
-    - _WaterDepth: 4
+    - _WaterDepth: 0.9
     - _WaveAmplitude: 0.3
     - _WaveDensity: 20
     - _WaveSpeed: 0.05
