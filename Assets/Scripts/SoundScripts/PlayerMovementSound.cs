@@ -9,13 +9,13 @@ public class PlayerMovementSound : MonoBehaviour
 
     void Start()
     {
-        stepSounds = GameUtility.loadSounds("Step", VolumeManager.stepVolume, 2);
+        stepSounds = GameUtility.loadSounds("Step", VolumeManager.stepBaseVolume, 2);
         gameObject.createAudioSources(stepSounds);
-        VolumeManager.stepSounds = stepSounds;
+        VolumeManager.addEffects(stepSounds);
 
-        swimSounds = GameUtility.loadSounds("Swimming", VolumeManager.swimVolume, 1);
+        swimSounds = GameUtility.loadSounds("Swimming", VolumeManager.swimBaseVolume, 1);
         gameObject.createAudioSources(swimSounds);
-        VolumeManager.swimSounds = swimSounds;
+        VolumeManager.addEffects(swimSounds);
     }
 
     void playStepSound()

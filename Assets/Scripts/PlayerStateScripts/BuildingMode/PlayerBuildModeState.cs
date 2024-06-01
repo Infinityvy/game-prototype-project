@@ -16,6 +16,8 @@ public class PlayerBuildModeState : IPlayerState
     private TileBuilder tileBuilder;
     private PlaceableBuilder placeableBuilder;
 
+    private Sound[] sounds;
+
     public void initialize()
     {
         tileMarkerController = GameObject.Instantiate(Resources.Load<Transform>("TileMarkerController"), Vector3.zero, Quaternion.identity).GetComponent<TileMarkerController>();
@@ -28,6 +30,10 @@ public class PlayerBuildModeState : IPlayerState
 
         resourceInventory = new ResourceInventory();
         resourceInventory.initialize();
+
+        sounds = GameUtility.loadSounds("Upgrade", VolumeManager.upgradeBaseVolume, 1);
+        Session.instance.gameObject.createAudioSources(sounds);
+        VolumeManager.addEffects(sounds);
     }
 
     public void finalize()
@@ -75,6 +81,7 @@ public class PlayerBuildModeState : IPlayerState
             if(!resourceInventory.subtractResources(TileBuilder.tileCost)) return false;
 
             tileBuilder.placeTile(pos);
+            sounds[0].play();
             return true;
         }
         else if (PlaceableBuilder.getPlaceable(pos) == null)
@@ -82,6 +89,16 @@ public class PlayerBuildModeState : IPlayerState
             if(!resourceInventory.subtractResources(PlaceableBuilder.getPlaceableCost(PlaceableType.CROSSBOW))) return false;
 
             placeableBuilder.placePlaceable(PlaceableType.CROSSBOW, pos);
+            sounds[0].play();
+            return true;
+        }
+        else if(PlaceableBuilder.getPlaceable(pos).type == PlaceableType.CROSSBOW) 
+        {
+            if(!resourceInventory.subtractResources(PlaceableBuilder.getPlaceableCost(PlaceableType.MACHINEGUN))) return false;
+
+            placeableBuilder.removePlaceable(pos);
+            placeableBuilder.placePlaceable(PlaceableType.MACHINEGUN, pos);
+            sounds[0].play();
             return true;
         }
 
@@ -98,8 +115,9 @@ public class PlayerBuildModeState : IPlayerState
         }
         else if (TileBuilder.getTile(pos) != null)
         {
-            resourceInventory.addResources(TileBuilder.tileCost / 2);
-            return tileBuilder.removeTile(pos);
+            bool successful = tileBuilder.removeTile(pos);
+            if(successful) resourceInventory.addResources(TileBuilder.tileCost / 2);
+            return successful;
         }
 
         return false;

@@ -4,6 +4,8 @@ using UnityEngine;
 [System.Serializable]
 public class Sound
 {
+    public string name = "";
+
     public AudioClip clip;
 
     [Range(0f, 1f)]
@@ -19,6 +21,8 @@ public class Sound
         this.clip = clip;
         this.volume = volume;
         this.pitch = pitch;
+
+        name = clip.name;
     }
 
     public void play() { source.Play(); }

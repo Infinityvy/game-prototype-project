@@ -17,8 +17,11 @@ public class Session : MonoBehaviour
         GameInputs.initialize();
         instance = this;
 
+        VolumeManager.flush();
         TileBuilder.flush();
         PlaceableBuilder.flush();
+        ScoreController.flush();
+        ScoreController.loadHighScore();
 
         // initializing the start platform
         PlayerBuildModeState playerBuildModeState = new();

@@ -17,8 +17,12 @@ public class PlaceableBuilder
 
         placeables ??= new Dictionary<int, Dictionary<int, IPlaceable>>();
 
-        placeablePrefabs = new Dictionary<PlaceableType, Transform>();
-        placeablePrefabs.Add(PlaceableType.CROSSBOW, Resources.Load<Transform>("crossbow-turret"));
+        placeablePrefabs = new Dictionary<PlaceableType, Transform>
+        {
+            { PlaceableType.CROSSBOW, Resources.Load<Transform>("crossbow-turret") },
+            { PlaceableType.MACHINEGUN, Resources.Load<Transform>("machinegun-turret") }
+        };
+
     }
 
     public static void flush()

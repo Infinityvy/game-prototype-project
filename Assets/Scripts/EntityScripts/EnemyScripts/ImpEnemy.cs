@@ -34,6 +34,8 @@ public class ImpEnemy : MonoBehaviour, IEnemy, IEntity
     Vector3 IEnemy.velocity { get { return _velocity; } }
     private Vector3 _velocity = Vector3.zero;
 
+    private Material modelMaterial;
+
     void Awake()
     {
         _deathEvent = new UnityEvent();
@@ -48,6 +50,8 @@ public class ImpEnemy : MonoBehaviour, IEnemy, IEntity
         targetDestination = transform.position;
         player = GameObject.Find("Player").transform;
         projectilePrefab = Resources.Load<Transform>("MudProjectile");
+
+        modelMaterial = transform.Find("Model").GetComponent<MeshRenderer>().material;
         
         // initiating pathing after a random delay to prevent all enemies pathing in the same frame
         InvokeRepeating(nameof(findTargetDestination), Random.Range(0f, 1f), 1.0f);
@@ -82,6 +86,9 @@ public class ImpEnemy : MonoBehaviour, IEnemy, IEntity
     {
         currentHealth -= damage;
 
+        modelMaterial.color = Color.red;
+        Invoke(nameof(resetModelColor), 0.2f);
+
         if (currentHealth <= 0) die();
     }
 
@@ -96,6 +103,8 @@ public class ImpEnemy : MonoBehaviour, IEnemy, IEntity
         float metalChance = Random.Range(0f, 1f);
         if (woodChance < 0.50f) PlayerBuildModeState.resourceInventory.addResources(new ResourceBlock(1, 0));
         if (metalChance < 0.1f) PlayerBuildModeState.resourceInventory.addResources(new ResourceBlock(0, 1));
+
+        ScoreController.currentScore++;
 
         EnemyDirector.instance.enemies.Remove(this);
         _deathEvent.Invoke();
@@ -139,6 +148,8 @@ public class ImpEnemy : MonoBehaviour, IEnemy, IEntity
 
     private void move()
     {
+        if (altitude - transform.position.y <= toleranceDistance) state = EnemyState.SPAWNING;
+
         if (Vector3.Distance(transform.position, targetDestination) <= toleranceDistance)
         {
             state = EnemyState.ATTACKING;
@@ -175,10 +186,9 @@ public class ImpEnemy : MonoBehaviour, IEnemy, IEntity
         lastSide = side;
     }
 
-    private void OnDrawGizmos()
+    private void resetModelColor()
     {
-        Gizmos.color = Color.cyan;
-        Gizmos.DrawLine(transform.position, targetDestination);
+        modelMaterial.color = Color.white;
     }
 
     public static Transform getPrefab()
@@ -186,5 +196,10 @@ public class ImpEnemy : MonoBehaviour, IEnemy, IEntity
         Transform prefab = Resources.Load<Transform>("ImpEnemy");
 
         return prefab;
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawLine(transform.position, targetDestination);
     }
 }

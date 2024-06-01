@@ -7,6 +7,8 @@ public class PlayerEntity : MonoBehaviour, IEntity
 {
     public static PlayerEntity instance;
 
+    public GameObject GameOverPanel;
+
     [HideInInspector]
     public bool isDead = false;
     [HideInInspector]
@@ -14,8 +16,12 @@ public class PlayerEntity : MonoBehaviour, IEntity
 
     private float maxHealth = 100;
     private float currentHealth;
+    private bool isInvincible = false;
 
-    public GameObject GameOverPanel;
+    private Material modelMaterial;
+
+
+    private Sound[] hurtSounds;
 
 
     void Start()
@@ -23,12 +29,27 @@ public class PlayerEntity : MonoBehaviour, IEntity
         instance = this;
         movement = GetComponent<PlayerMovement>();
 
+        modelMaterial = transform.Find("Model").GetComponent<MeshRenderer>().material;
+
+        hurtSounds = GameUtility.loadSounds("Playerhurt", VolumeManager.playerHurtBaseVolume, 1.5f);
+        gameObject.createAudioSources(hurtSounds);
+        VolumeManager.addEffects(hurtSounds);
+
         currentHealth = maxHealth;
     }
 
     public void dealDamage(float damage)
     {
+        if (isInvincible) return;
+
         currentHealth -= damage;
+        hurtSounds.playRandom();
+
+        modelMaterial.color = Color.red;
+        Invoke(nameof(resetModelColor), 0.2f);
+
+        isInvincible = true;
+        Invoke(nameof(resetInvincibility), 0.2f);
 
         if (currentHealth <= 0) die();
     }
@@ -41,8 +62,25 @@ public class PlayerEntity : MonoBehaviour, IEntity
     private void die()
     {
         isDead = true;
+
+        movement.rigidbody.velocity = Vector3.zero;
+
+        Time.timeScale = 0.2f;
+
+        transform.GetComponent<CapsuleCollider>().enabled = false;
         transform.GetComponentInChildren<MeshRenderer>().enabled = false;
         transform.GetComponentInChildren<ParticleSystem>().Play();
         GameOverPanel.SetActive(true);
+        ScoreController.updateHighscore();
+    }
+
+    private void resetModelColor()
+    {
+        modelMaterial.color = Color.white;
+    }
+
+    private void resetInvincibility()
+    {
+        isInvincible = false;
     }
 }

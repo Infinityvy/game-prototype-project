@@ -5,7 +5,7 @@ using TMPro;
 
 public class ResourceInventory
 {
-    ResourceBlock resources = new ResourceBlock(10, 10);
+    ResourceBlock resources = new ResourceBlock(20, 5);
 
     private TextMeshProUGUI metalAmountDisplay;
     private TextMeshProUGUI woodAmountDisplay;

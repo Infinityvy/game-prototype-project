@@ -81,7 +81,6 @@ public abstract class Turret : MonoBehaviour
     public void removeTarget()
     {
         target = null;
-        state = TurretState.IDLING;
     }
 
     protected abstract void idle();

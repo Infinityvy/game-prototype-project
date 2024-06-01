@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     // public:
     public new Rigidbody rigidbody;
     public float acceleration = 1f;
-    public float maxSpeed = 2.5f;
+    public float maxSpeed = 3f;
     public float jumpStrength = 1f;
 
     [HideInInspector]
@@ -29,9 +29,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        splashSounds = GameUtility.loadSounds("Watersplash", VolumeManager.splashVolume, 1);
+        splashSounds = GameUtility.loadSounds("Watersplash", VolumeManager.splashBaseVolume, 1);
         gameObject.createAudioSources(splashSounds);
-        VolumeManager.splashSounds = splashSounds;
+        VolumeManager.addEffects(splashSounds);
     }
 
     void Update()
