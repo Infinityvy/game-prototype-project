@@ -11,7 +11,7 @@ public class PlayerCamera : MonoBehaviour
     public float zoomSpeed = 1f;
 
     // private:
-    private readonly float minCameraZoom = -5.0f;
+    private readonly float minCameraZoom = -5.8f;
     private readonly float maxCameraZoom = -35.55f;
     private readonly float defaultCameraZoom = -25.0f;
 
@@ -26,15 +26,12 @@ public class PlayerCamera : MonoBehaviour
 
         if (scrollAxis != 0)
         {
-            //float newZoom = camera.orthographicSize + scrollAxis * zoomSpeed * Time.deltaTime * 1000;
             float newZoom = camera.transform.localPosition.z + scrollAxis * zoomSpeed * Time.deltaTime * 1000;
             newZoom = Mathf.Clamp(newZoom, maxCameraZoom, minCameraZoom);
-            //camera.orthographicSize = newZoom;
             camera.transform.localPosition = new Vector3(0, 0, newZoom);
         }
         if(Input.GetKeyDown(GameInputs.keys["Reset Camera"]))
         {
-            //camera.orthographicSize = defaultCameraZoom;
             camera.transform.localPosition = new Vector3(0, 0, defaultCameraZoom);
         }
     }

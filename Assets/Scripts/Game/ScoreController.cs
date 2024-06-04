@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public static class ScoreController
 {
@@ -29,21 +29,21 @@ public static class ScoreController
 
     public static void updateHighscore()
     {
-        TextMeshProUGUI textmesh = GameObject.Find("HighScoreText").GetComponent<TextMeshProUGUI>();
+        Text text = GameObject.Find("HighScoreText").GetComponent<Text>();
 
         if (currentScore > highscore)
         {
-            textmesh.text = "NEW Highscore: " + currentScore.ToString() + " !!! \nPrevius Highscore: " + highscore;
+            text.text = "NEW Highscore: " + currentScore.ToString() + " !!! \nPrevius Highscore: " + highscore;
             highscore = currentScore;
             saveHighscore();
         }
         else if (currentScore == highscore)
         {
-            textmesh.text = "Matched Highscore: " + highscore.ToString() + "\nYour score: " + currentScore;
+            text.text = "Matched Highscore: " + highscore.ToString() + "\nYour score: " + currentScore;
         }
         else if(currentScore < highscore)
         {
-            textmesh.text = "Highscore: " + highscore.ToString() + "\nYour score: " + currentScore;
+            text.text = "Highscore: " + highscore.ToString() + "\nYour score: " + currentScore;
         }
     }
 }

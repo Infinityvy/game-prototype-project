@@ -13,6 +13,11 @@ public struct ResourceBlock
     public int wood;
     public int metal;
 
+    public bool isEmpty()
+    {
+        return wood == 0 && metal == 0;
+    }
+
     public static ResourceBlock operator +(ResourceBlock a, ResourceBlock b)
     {
         return new ResourceBlock(a.wood + b.wood, a.metal + b.metal);

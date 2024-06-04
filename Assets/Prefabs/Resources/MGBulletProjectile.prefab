@@ -51,7 +51,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   aliveTimeInSeconds: 2
-  damage: 4
+  damage: 3
 --- !u!1 &1582493036072914444
 GameObject:
   m_ObjectHideFlags: 0

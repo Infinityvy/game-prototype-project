@@ -1,19 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public class ResourceInventory
 {
     ResourceBlock resources = new ResourceBlock(20, 5);
 
-    private TextMeshProUGUI metalAmountDisplay;
-    private TextMeshProUGUI woodAmountDisplay;
+    private Text metalAmountDisplay;
+    private Text woodAmountDisplay;
 
     public void initialize()
     {
-        metalAmountDisplay = GameObject.Find("MetalAmount").GetComponent<TextMeshProUGUI>();
-        woodAmountDisplay = GameObject.Find("WoodAmount").GetComponent<TextMeshProUGUI>();
+        metalAmountDisplay = GameObject.Find("MetalAmount").GetComponent<Text>();
+        woodAmountDisplay = GameObject.Find("WoodAmount").GetComponent<Text>();
 
         metalAmountDisplay.text = resources.metal.ToString();
         woodAmountDisplay.text = resources.wood.ToString();
@@ -23,6 +23,7 @@ public class ResourceInventory
     {
         resources += amount;
         updateResources();
+        ResourceChangePopup.instance.queueResourceChange(amount);
     }
 
     public bool subtractResources(ResourceBlock amount)
@@ -32,6 +33,7 @@ public class ResourceInventory
 
         resources -= amount;
         updateResources();
+        ResourceChangePopup.instance.queueResourceChange(amount * -1);
         return true;
     }
 

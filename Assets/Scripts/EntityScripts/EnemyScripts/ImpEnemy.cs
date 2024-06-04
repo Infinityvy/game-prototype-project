@@ -14,7 +14,7 @@ public class ImpEnemy : MonoBehaviour, IEnemy, IEntity
     private readonly float maxHealth = 20f;
     private float currentHealth;
 
-    private readonly float movementSpeed = 2f;
+    private readonly float movementSpeed = 2.5f;
     private readonly float altitude = 1.6f;
 
     private Vector3 targetDestination;
@@ -99,12 +99,14 @@ public class ImpEnemy : MonoBehaviour, IEnemy, IEntity
 
     private void die()
     {
-        float woodChance = Random.Range(0f, 1f);
-        float metalChance = Random.Range(0f, 1f);
-        if (woodChance < 0.50f) PlayerBuildModeState.resourceInventory.addResources(new ResourceBlock(1, 0));
-        if (metalChance < 0.1f) PlayerBuildModeState.resourceInventory.addResources(new ResourceBlock(0, 1));
+        ResourceBlock drops = new ResourceBlock(0, 0);
 
-        ScoreController.currentScore++;
+        if (GameUtility.runProbability(0.5f)) drops.wood = 1;
+        if (GameUtility.runProbability(0.15f)) drops.metal = 1;
+
+        if (!drops.isEmpty()) ResourceEntity.create(drops, transform.position);
+
+        ScoreController.currentScore += 10;
 
         EnemyDirector.instance.enemies.Remove(this);
         _deathEvent.Invoke();
@@ -124,7 +126,7 @@ public class ImpEnemy : MonoBehaviour, IEnemy, IEntity
         {
             Vector2 vectorToDestination = vectorToPlayer.normalized * (distance - medianDistanceToPlayer);
 
-            targetDestination = new Vector3(transform.position.x + vectorToDestination.x, transform.position.y,
+            targetDestination = new Vector3(transform.position.x + vectorToDestination.x, altitude,
                                             transform.position.z + vectorToDestination.y);
         }
     }
@@ -148,7 +150,6 @@ public class ImpEnemy : MonoBehaviour, IEnemy, IEntity
 
     private void move()
     {
-        if (altitude - transform.position.y <= toleranceDistance) state = EnemyState.SPAWNING;
 
         if (Vector3.Distance(transform.position, targetDestination) <= toleranceDistance)
         {

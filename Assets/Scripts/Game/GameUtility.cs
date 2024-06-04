@@ -47,4 +47,14 @@ public static class GameUtility
 
         return sounds;
     }
+
+    /// <summary>
+    /// Runs the given probability (0-1). Returns true when probability is hit.
+    /// </summary>
+    /// <param name="probability"></param>
+    /// <returns></returns>
+    public static bool runProbability(float  probability)
+    {
+        return Random.Range(0f, 1f) <= probability;
+    }
 }

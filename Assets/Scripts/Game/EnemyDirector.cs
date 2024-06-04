@@ -59,6 +59,9 @@ public class EnemyDirector : MonoBehaviour
         float randomSpawnInterval = Random.Range(minSpawnInterval, maxSpawnInterval);
         float spawnInterval = randomSpawnInterval + averageSpawnInterval - lastSpawnInterval;
 
+        // reduce time till next wave for first 2 waves
+        spawnInterval /= Mathf.Clamp(4 - waveCount, 1, 3);
+
         Debug.Log("Wave: " + waveCount + " || Balance: " + balance + " || Next wave in: " + spawnInterval + " seconds");
 
         Invoke(nameof(spawnWave), spawnInterval);

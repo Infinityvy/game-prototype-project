@@ -16,6 +16,7 @@ public class PlayerEntity : MonoBehaviour, IEntity
 
     private float maxHealth = 100;
     private float currentHealth;
+    private float healthRegenPerSecond = 0.2f;
     private bool isInvincible = false;
 
     private Material modelMaterial;
@@ -24,9 +25,13 @@ public class PlayerEntity : MonoBehaviour, IEntity
     private Sound[] hurtSounds;
 
 
-    void Start()
+    private void Awake()
     {
         instance = this;
+    }
+
+    void Start()
+    {
         movement = GetComponent<PlayerMovement>();
 
         modelMaterial = transform.Find("Model").GetComponent<MeshRenderer>().material;
@@ -36,6 +41,11 @@ public class PlayerEntity : MonoBehaviour, IEntity
         VolumeManager.addEffects(hurtSounds);
 
         currentHealth = maxHealth;
+    }
+
+    private void Update()
+    {
+        currentHealth += healthRegenPerSecond * Time.deltaTime;
     }
 
     public void dealDamage(float damage)
