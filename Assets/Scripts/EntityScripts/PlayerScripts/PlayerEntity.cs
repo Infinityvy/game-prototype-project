@@ -45,7 +45,7 @@ public class PlayerEntity : MonoBehaviour, IEntity
 
     private void Update()
     {
-        currentHealth += healthRegenPerSecond * Time.deltaTime;
+        currentHealth = Mathf.Clamp(currentHealth + healthRegenPerSecond * Time.deltaTime, 0, maxHealth);
     }
 
     public void dealDamage(float damage)
@@ -62,6 +62,11 @@ public class PlayerEntity : MonoBehaviour, IEntity
         Invoke(nameof(resetInvincibility), 0.2f);
 
         if (currentHealth <= 0) die();
+    }
+
+    public float getMaxHealth()
+    {
+        return maxHealth;
     }
 
     public float getHealth()

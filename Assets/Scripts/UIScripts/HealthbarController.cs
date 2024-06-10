@@ -17,7 +17,7 @@ public class HealthbarController : MonoBehaviour
 
     void Update()
     {
-        healthBarText.text = ((int)player.getHealth()).ToString() + "/100";
+        healthBarText.text = ((int)player.getHealth()).ToString() + "/" + ((int)player.getMaxHealth()).ToString();
         healthBarSlider.value = player.getHealth();
     }
 }

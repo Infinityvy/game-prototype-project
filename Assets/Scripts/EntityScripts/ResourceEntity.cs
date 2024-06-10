@@ -48,6 +48,11 @@ public class ResourceEntity : MonoBehaviour, IEntity
     {
         if(!prefabsFetched) fetchPrefabs();
 
+        foreach(Transform child in transform)
+        {
+            Destroy(child.gameObject);
+        }
+
         float woodRotationOffset = Random.Range(0f, 360f);
         for (int i = 0; i < contents.wood && i < 4; i++) 
         {

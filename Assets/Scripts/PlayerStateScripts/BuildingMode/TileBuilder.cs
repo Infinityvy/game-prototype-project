@@ -86,6 +86,8 @@ public class TileBuilder
         return false;
     }
 
+
+    // there seems to be a bug here; under certain circumstances it will fail and removal succeeds when it shouldnt
     private bool areNeighborsConnected(Vector2Int pos) { return areNeighborsConnected(pos.x, pos.y); }
     private bool areNeighborsConnected(int x, int y)
     {

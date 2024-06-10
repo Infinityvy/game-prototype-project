@@ -9,6 +9,7 @@ public class EnemyDirector : MonoBehaviour
     public static EnemyDirector instance {  get; private set; }
 
     public List<IEnemy> enemies = new List<IEnemy>();
+    public bool paused = false;
 
     // spawn variables
     private static readonly float spawnAreaThickness = 4f * TileBuilder.tileSize;
@@ -40,6 +41,8 @@ public class EnemyDirector : MonoBehaviour
 
     private void spawnWave()
     {
+        if(paused) return;
+
         waveCount++;
 
         int waveBalance = 1 + (waveCount % 2 == 0 ? waveCount : waveCount - 1);
