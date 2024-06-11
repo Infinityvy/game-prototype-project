@@ -47,10 +47,8 @@ public class PlayerMovement : MonoBehaviour
                 timeWhenLastGrounded = Time.time;
                 // if (transform.position.y < 0) splashSounds[1].play();
 
-                if (transform.position.y < 0)
-                {
-                    AkSoundEngine.PostEvent("player_landing_in_water", gameObject);
-                }
+                if (transform.position.y < 0) AkSoundEngine.PostEvent("player_landing_in_water", gameObject);
+                else AkSoundEngine.PostEvent("footsteps_wood", gameObject);
 
                 isGrounded = true;
             }

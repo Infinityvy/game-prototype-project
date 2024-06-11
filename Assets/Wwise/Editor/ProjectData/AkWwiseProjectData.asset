@@ -211,8 +211,8 @@ MonoBehaviour:
         guid: 7e34ca3f1b3e3c459a8e199c1b92c1e8
       Path: Events\Default Work Unit\player\player_landing_on_raft
       maxAttenuation: 0
-      maxDuration: 0.54721403
-      minDuration: 0.54721403
+      maxDuration: 1.283841
+      minDuration: 1.283841
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:

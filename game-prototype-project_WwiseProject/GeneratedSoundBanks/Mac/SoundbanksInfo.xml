@@ -30,7 +30,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="4083419649" Type="User" Language="SFX" Hash="{C5645648-7189-86CA-920F-FB827A268275}">
+		<SoundBank Id="4083419649" Type="User" Language="SFX" Hash="{68FFEB31-9612-65F6-8B70-C38A5368D5AC}">
 			<ShortName>player_sounds</ShortName>
 			<Path>player_sounds.bnk</Path>
 			<Media>
@@ -128,7 +128,7 @@
 				</File>
 				<File Id="717806920" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>badum.wav</ShortName>
-					<CachePath>SFX/badum_741AF491.wem</CachePath>
+					<CachePath>SFX/badum_CC68E6D0.wem</CachePath>
 				</File>
 				<File Id="995425770" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>swim_04.wav</ShortName>
@@ -176,7 +176,7 @@
 						<MediaRef Id="447909178"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2578715888" Name="player_landing_on_raft" DurationType="OneShot" DurationMin="0.54721403" DurationMax="0.54721403">
+				<Event Id="2578715888" Name="player_landing_on_raft" DurationType="OneShot" DurationMin="1.283841" DurationMax="1.283841">
 					<MediaRefs>
 						<MediaRef Id="717806920"/>
 					</MediaRefs>
@@ -184,5 +184,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{2E058F44-F4D1-F55F-0864-B542B99313B2}</FileHash>
+	<FileHash>{F15E8EB1-296F-F33F-D0A5-3ECD232B057D}</FileHash>
 </SoundBanksInfo>

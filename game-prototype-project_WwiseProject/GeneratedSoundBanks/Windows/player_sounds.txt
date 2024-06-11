@@ -29,6 +29,6 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	614917562	step_01	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\step_01_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\footsteps_wood\step_01		84904
 	660925306	swim_01	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\swim_01_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\footsteps_water\swim_01		191760
 	666595011	step_18	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\step_18_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\footsteps_wood\step_18		84904
-	717806920	badum	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\badum_741AF491.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\badum		161500
+	717806920	badum	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\badum_CC68E6D0.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\badum		160232
 	995425770	swim_04	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\swim_04_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\footsteps_water\swim_04		191760
 
