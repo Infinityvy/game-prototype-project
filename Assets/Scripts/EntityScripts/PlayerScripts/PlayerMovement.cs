@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Net.NetworkInformation;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -43,10 +45,15 @@ public class PlayerMovement : MonoBehaviour
             if (!isGrounded)
             {
                 timeWhenLastGrounded = Time.time;
-                if (transform.position.y < 0) splashSounds[1].play();
-            }
+                // if (transform.position.y < 0) splashSounds[1].play();
 
-            isGrounded = true;
+                if (transform.position.y < 0)
+                {
+                    AkSoundEngine.PostEvent("player_landing_in_water", gameObject);
+                }
+
+                isGrounded = true;
+            }
         }
         else
         {
@@ -105,7 +112,7 @@ public class PlayerMovement : MonoBehaviour
         {
             timeWhenLastJumped = Time.time;
             rigidbody.AddForce(Vector3.up * jumpStrength, ForceMode.Impulse);
-            if (transform.position.y < 0) splashSounds[0].play();
+            if (transform.position.y < 0) AkSoundEngine.PostEvent("player_jumping_from_water", gameObject);
         }
     }
 
@@ -114,13 +121,6 @@ public class PlayerMovement : MonoBehaviour
         if (Physics.Raycast(transform.position + Vector3.up, Vector3.down, 1.05f, layerMaskGround))
             return true;
 
-        return false;
-    }
-
-    private bool equalSignOrZero(float a, float b)
-    {
-        if (a <= 0 && b <= 0) return true;
-        if (a >= 0 && b >= 0) return true;
         return false;
     }
 }

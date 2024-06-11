@@ -1,0 +1,34 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1202382412	player_landing_in_water			\Default Work Unit\player\player_landing_in_water	
+	1732241522	footsteps_wood			\Default Work Unit\player\footsteps_wood	
+	2578715888	player_landing_on_raft			\Default Work Unit\player\player_landing_on_raft	
+	3191879790	player_jumping_from_water			\Default Work Unit\player\player_jumping_from_water	
+	3824801682	footsteps_water			\Default Work Unit\player\footsteps_water	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	18124032	step_12	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\step_12_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\footsteps_wood\step_12		85752
+	29739382	step_09	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\step_09_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\footsteps_wood\step_09		85752
+	48939150	step_17	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\step_17_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\footsteps_wood\step_17		84904
+	145394794	step_10	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\step_10_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\footsteps_wood\step_10		85752
+	204128061	splash_01	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\splash_01_E625D9EE.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\splash_01		421948
+	205262316	step_08	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\step_08_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\footsteps_wood\step_08		85752
+	281625812	step_14	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\step_14_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\footsteps_wood\step_14		84904
+	300566642	step_03	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\step_03_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\footsteps_wood\step_03		86600
+	301347646	step_07	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\step_07_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\footsteps_wood\step_07		87448
+	335963773	step_13	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\step_13_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\footsteps_wood\step_13		86600
+	344063261	step_15	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\step_15_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\footsteps_wood\step_15		84904
+	356337697	step_02	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\step_02_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\footsteps_wood\step_02		86600
+	359951811	step_16	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\step_16_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\footsteps_wood\step_16		86600
+	429592434	step_06	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\step_06_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\footsteps_wood\step_06		84904
+	447909178	splash_02	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\splash_02_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\splash_02		492828
+	477919486	swim_02	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\swim_02_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\footsteps_water\swim_02		193456
+	521002281	swim_03	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\swim_03_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\footsteps_water\swim_03		191760
+	577004465	step_11	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\step_11_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\footsteps_wood\step_11		84904
+	581575218	step_05	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\step_05_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\footsteps_wood\step_05		84904
+	611392177	step_04	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\step_04_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\footsteps_wood\step_04		84904
+	614917562	step_01	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\step_01_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\footsteps_wood\step_01		84904
+	660925306	swim_01	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\swim_01_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\footsteps_water\swim_01		191760
+	666595011	step_18	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\step_18_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\footsteps_wood\step_18		84904
+	717806920	badum	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\badum_741AF491.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\badum		161500
+	995425770	swim_04	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\swim_04_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\footsteps_water\swim_04		191760
+

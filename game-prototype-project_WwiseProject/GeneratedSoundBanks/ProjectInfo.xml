@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectInfo>
+	<Project Name="game-prototype-project_WwiseProject" GUID="{69FD7A60-7D63-43EB-851C-2A60608A9A49}" Generator="2023.1.4.8496"/>
+	<CacheRoot>../.cache</CacheRoot>
+	<Platforms>
+		<Platform Name="Mac" GUID="{A6666CF8-EF0E-4CC5-BCCB-C45666B9B8F8}" BasePlatform="Mac" BasePlatformGUID="{9C6217D5-DD11-4795-87C1-6CE02853C540}" Path="Mac"/>
+		<Platform Name="Windows" GUID="{1BBF5C37-5B93-4DFB-9528-0ED01654D530}" BasePlatform="Windows" BasePlatformGUID="{6E0CB257-C6C8-4C5C-8366-2740DFC441EB}" Path="Windows"/>
+	</Platforms>
+	<Languages>
+		<Language Name="English(US)" Id="684519430" GUID="{FCD659A5-4C45-407D-84E2-909C538CAF96}" Default="true" UseAsStandIn="true"/>
+	</Languages>
+	<FileHash>{833DCBB2-CE4C-9201-E0A6-C57E6FC2D7A7}</FileHash>
+</ProjectInfo>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{4E38F5FE-9D9F-427F-B864-228D27E45446}" SchemaVersion="119">
+	<SoundBanks>
+		<WorkUnit Name="Default Work Unit" ID="{4E38F5FE-9D9F-427F-B864-228D27E45446}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="player_sounds" ID="{1AE1BFBD-3774-4F29-AC6E-2FB93E93830E}">
+					<ObjectInclusionList>
+						<ObjectRef Name="player_jumping_from_water" ID="{2A0233BA-959E-439A-96D2-1622CCEA0826}" WorkUnitID="{8EAF90F5-1EFD-4720-896B-638D3BEA5FA1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="footsteps_wood" ID="{63AA8970-15D1-4443-9090-045F8C0B218F}" WorkUnitID="{8EAF90F5-1EFD-4720-896B-638D3BEA5FA1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="player_landing_on_raft" ID="{3FCA347E-3E1B-453C-9A8E-199C1B92C1E8}" WorkUnitID="{8EAF90F5-1EFD-4720-896B-638D3BEA5FA1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="player_landing_in_water" ID="{C2EC025A-571C-4B34-B887-CD8FBFA8D21A}" WorkUnitID="{8EAF90F5-1EFD-4720-896B-638D3BEA5FA1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="footsteps_water" ID="{EAB668B5-1307-4CC5-8336-201610589D5C}" WorkUnitID="{8EAF90F5-1EFD-4720-896B-638D3BEA5FA1}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>

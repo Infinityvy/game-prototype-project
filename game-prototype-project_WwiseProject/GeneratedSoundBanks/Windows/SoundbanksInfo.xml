@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="150">
+	<RootPaths>
+		<ProjectRoot>../..</ProjectRoot>
+		<SourceFilesRoot>../../.cache/Windows</SourceFilesRoot>
+		<SoundBanksRoot>.</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>.</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{B6CBD692-12EC-CDBA-0932-48F63C40C91F}">
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+			<Plugins>
+				<AudioDevices>
+					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
+					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
+				</AudioDevices>
+			</Plugins>
+			<Busses>
+				<Bus Id="3803692087" Name="Master Audio Bus"/>
+			</Busses>
+			<SwitchGroups>
+				<SwitchGroup Id="4040317175" Name="ground_type">
+					<Switches>
+						<Switch Id="2058049674" Name="wood"/>
+						<Switch Id="2654748154" Name="water"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
+		</SoundBank>
+		<SoundBank Id="4083419649" Type="User" Language="SFX" Hash="{C5645648-7189-86CA-920F-FB827A268275}">
+			<ShortName>player_sounds</ShortName>
+			<Path>player_sounds.bnk</Path>
+			<Media>
+				<File Id="18124032" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>step_12.wav</ShortName>
+					<CachePath>SFX/step_12_818F3B66.wem</CachePath>
+				</File>
+				<File Id="29739382" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>step_09.wav</ShortName>
+					<CachePath>SFX/step_09_818F3B66.wem</CachePath>
+				</File>
+				<File Id="48939150" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>step_17.wav</ShortName>
+					<CachePath>SFX/step_17_818F3B66.wem</CachePath>
+				</File>
+				<File Id="145394794" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>step_10.wav</ShortName>
+					<CachePath>SFX/step_10_818F3B66.wem</CachePath>
+				</File>
+				<File Id="204128061" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>splash_01.wav</ShortName>
+					<CachePath>SFX/splash_01_E625D9EE.wem</CachePath>
+				</File>
+				<File Id="205262316" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>step_08.wav</ShortName>
+					<CachePath>SFX/step_08_818F3B66.wem</CachePath>
+				</File>
+				<File Id="281625812" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>step_14.wav</ShortName>
+					<CachePath>SFX/step_14_818F3B66.wem</CachePath>
+				</File>
+				<File Id="300566642" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>step_03.wav</ShortName>
+					<CachePath>SFX/step_03_818F3B66.wem</CachePath>
+				</File>
+				<File Id="301347646" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>step_07.wav</ShortName>
+					<CachePath>SFX/step_07_818F3B66.wem</CachePath>
+				</File>
+				<File Id="335963773" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>step_13.wav</ShortName>
+					<CachePath>SFX/step_13_818F3B66.wem</CachePath>
+				</File>
+				<File Id="344063261" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>step_15.wav</ShortName>
+					<CachePath>SFX/step_15_818F3B66.wem</CachePath>
+				</File>
+				<File Id="356337697" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>step_02.wav</ShortName>
+					<CachePath>SFX/step_02_818F3B66.wem</CachePath>
+				</File>
+				<File Id="359951811" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>step_16.wav</ShortName>
+					<CachePath>SFX/step_16_818F3B66.wem</CachePath>
+				</File>
+				<File Id="429592434" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>step_06.wav</ShortName>
+					<CachePath>SFX/step_06_818F3B66.wem</CachePath>
+				</File>
+				<File Id="447909178" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>splash_02.wav</ShortName>
+					<CachePath>SFX/splash_02_818F3B66.wem</CachePath>
+				</File>
+				<File Id="477919486" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>swim_02.wav</ShortName>
+					<CachePath>SFX/swim_02_818F3B66.wem</CachePath>
+				</File>
+				<File Id="521002281" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>swim_03.wav</ShortName>
+					<CachePath>SFX/swim_03_818F3B66.wem</CachePath>
+				</File>
+				<File Id="577004465" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>step_11.wav</ShortName>
+					<CachePath>SFX/step_11_818F3B66.wem</CachePath>
+				</File>
+				<File Id="581575218" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>step_05.wav</ShortName>
+					<CachePath>SFX/step_05_818F3B66.wem</CachePath>
+				</File>
+				<File Id="611392177" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>step_04.wav</ShortName>
+					<CachePath>SFX/step_04_818F3B66.wem</CachePath>
+				</File>
+				<File Id="614917562" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>step_01.wav</ShortName>
+					<CachePath>SFX/step_01_818F3B66.wem</CachePath>
+				</File>
+				<File Id="660925306" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>swim_01.wav</ShortName>
+					<CachePath>SFX/swim_01_818F3B66.wem</CachePath>
+				</File>
+				<File Id="666595011" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>step_18.wav</ShortName>
+					<CachePath>SFX/step_18_818F3B66.wem</CachePath>
+				</File>
+				<File Id="717806920" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>badum.wav</ShortName>
+					<CachePath>SFX/badum_741AF491.wem</CachePath>
+				</File>
+				<File Id="995425770" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>swim_04.wav</ShortName>
+					<CachePath>SFX/swim_04_818F3B66.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="3824801682" Name="footsteps_water" DurationType="OneShot" DurationMin="1.0865306" DurationMax="1.0961452">
+					<MediaRefs>
+						<MediaRef Id="477919486"/>
+						<MediaRef Id="521002281"/>
+						<MediaRef Id="660925306"/>
+						<MediaRef Id="995425770"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1732241522" Name="footsteps_wood" DurationType="OneShot" DurationMin="0.386022" DurationMax="0.39760157">
+					<MediaRefs>
+						<MediaRef Id="18124032"/>
+						<MediaRef Id="29739382"/>
+						<MediaRef Id="48939150"/>
+						<MediaRef Id="145394794"/>
+						<MediaRef Id="205262316"/>
+						<MediaRef Id="281625812"/>
+						<MediaRef Id="300566642"/>
+						<MediaRef Id="301347646"/>
+						<MediaRef Id="335963773"/>
+						<MediaRef Id="344063261"/>
+						<MediaRef Id="356337697"/>
+						<MediaRef Id="359951811"/>
+						<MediaRef Id="429592434"/>
+						<MediaRef Id="577004465"/>
+						<MediaRef Id="581575218"/>
+						<MediaRef Id="611392177"/>
+						<MediaRef Id="614917562"/>
+						<MediaRef Id="666595011"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3191879790" Name="player_jumping_from_water" DurationType="OneShot" DurationMin="2.39117" DurationMax="2.39117">
+					<MediaRefs>
+						<MediaRef Id="204128061"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1202382412" Name="player_landing_in_water" DurationType="OneShot" DurationMin="2.7932653" DurationMax="2.7932653">
+					<MediaRefs>
+						<MediaRef Id="447909178"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2578715888" Name="player_landing_on_raft" DurationType="OneShot" DurationMin="0.54721403" DurationMax="0.54721403">
+					<MediaRefs>
+						<MediaRef Id="717806920"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{98BBC4E5-2E0E-532C-0239-06B87D8CDBAC}</FileHash>
+</SoundBanksInfo>
