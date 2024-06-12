@@ -608,6 +608,287 @@
 								</Sound>
 							</ChildrenList>
 						</RandomSequenceContainer>
+						<Sound Name="player_jump" ID="{B5E31071-5CAE-448E-A741-F658AB4CCCAD}" ShortID="911643574">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC6BBD8C-D469-4ABF-8A3A-5C105B3AF631}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20005636-939D-4810-A8B7-C18E7CF2C5CC}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player_jump" ID="{01CBBA68-998A-4512-BE3D-8D979AD2FF6B}">
+									<Language>SFX</Language>
+									<AudioFile>player_jump.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="952503057"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player_jump" ID="{01CBBA68-998A-4512-BE3D-8D979AD2FF6B}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player_landing" ID="{E88C0E4B-1014-49C4-B494-1577734CDB93}" ShortID="358616873">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC6BBD8C-D469-4ABF-8A3A-5C105B3AF631}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20005636-939D-4810-A8B7-C18E7CF2C5CC}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player_landing" ID="{CEC683F6-931C-4599-86CE-0928769884FE}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.583269040076954"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>player_landing.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="875158352"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player_landing" ID="{CEC683F6-931C-4599-86CE-0928769884FE}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<RandomSequenceContainer Name="hurt" ID="{BB7F5AC0-B4BC-493A-9E79-40EF632D0614}" ShortID="528398997">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>780</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC6BBD8C-D469-4ABF-8A3A-5C105B3AF631}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20005636-939D-4810-A8B7-C18E7CF2C5CC}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="player_hurt_01" ID="{15D8B128-9F76-4E64-B891-9A697FE4B702}" ShortID="211746501">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC6BBD8C-D469-4ABF-8A3A-5C105B3AF631}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20005636-939D-4810-A8B7-C18E7CF2C5CC}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="player_hurt_01" ID="{527C4491-4FAB-458F-AA30-47522F6735BD}">
+											<Language>SFX</Language>
+											<AudioFile>player_hurt_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="162845914"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="player_hurt_01" ID="{527C4491-4FAB-458F-AA30-47522F6735BD}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="player_hurt_02" ID="{89800803-EF2E-4B21-8208-7180CC1D4BD5}" ShortID="115649425">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC6BBD8C-D469-4ABF-8A3A-5C105B3AF631}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20005636-939D-4810-A8B7-C18E7CF2C5CC}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="player_hurt_02" ID="{1BD958C4-7E73-4199-9A27-45769CCAFA2C}">
+											<Language>SFX</Language>
+											<AudioFile>player_hurt_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="295666557"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="player_hurt_02" ID="{1BD958C4-7E73-4199-9A27-45769CCAFA2C}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="player_hurt_03" ID="{80402E99-EBFE-4E67-8A58-8E72AE6C4ADA}" ShortID="357183306">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC6BBD8C-D469-4ABF-8A3A-5C105B3AF631}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20005636-939D-4810-A8B7-C18E7CF2C5CC}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="player_hurt_03" ID="{C652F96A-68C9-4920-9A31-9E64E9814DF2}">
+											<Language>SFX</Language>
+											<AudioFile>player_hurt_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="933438271"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="player_hurt_03" ID="{C652F96A-68C9-4920-9A31-9E64E9814DF2}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="player_hurt_04" ID="{58A4A495-28FC-4299-AD41-5969C88D6499}" ShortID="145422247">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC6BBD8C-D469-4ABF-8A3A-5C105B3AF631}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20005636-939D-4810-A8B7-C18E7CF2C5CC}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="player_hurt_04" ID="{F61C42EC-B329-4970-B7E7-A07CA281ECE8}">
+											<Language>SFX</Language>
+											<AudioFile>player_hurt_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="393047000"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="player_hurt_04" ID="{F61C42EC-B329-4970-B7E7-A07CA281ECE8}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="player_hurt_05" ID="{D046C4AF-AB6A-45E4-9BE7-628498F4D5DF}" ShortID="120530043">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC6BBD8C-D469-4ABF-8A3A-5C105B3AF631}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20005636-939D-4810-A8B7-C18E7CF2C5CC}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="player_hurt_05" ID="{C54135DB-3082-4425-B4A5-602FB938674E}">
+											<Language>SFX</Language>
+											<AudioFile>player_hurt_05.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="133726927"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="player_hurt_05" ID="{C54135DB-3082-4425-B4A5-602FB938674E}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="player_hurt_06" ID="{60E7C4DD-B80F-4522-8E9D-09E786240B95}" ShortID="829737763">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC6BBD8C-D469-4ABF-8A3A-5C105B3AF631}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20005636-939D-4810-A8B7-C18E7CF2C5CC}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="player_hurt_06" ID="{214E72A9-1B72-4D5D-B144-FED8B6A3E945}">
+											<Language>SFX</Language>
+											<AudioFile>player_hurt_06.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="697382900"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="player_hurt_06" ID="{214E72A9-1B72-4D5D-B144-FED8B6A3E945}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="player_hurt_07" ID="{FD82B1E1-C389-4669-A308-7A31C44004FD}" ShortID="581967034">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC6BBD8C-D469-4ABF-8A3A-5C105B3AF631}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20005636-939D-4810-A8B7-C18E7CF2C5CC}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="player_hurt_07" ID="{81FA97AC-2902-4908-9C4D-A0148DC5BBDB}">
+											<Language>SFX</Language>
+											<AudioFile>player_hurt_07.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1006178185"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="player_hurt_07" ID="{81FA97AC-2902-4908-9C4D-A0148DC5BBDB}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="player_hurt_08" ID="{F71D8B32-6DF1-417B-B274-C64A1E4B6EC9}" ShortID="424844147">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC6BBD8C-D469-4ABF-8A3A-5C105B3AF631}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20005636-939D-4810-A8B7-C18E7CF2C5CC}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="player_hurt_08" ID="{44E49874-D439-4249-948A-ED787044B30A}">
+											<Language>SFX</Language>
+											<AudioFile>player_hurt_08.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="274852443"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="player_hurt_08" ID="{44E49874-D439-4249-948A-ED787044B30A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="turret" ID="{01161C8A-CCC9-4B2D-9C64-8C82CE3F4F7F}" ShortID="1711824">
+					<ChildrenList>
+						<Sound Name="machinegun_fire_02" ID="{510DBCBE-5446-43C2-9AB6-AA0159A131CD}" ShortID="291427454">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-9</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC6BBD8C-D469-4ABF-8A3A-5C105B3AF631}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20005636-939D-4810-A8B7-C18E7CF2C5CC}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="machinegun_fire_02" ID="{D3FA02B5-C9F2-48A5-A82C-A364B3308D0D}">
+									<PropertyList>
+										<Property Name="LoopBegin" Type="Real64" Value="0.744109372143919"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.744109372143919"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>machinegun_fire_02.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="310616471"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="machinegun_fire_02" ID="{D3FA02B5-C9F2-48A5-A82C-A364B3308D0D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

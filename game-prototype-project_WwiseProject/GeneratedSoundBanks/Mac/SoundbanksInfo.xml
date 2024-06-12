@@ -30,7 +30,24 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="4083419649" Type="User" Language="SFX" Hash="{68FFEB31-9612-65F6-8B70-C38A5368D5AC}">
+		<SoundBank Id="2674766611" Type="User" Language="SFX" Hash="{96374F20-5E5B-8A70-2C31-5B4B5213DE96}">
+			<ShortName>turret</ShortName>
+			<Path>turret.bnk</Path>
+			<Media>
+				<File Id="310616471" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>machinegun_fire_02.wav</ShortName>
+					<CachePath>SFX/machinegun_fire_02_D889BFD7.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="1143638809" Name="machinegun_shot" DurationType="OneShot" DurationMin="0.12607203" DurationMax="0.12607203">
+					<MediaRefs>
+						<MediaRef Id="310616471"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="4083419649" Type="User" Language="SFX" Hash="{8C0B2887-CF30-3E50-2E3F-9D961A02E5FE}">
 			<ShortName>player_sounds</ShortName>
 			<Path>player_sounds.bnk</Path>
 			<Media>
@@ -46,9 +63,17 @@
 					<ShortName>step_17.wav</ShortName>
 					<CachePath>SFX/step_17_818F3B66.wem</CachePath>
 				</File>
+				<File Id="133726927" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player_hurt_05.wav</ShortName>
+					<CachePath>SFX/player_hurt_05_818F3B66.wem</CachePath>
+				</File>
 				<File Id="145394794" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>step_10.wav</ShortName>
 					<CachePath>SFX/step_10_818F3B66.wem</CachePath>
+				</File>
+				<File Id="162845914" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player_hurt_01.wav</ShortName>
+					<CachePath>SFX/player_hurt_01_818F3B66.wem</CachePath>
 				</File>
 				<File Id="204128061" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>splash_01.wav</ShortName>
@@ -58,9 +83,17 @@
 					<ShortName>step_08.wav</ShortName>
 					<CachePath>SFX/step_08_818F3B66.wem</CachePath>
 				</File>
+				<File Id="274852443" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player_hurt_08.wav</ShortName>
+					<CachePath>SFX/player_hurt_08_818F3B66.wem</CachePath>
+				</File>
 				<File Id="281625812" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>step_14.wav</ShortName>
 					<CachePath>SFX/step_14_818F3B66.wem</CachePath>
+				</File>
+				<File Id="295666557" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player_hurt_02.wav</ShortName>
+					<CachePath>SFX/player_hurt_02_818F3B66.wem</CachePath>
 				</File>
 				<File Id="300566642" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>step_03.wav</ShortName>
@@ -85,6 +118,10 @@
 				<File Id="359951811" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>step_16.wav</ShortName>
 					<CachePath>SFX/step_16_818F3B66.wem</CachePath>
+				</File>
+				<File Id="393047000" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player_hurt_04.wav</ShortName>
+					<CachePath>SFX/player_hurt_04_818F3B66.wem</CachePath>
 				</File>
 				<File Id="429592434" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>step_06.wav</ShortName>
@@ -126,13 +163,29 @@
 					<ShortName>step_18.wav</ShortName>
 					<CachePath>SFX/step_18_818F3B66.wem</CachePath>
 				</File>
-				<File Id="717806920" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>badum.wav</ShortName>
-					<CachePath>SFX/badum_CC68E6D0.wem</CachePath>
+				<File Id="697382900" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player_hurt_06.wav</ShortName>
+					<CachePath>SFX/player_hurt_06_818F3B66.wem</CachePath>
+				</File>
+				<File Id="875158352" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player_landing.wav</ShortName>
+					<CachePath>SFX/player_landing_EB83D796.wem</CachePath>
+				</File>
+				<File Id="933438271" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player_hurt_03.wav</ShortName>
+					<CachePath>SFX/player_hurt_03_818F3B66.wem</CachePath>
+				</File>
+				<File Id="952503057" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player_jump.wav</ShortName>
+					<CachePath>SFX/player_jump_818F3B66.wem</CachePath>
 				</File>
 				<File Id="995425770" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>swim_04.wav</ShortName>
 					<CachePath>SFX/swim_04_818F3B66.wem</CachePath>
+				</File>
+				<File Id="1006178185" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player_hurt_07.wav</ShortName>
+					<CachePath>SFX/player_hurt_07_818F3B66.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
@@ -166,6 +219,23 @@
 						<MediaRef Id="666595011"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="1068092414" Name="player_hurt" DurationType="OneShot" DurationMin="0.3247673" DurationMax="0.333958">
+					<MediaRefs>
+						<MediaRef Id="133726927"/>
+						<MediaRef Id="162845914"/>
+						<MediaRef Id="274852443"/>
+						<MediaRef Id="295666557"/>
+						<MediaRef Id="393047000"/>
+						<MediaRef Id="697382900"/>
+						<MediaRef Id="933438271"/>
+						<MediaRef Id="1006178185"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="56442844" Name="player_jumping_from_raft" DurationType="OneShot" DurationMin="0.59133786" DurationMax="0.59133786">
+					<MediaRefs>
+						<MediaRef Id="952503057"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="3191879790" Name="player_jumping_from_water" DurationType="OneShot" DurationMin="2.39117" DurationMax="2.39117">
 					<MediaRefs>
 						<MediaRef Id="204128061"/>
@@ -176,13 +246,13 @@
 						<MediaRef Id="447909178"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2578715888" Name="player_landing_on_raft" DurationType="OneShot" DurationMin="1.283841" DurationMax="1.283841">
+				<Event Id="2578715888" Name="player_landing_on_raft" DurationType="OneShot" DurationMin="0.58326906" DurationMax="0.58326906">
 					<MediaRefs>
-						<MediaRef Id="717806920"/>
+						<MediaRef Id="875158352"/>
 					</MediaRefs>
 				</Event>
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{F15E8EB1-296F-F33F-D0A5-3ECD232B057D}</FileHash>
+	<FileHash>{52777D46-7E29-CCC4-EE98-3725D447DD6B}</FileHash>
 </SoundBanksInfo>

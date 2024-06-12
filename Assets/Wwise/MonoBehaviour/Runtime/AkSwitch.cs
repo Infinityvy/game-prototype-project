@@ -16,8 +16,6 @@ in a written agreement between you and Audiokinetic Inc.
 Copyright (c) 2024 Audiokinetic Inc.
 *******************************************************************************/
 
-using System.Diagnostics;
-
 [UnityEngine.AddComponentMenu("Wwise/AkSwitch")]
 [UnityEngine.ExecuteInEditMode]
 [UnityEngine.DefaultExecutionOrder(-10)]
@@ -51,8 +49,8 @@ public class AkSwitch : AkDragDropTriggerHandler
 		data.SetValue(useOtherObject && in_gameObject != null ? in_gameObject : gameObject);
 	}
 
-    #region Obsolete
-    [System.Obsolete(AkSoundEngine.Deprecation_2018_1_6)]
+	#region Obsolete
+	[System.Obsolete(AkSoundEngine.Deprecation_2018_1_6)]
 	public int valueID { get { return (int)(data == null ? AkSoundEngine.AK_INVALID_UNIQUE_ID : data.Id); } }
 
 	[System.Obsolete(AkSoundEngine.Deprecation_2018_1_6)]

@@ -105,7 +105,8 @@ public class MachinegunTurret : Turret, IPlaceable
         lastTimeAttacked = Time.time;
 
         Instantiate(projectilePrefab, machinegun.position + machinegun.forward, machinegun.rotation * Quaternion.Euler(Random.Range(0f, 1f), Random.Range(0f, 1f), 0));
-        sounds[3].play();
+        //sounds[3].play();
+        AkSoundEngine.PostEvent("machinegun_shot", gameObject);
         muzzleFlash.enabled = true;
         muzzleFlash.transform.Rotate(Random.Range(0f, 360f), 0, 0);
         Invoke(nameof(disableMuzzleFlash), 0.1f);

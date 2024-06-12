@@ -53,7 +53,8 @@ public class PlayerEntity : MonoBehaviour, IEntity
         if (isInvincible) return;
 
         currentHealth -= damage;
-        hurtSounds.playRandom();
+        //hurtSounds.playRandom();
+        AkSoundEngine.PostEvent("player_hurt", gameObject);
 
         modelMaterial.color = Color.red;
         Invoke(nameof(resetModelColor), 0.2f);

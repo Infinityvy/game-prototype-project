@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1143638809	machinegun_shot			\Default Work Unit\turret\machinegun_shot	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	310616471	machinegun_fire_02	C:\Users\benoo\Documents\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Mac\SFX\machinegun_fire_02_D889BFD7.wem		\Actor-Mixer Hierarchy\Default Work Unit\turret\machinegun_fire_02		22336
+

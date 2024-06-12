@@ -45,10 +45,9 @@ public class PlayerMovement : MonoBehaviour
             if (!isGrounded)
             {
                 timeWhenLastGrounded = Time.time;
-                // if (transform.position.y < 0) splashSounds[1].play();
 
                 if (transform.position.y < 0) AkSoundEngine.PostEvent("player_landing_in_water", gameObject);
-                else AkSoundEngine.PostEvent("footsteps_wood", gameObject);
+                else AkSoundEngine.PostEvent("player_landing_on_raft", gameObject);
 
                 isGrounded = true;
             }
@@ -111,6 +110,7 @@ public class PlayerMovement : MonoBehaviour
             timeWhenLastJumped = Time.time;
             rigidbody.AddForce(Vector3.up * jumpStrength, ForceMode.Impulse);
             if (transform.position.y < 0) AkSoundEngine.PostEvent("player_jumping_from_water", gameObject);
+            else AkSoundEngine.PostEvent("player_jumping_from_raft", gameObject);
         }
     }
 

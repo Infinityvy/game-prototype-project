@@ -7,10 +7,10 @@
 					<ChildrenList>
 						<Event Name="player_landing_on_raft" ID="{3FCA347E-3E1B-453C-9A8E-199C1B92C1E8}">
 							<ChildrenList>
-								<Action Name="" ID="{5E9BC0A9-6D8A-4332-B9C6-7CB7585DE2F0}" ShortID="589423119">
+								<Action Name="" ID="{960089A5-D8BB-4EB8-BF0A-F54441AF5497}" ShortID="605150034">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="badum" ID="{CE9BE885-6489-42B5-9949-E2D80DB1C6E0}" WorkUnitID="{B85A01B8-0CD4-4C99-951A-35EE4555F6EB}"/>
+											<ObjectRef Name="player_landing" ID="{E88C0E4B-1014-49C4-B494-1577734CDB93}" WorkUnitID="{B85A01B8-0CD4-4C99-951A-35EE4555F6EB}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -55,6 +55,43 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="footsteps_wood" ID="{AA705619-9E67-4219-BDBE-D6CB72551CC3}" WorkUnitID="{B85A01B8-0CD4-4C99-951A-35EE4555F6EB}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="player_jumping_from_raft" ID="{D4A3D184-27A9-48D1-91E5-ECA0256B682C}">
+							<ChildrenList>
+								<Action Name="" ID="{588E946C-CAE0-4A50-AF1C-AA31975A81DE}" ShortID="794992469">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="player_jump" ID="{B5E31071-5CAE-448E-A741-F658AB4CCCAD}" WorkUnitID="{B85A01B8-0CD4-4C99-951A-35EE4555F6EB}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="player_hurt" ID="{EE3D5C71-BE24-4988-A15A-0776B3BD3F11}">
+							<ChildrenList>
+								<Action Name="" ID="{DCC7065B-E1E8-4D88-8A0F-85EF5A110624}" ShortID="149154678">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="hurt" ID="{BB7F5AC0-B4BC-493A-9E79-40EF632D0614}" WorkUnitID="{B85A01B8-0CD4-4C99-951A-35EE4555F6EB}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="turret" ID="{5DE23123-3CDD-4E3C-9E02-40259D6A6DF7}" ShortID="497948807">
+					<ChildrenList>
+						<Event Name="machinegun_shot" ID="{70E97710-317D-4ADC-B25E-8B830FCBE5D3}">
+							<ChildrenList>
+								<Action Name="" ID="{505C938D-0A03-4D8B-9250-5874D576085F}" ShortID="729083757">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="machinegun_fire_02" ID="{510DBCBE-5446-43C2-9AB6-AA0159A131CD}" WorkUnitID="{B85A01B8-0CD4-4C99-951A-35EE4555F6EB}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

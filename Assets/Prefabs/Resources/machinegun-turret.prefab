@@ -188,6 +188,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 5792238846776869739}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 49a1719176a3f4f40bf3363e2c24be3f,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -1207370657052533050}
   m_SourcePrefab: {fileID: 100100000, guid: 49a1719176a3f4f40bf3363e2c24be3f, type: 3}
 --- !u!1 &3054914415552793038 stripped
 GameObject:
@@ -209,6 +213,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   machinegun: {fileID: 5834732062168003501}
   muzzleFlash: {fileID: 5106098906719378892}
+--- !u!114 &-1207370657052533050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3054914415552793038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f482ca5b5b18d24db1773b9a2318b9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7e1664c
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: e8dcc7f07bc0b4843b06f945b1756ff1,
+      type: 2}
+  decodeBank: 0
+  overrideLoadSetting: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
+  bankNameInternal: 
+  valueGuidInternal: 
 --- !u!4 &5834732062168003501 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8529101147114866482, guid: 49a1719176a3f4f40bf3363e2c24be3f,

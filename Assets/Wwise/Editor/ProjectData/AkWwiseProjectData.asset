@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Default Work Unit
     guid: 0d1a7dfba8549444a69c670666e7a790
     GuidInternal: 
-    m_lastTime: -8584835478960582046
+    m_lastTime: -8584835385644655525
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 365600209d931048a8b7c18e7cf2c5cc
     GuidInternal: 
-    m_lastTime: -8584835478959531436
+    m_lastTime: -8584835385645489311
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: fef5384e9f9d7f42b864228d27e45446
     GuidInternal: 
-    m_lastTime: -8584835404527262305
+    m_lastTime: -8584834254158839023
     List:
     - name: player_sounds
       guid: bdbfe11a7437294fac6e2fb93e93830e
@@ -82,6 +82,20 @@ MonoBehaviour:
         ObjectType: 7
         guid: bdbfe11a7437294fac6e2fb93e93830e
       Path: SoundBanks\Default Work Unit\player_sounds
+    - name: turret
+      guid: 73ea99337222494faf4e3d0da65113ec
+      id: 2674766611
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fef5384e9f9d7f42b864228d27e45446
+      - ElementName: turret
+        ObjectType: 7
+        guid: 73ea99337222494faf4e3d0da65113ec
+      Path: SoundBanks\Default Work Unit\turret
   EventWwu:
   - PhysicalPath: Events\Default Work Unit.wwu
     PathAndIcons:
@@ -94,7 +108,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: f590af8efd1e2047896b638d3bea5fa1
     GuidInternal: 
-    m_lastTime: -8584835404669595053
+    m_lastTime: -8584834251294027258
     List:
     - name: footsteps_water
       guid: b568b6ea0713c54c8336201610589d5c
@@ -136,6 +150,26 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.39760157
       minDuration: 0.386022
+    - name: machinegun_shot
+      guid: 1077e9707d31dc4ab25e8b830fcbe5d3
+      id: 1143638809
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: f590af8efd1e2047896b638d3bea5fa1
+      - ElementName: turret
+        ObjectType: 4
+        guid: 2331e25ddd3c3c4e9e0240259d6a6df7
+      - ElementName: machinegun_shot
+        ObjectType: 3
+        guid: 1077e9707d31dc4ab25e8b830fcbe5d3
+      Path: Events\Default Work Unit\turret\machinegun_shot
+      maxAttenuation: 0
+      maxDuration: 0.12607203
+      minDuration: 0.12607203
     - name: player
       guid: 6f634b67b9747940a74ee1baff05a91a
       id: 1069431850
@@ -153,6 +187,46 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: player_hurt
+      guid: 715c3dee24be8849a15a0776b3bd3f11
+      id: 1068092414
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: f590af8efd1e2047896b638d3bea5fa1
+      - ElementName: player
+        ObjectType: 4
+        guid: 6f634b67b9747940a74ee1baff05a91a
+      - ElementName: player_hurt
+        ObjectType: 3
+        guid: 715c3dee24be8849a15a0776b3bd3f11
+      Path: Events\Default Work Unit\player\player_hurt
+      maxAttenuation: 0
+      maxDuration: 0.333958
+      minDuration: 0.3247673
+    - name: player_jumping_from_raft
+      guid: 84d1a3d4a927d14891e5eca0256b682c
+      id: 56442844
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: f590af8efd1e2047896b638d3bea5fa1
+      - ElementName: player
+        ObjectType: 4
+        guid: 6f634b67b9747940a74ee1baff05a91a
+      - ElementName: player_jumping_from_raft
+        ObjectType: 3
+        guid: 84d1a3d4a927d14891e5eca0256b682c
+      Path: Events\Default Work Unit\player\player_jumping_from_raft
+      maxAttenuation: 0
+      maxDuration: 0.59133786
+      minDuration: 0.59133786
     - name: player_jumping_from_water
       guid: ba33022a9e959a4396d21622ccea0826
       id: 3191879790
@@ -211,8 +285,25 @@ MonoBehaviour:
         guid: 7e34ca3f1b3e3c459a8e199c1b92c1e8
       Path: Events\Default Work Unit\player\player_landing_on_raft
       maxAttenuation: 0
-      maxDuration: 1.283841
-      minDuration: 1.283841
+      maxDuration: 0.58326906
+      minDuration: 0.58326906
+    - name: turret
+      guid: 2331e25ddd3c3c4e9e0240259d6a6df7
+      id: 2674766611
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: f590af8efd1e2047896b638d3bea5fa1
+      - ElementName: turret
+        ObjectType: 4
+        guid: 2331e25ddd3c3c4e9e0240259d6a6df7
+      Path: Events\Default Work Unit\turret
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -225,7 +316,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 2515a2fe3dc62f45ad3af89d5a0faa83
     GuidInternal: 
-    m_lastTime: -8584835478959704696
+    m_lastTime: -8584835385646647528
     List: []
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
@@ -239,7 +330,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: f9b35ae87832244c8ce1a94adba566b9
     GuidInternal: 
-    m_lastTime: -8584835478959824502
+    m_lastTime: -8584835385644822544
     List: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
@@ -253,7 +344,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: dafd922ade6ff14c95db971275d4b5df
     GuidInternal: 
-    m_lastTime: -8584835454401797308
+    m_lastTime: -8584835385644655525
     List:
     - name: ground_type
       guid: ae7db4782f0d504882f4ef7034ec067f
@@ -317,10 +408,10 @@ MonoBehaviour:
     ParentPath: Triggers\Default Work Unit
     guid: 1a6791e22a64c2409b3f503e7e9af0c6
     GuidInternal: 
-    m_lastTime: -8584835478960007017
+    m_lastTime: -8584835385644655525
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 0500000006000000070000000a0000000b0000000d0000000e0000000f00000010000000
+  ExpandedWaapiItemIds: 0500000006000000070000000a0000000b0000000d0000000e0000000f00000010000000ea5f0000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0
