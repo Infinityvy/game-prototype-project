@@ -22,11 +22,13 @@ public class MenuController : MonoBehaviour
     public void OpenOptions()
     {
         OptionPanel.SetActive(true);
+        MenuPanel.SetActive(false);
     }
 
     public void CloseOptions()
     {
         OptionPanel.SetActive(false);
+        MenuPanel.SetActive(true);
     }
 
     public void QuitGame()

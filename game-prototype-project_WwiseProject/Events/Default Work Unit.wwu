@@ -82,16 +82,96 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="player_death" ID="{2CB2B541-CBCE-4B3F-8834-C13C7316C609}">
+							<ChildrenList>
+								<Action Name="" ID="{E86EE503-1BB0-48E5-99B2-9539027D0833}" ShortID="357453058">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="player_death_only_vox" ID="{2DD52C4D-47A7-4192-8E93-E01637174544}" WorkUnitID="{B85A01B8-0CD4-4C99-951A-35EE4555F6EB}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="player_pickup" ID="{E033D61E-9142-4BAA-AA0C-89CE5EB15C98}">
+							<ChildrenList>
+								<Action Name="" ID="{E89BB3A6-74FC-4321-896C-32CE2FA27A43}" ShortID="997161366">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="pick-up_wood" ID="{E34F7FA1-8202-4D54-8AE0-65E1812486A8}" WorkUnitID="{B85A01B8-0CD4-4C99-951A-35EE4555F6EB}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="player_build" ID="{678D8324-8D70-43D0-9072-C31B1F50CA3D}">
+							<ChildrenList>
+								<Action Name="" ID="{092EAC89-786F-4281-8DB1-96D34CF8E744}" ShortID="772570030">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="upgrade" ID="{CCB67A7E-29E2-4F43-B13A-58FCCFF6772D}" WorkUnitID="{B85A01B8-0CD4-4C99-951A-35EE4555F6EB}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="turret" ID="{5DE23123-3CDD-4E3C-9E02-40259D6A6DF7}" ShortID="497948807">
 					<ChildrenList>
 						<Event Name="machinegun_shot" ID="{70E97710-317D-4ADC-B25E-8B830FCBE5D3}">
 							<ChildrenList>
-								<Action Name="" ID="{505C938D-0A03-4D8B-9250-5874D576085F}" ShortID="729083757">
+								<Action Name="" ID="{AA0561BC-C835-4BFA-9221-7D73EF6E20DE}" ShortID="516548600">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="machinegun_fire_02" ID="{510DBCBE-5446-43C2-9AB6-AA0159A131CD}" WorkUnitID="{B85A01B8-0CD4-4C99-951A-35EE4555F6EB}"/>
+											<ObjectRef Name="machinegun_fire_01" ID="{C920EB7B-1D7E-4208-9CC5-AC2D07EA619A}" WorkUnitID="{B85A01B8-0CD4-4C99-951A-35EE4555F6EB}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="crossbow_shot_reload" ID="{0564406A-7511-4065-821A-ACA4F70EEC0D}">
+							<ChildrenList>
+								<Action Name="" ID="{28E2C4D9-E750-47AE-ACF9-C7C1BDA5F93C}" ShortID="244418299">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="arrow_shoot" ID="{53EC49D8-39C7-4BA5-8F3E-AF305F584093}" WorkUnitID="{B85A01B8-0CD4-4C99-951A-35EE4555F6EB}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{0CCF40CC-C5F2-489F-ACB3-590064AFA656}" ShortID="816484209">
+									<PropertyList>
+										<Property Name="Delay" Type="Real64" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="arrow_charge" ID="{A291CF86-5246-4278-B74D-FFF983C0BAC8}" WorkUnitID="{B85A01B8-0CD4-4C99-951A-35EE4555F6EB}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="insect" ID="{1A5799CB-3D6B-4BA3-A709-F2818744F1CB}" ShortID="528365086">
+					<ChildrenList>
+						<Event Name="wing_flap" ID="{51045776-07DB-4622-912E-AF248DC4F86A}">
+							<ChildrenList>
+								<Action Name="" ID="{B7C1B4F7-FA3B-44ED-BC24-0336D283BFF0}" ShortID="813114421">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="wing_flaps" ID="{F8B6FD8B-A896-4D4D-9A59-65EE945C51BC}" WorkUnitID="{B85A01B8-0CD4-4C99-951A-35EE4555F6EB}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="insect_death" ID="{475705B9-5A42-4549-992B-C888C5F7C735}">
+							<ChildrenList>
+								<Action Name="" ID="{065CEA19-2C6A-4391-8D4F-6306352566C3}" ShortID="90241816">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="insect_death" ID="{641C55C5-9442-4133-B290-EBC94C4BBA13}" WorkUnitID="{B85A01B8-0CD4-4C99-951A-35EE4555F6EB}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

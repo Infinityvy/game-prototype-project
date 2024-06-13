@@ -16,7 +16,7 @@ public class PlayerEntity : MonoBehaviour, IEntity
 
     private float maxHealth = 100;
     private float currentHealth;
-    private float healthRegenPerSecond = 0.2f;
+    private float healthRegenPerSecond = 0.5f;
     private bool isInvincible = false;
 
     private Material modelMaterial;
@@ -82,6 +82,8 @@ public class PlayerEntity : MonoBehaviour, IEntity
         movement.rigidbody.velocity = Vector3.zero;
 
         Time.timeScale = 0.2f;
+
+        AkSoundEngine.PostEvent("player_death", gameObject);
 
         transform.GetComponent<CapsuleCollider>().enabled = false;
         transform.GetComponentInChildren<MeshRenderer>().enabled = false;

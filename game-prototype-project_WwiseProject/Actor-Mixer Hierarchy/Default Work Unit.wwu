@@ -9,11 +9,14 @@
 							<PropertyList>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-10</Value>
+										<Value>-13</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Default Attenuation" ID="{1B3030CC-781B-4268-85BB-DF351C28EACA}" WorkUnitID="{543FEF3B-879B-4790-B1A6-584042639397}"/>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC6BBD8C-D469-4ABF-8A3A-5C105B3AF631}"/>
 								</Reference>
@@ -23,6 +26,11 @@
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="splash_02" ID="{0D74AF7C-3C2A-4DA1-88D5-6550375AD285}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="1.09901901967462"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="1.38408268056902"/>
+									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>splash_02.wav</AudioFile>
 									<MediaIDList>
@@ -34,42 +42,18 @@
 								<ActiveSource Name="splash_02" ID="{0D74AF7C-3C2A-4DA1-88D5-6550375AD285}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
-						<Sound Name="badum" ID="{CE9BE885-6489-42B5-9949-E2D80DB1C6E0}" ShortID="703442263">
+						<Sound Name="splash_01" ID="{9152EED1-D069-4DAF-BF4B-8A810F1C7404}" ShortID="1017223200">
 							<PropertyList>
-								<Property Name="Pitch" Type="int32">
+								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-600</Value>
+										<Value>-10</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
 							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC6BBD8C-D469-4ABF-8A3A-5C105B3AF631}"/>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Default Attenuation" ID="{1B3030CC-781B-4268-85BB-DF351C28EACA}" WorkUnitID="{543FEF3B-879B-4790-B1A6-584042639397}"/>
 								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20005636-939D-4810-A8B7-C18E7CF2C5CC}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="badum" ID="{80EA9562-37EF-43C8-AD38-02B0BD9FD9C3}">
-									<PropertyList>
-										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-										<Property Name="TrimBegin" Type="Real64" Value="0.0351873062447057"/>
-										<Property Name="TrimEnd" Type="Real64" Value="0.943"/>
-									</PropertyList>
-									<Language>SFX</Language>
-									<AudioFile>badum.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="717806920"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="badum" ID="{80EA9562-37EF-43C8-AD38-02B0BD9FD9C3}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="splash_01" ID="{9152EED1-D069-4DAF-BF4B-8A810F1C7404}" ShortID="1017223200">
-							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC6BBD8C-D469-4ABF-8A3A-5C105B3AF631}"/>
 								</Reference>
@@ -80,7 +64,10 @@
 							<ChildrenList>
 								<AudioFileSource Name="splash_01" ID="{048D7979-8FAB-4E2F-AA47-5EC51D34B299}">
 									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="1.18743278055766"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 										<Property Name="TrimBegin" Type="Real64" Value="0.024"/>
+										<Property Name="TrimEnd" Type="Real64" Value="1.4835158890257"/>
 									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>splash_01.wav</AudioFile>
@@ -100,8 +87,99 @@
 										<Value>380</Value>
 									</ValueList>
 								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-5</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<Custom CreatedFrom="{1B3030CC-781B-4268-85BB-DF351C28EACA}">
+										<Attenuation Name="Default Attenuation (Custom)" ID="{866FF38F-A2D1-4BFA-BC1A-5EEAA5D773C9}" ShortID="709911099">
+											<PropertyList>
+												<Property Name="RadiusMax" Type="Real64" Value="40"/>
+											</PropertyList>
+											<CurveUsageInfoList>
+												<VolumeDryUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="Custom">
+														<Curve Name="VolumeDry" ID="{03FE6A21-E2C4-41D3-A889-828522819B5E}">
+															<PropertyList>
+																<Property Name="Flags" Type="int32" Value="3"/>
+															</PropertyList>
+															<PointList>
+																<Point>
+																	<XPos>0</XPos>
+																	<YPos>0</YPos>
+																	<Flags>5</Flags>
+																</Point>
+																<Point>
+																	<XPos>40</XPos>
+																	<YPos>-200</YPos>
+																	<Flags>37</Flags>
+																</Point>
+															</PointList>
+														</Curve>
+													</CurveUsageInfo>
+												</VolumeDryUsage>
+												<VolumeWetGameUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
+												</VolumeWetGameUsage>
+												<VolumeWetUserUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
+												</VolumeWetUserUsage>
+												<LowPassFilterUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+												</LowPassFilterUsage>
+												<HighPassFilterUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+												</HighPassFilterUsage>
+												<SpreadUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+												</SpreadUsage>
+												<FocusUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+												</FocusUsage>
+												<ObstructionVolumeUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</ObstructionVolumeUsage>
+												<ObstructionLPFUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</ObstructionLPFUsage>
+												<ObstructionHPFUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</ObstructionHPFUsage>
+												<OcclusionVolumeUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</OcclusionVolumeUsage>
+												<OcclusionLPFUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</OcclusionLPFUsage>
+												<OcclusionHPFUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</OcclusionHPFUsage>
+												<DiffractionVolumeUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</DiffractionVolumeUsage>
+												<DiffractionLPFUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</DiffractionLPFUsage>
+												<DiffractionHPFUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</DiffractionHPFUsage>
+												<TransmissionVolumeUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</TransmissionVolumeUsage>
+												<TransmissionLPFUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</TransmissionLPFUsage>
+												<TransmissionHPFUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</TransmissionHPFUsage>
+											</CurveUsageInfoList>
+										</Attenuation>
+									</Custom>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC6BBD8C-D469-4ABF-8A3A-5C105B3AF631}"/>
 								</Reference>
@@ -509,7 +587,100 @@
 							</ChildrenList>
 						</RandomSequenceContainer>
 						<RandomSequenceContainer Name="footsteps_water" ID="{3366A393-5AEF-4BC1-8848-07A41A80475E}" ShortID="1046623917">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-15</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<Custom CreatedFrom="{1B3030CC-781B-4268-85BB-DF351C28EACA}">
+										<Attenuation Name="Default Attenuation (Custom)" ID="{37282A9F-2691-4BB3-988E-978B37ABF000}" ShortID="496006982">
+											<PropertyList>
+												<Property Name="RadiusMax" Type="Real64" Value="40"/>
+											</PropertyList>
+											<CurveUsageInfoList>
+												<VolumeDryUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="Custom">
+														<Curve Name="VolumeDry" ID="{5F101B1C-F104-4F42-8E15-3CEE44D7EF39}">
+															<PropertyList>
+																<Property Name="Flags" Type="int32" Value="3"/>
+															</PropertyList>
+															<PointList>
+																<Point>
+																	<XPos>0</XPos>
+																	<YPos>0</YPos>
+																	<Flags>5</Flags>
+																</Point>
+																<Point>
+																	<XPos>40</XPos>
+																	<YPos>-200</YPos>
+																	<Flags>37</Flags>
+																</Point>
+															</PointList>
+														</Curve>
+													</CurveUsageInfo>
+												</VolumeDryUsage>
+												<VolumeWetGameUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
+												</VolumeWetGameUsage>
+												<VolumeWetUserUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
+												</VolumeWetUserUsage>
+												<LowPassFilterUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+												</LowPassFilterUsage>
+												<HighPassFilterUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+												</HighPassFilterUsage>
+												<SpreadUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+												</SpreadUsage>
+												<FocusUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+												</FocusUsage>
+												<ObstructionVolumeUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</ObstructionVolumeUsage>
+												<ObstructionLPFUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</ObstructionLPFUsage>
+												<ObstructionHPFUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</ObstructionHPFUsage>
+												<OcclusionVolumeUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</OcclusionVolumeUsage>
+												<OcclusionLPFUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</OcclusionLPFUsage>
+												<OcclusionHPFUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</OcclusionHPFUsage>
+												<DiffractionVolumeUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</DiffractionVolumeUsage>
+												<DiffractionLPFUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</DiffractionLPFUsage>
+												<DiffractionHPFUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</DiffractionHPFUsage>
+												<TransmissionVolumeUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</TransmissionVolumeUsage>
+												<TransmissionLPFUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</TransmissionLPFUsage>
+												<TransmissionHPFUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</TransmissionHPFUsage>
+											</CurveUsageInfoList>
+										</Attenuation>
+									</Custom>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC6BBD8C-D469-4ABF-8A3A-5C105B3AF631}"/>
 								</Reference>
@@ -609,7 +780,100 @@
 							</ChildrenList>
 						</RandomSequenceContainer>
 						<Sound Name="player_jump" ID="{B5E31071-5CAE-448E-A741-F658AB4CCCAD}" ShortID="911643574">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-5</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<Custom CreatedFrom="{1B3030CC-781B-4268-85BB-DF351C28EACA}">
+										<Attenuation Name="Default Attenuation (Custom)" ID="{D2B8FB3C-50F5-45AE-A6E3-95C86B5669B7}" ShortID="3338039">
+											<PropertyList>
+												<Property Name="RadiusMax" Type="Real64" Value="40"/>
+											</PropertyList>
+											<CurveUsageInfoList>
+												<VolumeDryUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="Custom">
+														<Curve Name="VolumeDry" ID="{445CF0B6-DF8F-4234-8E1B-7C7E9AF19B0D}">
+															<PropertyList>
+																<Property Name="Flags" Type="int32" Value="3"/>
+															</PropertyList>
+															<PointList>
+																<Point>
+																	<XPos>0</XPos>
+																	<YPos>0</YPos>
+																	<Flags>5</Flags>
+																</Point>
+																<Point>
+																	<XPos>40</XPos>
+																	<YPos>-200</YPos>
+																	<Flags>37</Flags>
+																</Point>
+															</PointList>
+														</Curve>
+													</CurveUsageInfo>
+												</VolumeDryUsage>
+												<VolumeWetGameUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
+												</VolumeWetGameUsage>
+												<VolumeWetUserUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
+												</VolumeWetUserUsage>
+												<LowPassFilterUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+												</LowPassFilterUsage>
+												<HighPassFilterUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+												</HighPassFilterUsage>
+												<SpreadUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+												</SpreadUsage>
+												<FocusUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+												</FocusUsage>
+												<ObstructionVolumeUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</ObstructionVolumeUsage>
+												<ObstructionLPFUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</ObstructionLPFUsage>
+												<ObstructionHPFUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</ObstructionHPFUsage>
+												<OcclusionVolumeUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</OcclusionVolumeUsage>
+												<OcclusionLPFUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</OcclusionLPFUsage>
+												<OcclusionHPFUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</OcclusionHPFUsage>
+												<DiffractionVolumeUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</DiffractionVolumeUsage>
+												<DiffractionLPFUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</DiffractionLPFUsage>
+												<DiffractionHPFUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</DiffractionHPFUsage>
+												<TransmissionVolumeUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</TransmissionVolumeUsage>
+												<TransmissionLPFUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</TransmissionLPFUsage>
+												<TransmissionHPFUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</TransmissionHPFUsage>
+											</CurveUsageInfoList>
+										</Attenuation>
+									</Custom>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC6BBD8C-D469-4ABF-8A3A-5C105B3AF631}"/>
 								</Reference>
@@ -619,6 +883,10 @@
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="player_jump" ID="{01CBBA68-998A-4512-BE3D-8D979AD2FF6B}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.0535164566468436"/>
+									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>player_jump.wav</AudioFile>
 									<MediaIDList>
@@ -631,6 +899,13 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="player_landing" ID="{E88C0E4B-1014-49C4-B494-1577734CDB93}" ShortID="358616873">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC6BBD8C-D469-4ABF-8A3A-5C105B3AF631}"/>
@@ -643,6 +918,7 @@
 								<AudioFileSource Name="player_landing" ID="{CEC683F6-931C-4599-86CE-0928769884FE}">
 									<PropertyList>
 										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.0316296694116243"/>
 										<Property Name="TrimEnd" Type="Real64" Value="0.583269040076954"/>
 									</PropertyList>
 									<Language>SFX</Language>
@@ -660,11 +936,102 @@
 							<PropertyList>
 								<Property Name="Pitch" Type="int32">
 									<ValueList>
-										<Value>780</Value>
+										<Value>720</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<Custom CreatedFrom="{1B3030CC-781B-4268-85BB-DF351C28EACA}">
+										<Attenuation Name="Default Attenuation (Custom)" ID="{BD184130-4E67-46CA-8D62-5C3290C1BDBB}" ShortID="372692016">
+											<PropertyList>
+												<Property Name="RadiusMax" Type="Real64" Value="40"/>
+											</PropertyList>
+											<CurveUsageInfoList>
+												<VolumeDryUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="Custom">
+														<Curve Name="VolumeDry" ID="{B04EE67A-798A-47D8-B748-BDE1CE04B9D1}">
+															<PropertyList>
+																<Property Name="Flags" Type="int32" Value="3"/>
+															</PropertyList>
+															<PointList>
+																<Point>
+																	<XPos>0</XPos>
+																	<YPos>0</YPos>
+																	<Flags>5</Flags>
+																</Point>
+																<Point>
+																	<XPos>40</XPos>
+																	<YPos>-200</YPos>
+																	<Flags>37</Flags>
+																</Point>
+															</PointList>
+														</Curve>
+													</CurveUsageInfo>
+												</VolumeDryUsage>
+												<VolumeWetGameUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
+												</VolumeWetGameUsage>
+												<VolumeWetUserUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
+												</VolumeWetUserUsage>
+												<LowPassFilterUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+												</LowPassFilterUsage>
+												<HighPassFilterUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+												</HighPassFilterUsage>
+												<SpreadUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+												</SpreadUsage>
+												<FocusUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+												</FocusUsage>
+												<ObstructionVolumeUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</ObstructionVolumeUsage>
+												<ObstructionLPFUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</ObstructionLPFUsage>
+												<ObstructionHPFUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</ObstructionHPFUsage>
+												<OcclusionVolumeUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</OcclusionVolumeUsage>
+												<OcclusionLPFUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</OcclusionLPFUsage>
+												<OcclusionHPFUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</OcclusionHPFUsage>
+												<DiffractionVolumeUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</DiffractionVolumeUsage>
+												<DiffractionLPFUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</DiffractionLPFUsage>
+												<DiffractionHPFUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</DiffractionHPFUsage>
+												<TransmissionVolumeUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</TransmissionVolumeUsage>
+												<TransmissionLPFUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</TransmissionLPFUsage>
+												<TransmissionHPFUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+												</TransmissionHPFUsage>
+											</CurveUsageInfoList>
+										</Attenuation>
+									</Custom>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC6BBD8C-D469-4ABF-8A3A-5C105B3AF631}"/>
 								</Reference>
@@ -851,6 +1218,103 @@
 								</Sound>
 							</ChildrenList>
 						</RandomSequenceContainer>
+						<Sound Name="pick-up_wood" ID="{E34F7FA1-8202-4D54-8AE0-65E1812486A8}" ShortID="650397318">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-7</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Default Attenuation" ID="{1B3030CC-781B-4268-85BB-DF351C28EACA}" WorkUnitID="{543FEF3B-879B-4790-B1A6-584042639397}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC6BBD8C-D469-4ABF-8A3A-5C105B3AF631}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20005636-939D-4810-A8B7-C18E7CF2C5CC}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="pick-up_wood" ID="{5544696A-A572-4C7E-B66B-ADA9BD5D3631}">
+									<PropertyList>
+										<Property Name="LoopBegin" Type="Real64" Value="0.0736149316380382"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.0736149316380382"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>pick-up_wood.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="311452715"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="pick-up_wood" ID="{5544696A-A572-4C7E-B66B-ADA9BD5D3631}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player_death_only_vox" ID="{2DD52C4D-47A7-4192-8E93-E01637174544}" ShortID="327912004">
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Default Attenuation" ID="{1B3030CC-781B-4268-85BB-DF351C28EACA}" WorkUnitID="{543FEF3B-879B-4790-B1A6-584042639397}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC6BBD8C-D469-4ABF-8A3A-5C105B3AF631}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20005636-939D-4810-A8B7-C18E7CF2C5CC}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player_death_only_vox" ID="{AFFD2DBD-5E79-456D-84AE-83479B2FE885}">
+									<Language>SFX</Language>
+									<AudioFile>player_death_only_vox.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="435057683"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player_death_only_vox" ID="{AFFD2DBD-5E79-456D-84AE-83479B2FE885}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="upgrade" ID="{CCB67A7E-29E2-4F43-B13A-58FCCFF6772D}" ShortID="917566793">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-10</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Default Attenuation" ID="{1B3030CC-781B-4268-85BB-DF351C28EACA}" WorkUnitID="{543FEF3B-879B-4790-B1A6-584042639397}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC6BBD8C-D469-4ABF-8A3A-5C105B3AF631}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20005636-939D-4810-A8B7-C18E7CF2C5CC}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="upgrade" ID="{7AE0303C-11F8-49C3-99F9-77468EB580A9}">
+									<PropertyList>
+										<Property Name="TrimEnd" Type="Real64" Value="2.59357234549789"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>upgrade.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="486542168"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="upgrade" ID="{7AE0303C-11F8-49C3-99F9-77468EB580A9}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="turret" ID="{01161C8A-CCC9-4B2D-9C64-8C82CE3F4F7F}" ShortID="1711824">
@@ -864,6 +1328,9 @@
 								</Property>
 							</PropertyList>
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Default Attenuation" ID="{1B3030CC-781B-4268-85BB-DF351C28EACA}" WorkUnitID="{543FEF3B-879B-4790-B1A6-584042639397}"/>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC6BBD8C-D469-4ABF-8A3A-5C105B3AF631}"/>
 								</Reference>
@@ -889,6 +1356,539 @@
 								<ActiveSource Name="machinegun_fire_02" ID="{D3FA02B5-C9F2-48A5-A82C-A364B3308D0D}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Folder Name="crossbow" ID="{E5DDA955-CCE0-4D51-908F-148D639EB649}" ShortID="43366322">
+							<ChildrenList>
+								<Sound Name="arrow_charge" ID="{A291CF86-5246-4278-B74D-FFF983C0BAC8}" ShortID="527926311">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-4</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="Default Attenuation" ID="{1B3030CC-781B-4268-85BB-DF351C28EACA}" WorkUnitID="{543FEF3B-879B-4790-B1A6-584042639397}"/>
+										</Reference>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC6BBD8C-D469-4ABF-8A3A-5C105B3AF631}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20005636-939D-4810-A8B7-C18E7CF2C5CC}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="arrow_charge" ID="{E19DD6B9-F983-4A31-B8B3-35DE0B84D47D}">
+											<Language>SFX</Language>
+											<AudioFile>arrow_charge.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="428222757"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="arrow_charge" ID="{E19DD6B9-F983-4A31-B8B3-35DE0B84D47D}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="arrow_shoot" ID="{53EC49D8-39C7-4BA5-8F3E-AF305F584093}" ShortID="646880914">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-10</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="Default Attenuation" ID="{1B3030CC-781B-4268-85BB-DF351C28EACA}" WorkUnitID="{543FEF3B-879B-4790-B1A6-584042639397}"/>
+										</Reference>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC6BBD8C-D469-4ABF-8A3A-5C105B3AF631}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20005636-939D-4810-A8B7-C18E7CF2C5CC}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="arrow_shoot" ID="{B76D69D1-7E2E-4F2A-A155-0325A80B5B15}">
+											<Language>SFX</Language>
+											<AudioFile>arrow_shoot.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="44739622"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="arrow_shoot" ID="{B76D69D1-7E2E-4F2A-A155-0325A80B5B15}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</Folder>
+						<Sound Name="machinegun_fire_01" ID="{C920EB7B-1D7E-4208-9CC5-AC2D07EA619A}" ShortID="789267307">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-13</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Default Attenuation" ID="{1B3030CC-781B-4268-85BB-DF351C28EACA}" WorkUnitID="{543FEF3B-879B-4790-B1A6-584042639397}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC6BBD8C-D469-4ABF-8A3A-5C105B3AF631}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20005636-939D-4810-A8B7-C18E7CF2C5CC}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="machinegun_fire_01" ID="{11E28A56-E3B0-4702-9498-2E749F5C1535}">
+									<PropertyList>
+										<Property Name="LoopBegin" Type="Real64" Value="0.649856755710414"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.649856755710414"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>machinegun_fire_01.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="48357522"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="machinegun_fire_01" ID="{11E28A56-E3B0-4702-9498-2E749F5C1535}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="insect" ID="{C43F6B39-A65E-4DB7-9511-0F6A3E933F24}" ShortID="833760205">
+					<ChildrenList>
+						<RandomSequenceContainer Name="wing_flaps" ID="{F8B6FD8B-A896-4D4D-9A59-65EE945C51BC}" ShortID="684720012">
+							<PropertyList>
+								<Property Name="GlobalOrPerObject" Type="int16" Value="0"/>
+								<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+								<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-10</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Default Attenuation" ID="{1B3030CC-781B-4268-85BB-DF351C28EACA}" WorkUnitID="{543FEF3B-879B-4790-B1A6-584042639397}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC6BBD8C-D469-4ABF-8A3A-5C105B3AF631}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20005636-939D-4810-A8B7-C18E7CF2C5CC}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="flap_00" ID="{CA0F682A-EF33-4ABB-AC27-ED132E131A54}" ShortID="763773986">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC6BBD8C-D469-4ABF-8A3A-5C105B3AF631}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20005636-939D-4810-A8B7-C18E7CF2C5CC}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="flying_loop_01" ID="{392F3D26-4838-4F38-BD76-9D15775AECD0}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.310022384649196"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.604797766774663"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>flying_loop_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="237547947"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="flying_loop_01" ID="{392F3D26-4838-4F38-BD76-9D15775AECD0}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="flap_01" ID="{6AAC134E-6AEF-4447-B467-C6413936F593}" ShortID="1052127884">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC6BBD8C-D469-4ABF-8A3A-5C105B3AF631}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20005636-939D-4810-A8B7-C18E7CF2C5CC}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="flying_loop_01" ID="{8530250A-DA87-4812-B5CF-2AAF7D5F851F}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.838585138805203"/>
+												<Property Name="TrimEnd" Type="Real64" Value="1.56535892576971"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>flying_loop_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="260914020"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="flying_loop_01" ID="{8530250A-DA87-4812-B5CF-2AAF7D5F851F}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="flap_02" ID="{75044086-8FCF-4C3F-B741-2D1FD15D6B5F}" ShortID="577629284">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC6BBD8C-D469-4ABF-8A3A-5C105B3AF631}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20005636-939D-4810-A8B7-C18E7CF2C5CC}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="flying_loop_01" ID="{F99C81B1-7D94-430C-A4CD-8A6CDB91135B}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="1.56027659159513"/>
+												<Property Name="TrimEnd" Type="Real64" Value="2.24130937098845"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>flying_loop_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="542641353"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="flying_loop_01" ID="{F99C81B1-7D94-430C-A4CD-8A6CDB91135B}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="flap_03" ID="{628F6886-58CA-46AA-8A13-29CC90A2B51C}" ShortID="135141488">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC6BBD8C-D469-4ABF-8A3A-5C105B3AF631}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20005636-939D-4810-A8B7-C18E7CF2C5CC}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="flying_loop_01" ID="{D618D57A-A168-4DEA-B9A9-017960FC2442}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="2.22606236846471"/>
+												<Property Name="TrimEnd" Type="Real64" Value="2.85627180611227"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>flying_loop_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="619816653"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="flying_loop_01" ID="{D618D57A-A168-4DEA-B9A9-017960FC2442}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="flap_04" ID="{43A2EAE9-3A32-4195-8580-6F539E2ADFB8}" ShortID="475084743">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC6BBD8C-D469-4ABF-8A3A-5C105B3AF631}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20005636-939D-4810-A8B7-C18E7CF2C5CC}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="flying_loop_01" ID="{A47D5E05-BC87-4B1F-8FD1-C80B895C9087}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="2.97316549212753"/>
+												<Property Name="TrimEnd" Type="Real64" Value="3.53730458550558"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>flying_loop_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="279163914"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="flying_loop_01" ID="{A47D5E05-BC87-4B1F-8FD1-C80B895C9087}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="flap_05" ID="{CAF1BCF4-0904-42E9-9DC5-3C689870BD3B}" ShortID="121633639">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC6BBD8C-D469-4ABF-8A3A-5C105B3AF631}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20005636-939D-4810-A8B7-C18E7CF2C5CC}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="flying_loop_01" ID="{EE3DC6F4-6682-4A9C-8F4A-8127EC051997}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="4.22850203324804"/>
+												<Property Name="TrimEnd" Type="Real64" Value="4.79264112662609"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>flying_loop_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="456677108"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="flying_loop_01" ID="{EE3DC6F4-6682-4A9C-8F4A-8127EC051997}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="flap_06" ID="{7DF31CC3-3F4F-4D33-8EF0-764811958471}" ShortID="154251554">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC6BBD8C-D469-4ABF-8A3A-5C105B3AF631}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20005636-939D-4810-A8B7-C18E7CF2C5CC}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="flying_loop_01" ID="{7C574F72-04CF-4AEF-9AAB-6E994A00467D}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="4.86887613924474"/>
+												<Property Name="TrimEnd" Type="Real64" Value="5.33136854913125"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>flying_loop_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1027415851"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="flying_loop_01" ID="{7C574F72-04CF-4AEF-9AAB-6E994A00467D}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="flap_07" ID="{A38CD0F3-5A33-4EB5-8266-EB32E571AC56}" ShortID="525381904">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC6BBD8C-D469-4ABF-8A3A-5C105B3AF631}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20005636-939D-4810-A8B7-C18E7CF2C5CC}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="flying_loop_01" ID="{4069FB9D-7A2F-43ED-A9A2-059A928EEB24}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="5.31612154660752"/>
+												<Property Name="TrimEnd" Type="Real64" Value="6.06322467027034"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>flying_loop_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1058269355"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="flying_loop_01" ID="{4069FB9D-7A2F-43ED-A9A2-059A928EEB24}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="flap_08" ID="{5C8B72B4-9D5C-47B2-864E-E7AB7FE89BA0}" ShortID="30405086">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC6BBD8C-D469-4ABF-8A3A-5C105B3AF631}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20005636-939D-4810-A8B7-C18E7CF2C5CC}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="flying_loop_01" ID="{6F15A75B-4A8D-4D1A-9A18-F816A9E7477E}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="6.87639813820265"/>
+												<Property Name="TrimEnd" Type="Real64" Value="7.3947962240095"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>flying_loop_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="693282797"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="flying_loop_01" ID="{6F15A75B-4A8D-4D1A-9A18-F816A9E7477E}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="flap_09" ID="{7896F2ED-56D8-45D0-A895-AE66FE62D24A}" ShortID="598361363">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC6BBD8C-D469-4ABF-8A3A-5C105B3AF631}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20005636-939D-4810-A8B7-C18E7CF2C5CC}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="flying_loop_01" ID="{BE3BC46F-335F-49A3-A885-5979A4661951}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="7.48627823915189"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>flying_loop_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1028353245"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="flying_loop_01" ID="{BE3BC46F-335F-49A3-A885-5979A4661951}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="insect_death" ID="{641C55C5-9442-4133-B290-EBC94C4BBA13}" ShortID="592599297">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>5</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Default Attenuation" ID="{1B3030CC-781B-4268-85BB-DF351C28EACA}" WorkUnitID="{543FEF3B-879B-4790-B1A6-584042639397}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC6BBD8C-D469-4ABF-8A3A-5C105B3AF631}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20005636-939D-4810-A8B7-C18E7CF2C5CC}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="insect_dying_01" ID="{338BFF34-3FA6-489B-B68A-70C568FE6241}" ShortID="1011388358">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC6BBD8C-D469-4ABF-8A3A-5C105B3AF631}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20005636-939D-4810-A8B7-C18E7CF2C5CC}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="insect_dying_01" ID="{2B131E94-84FE-4FF8-BF83-44D6904646A2}">
+											<PropertyList>
+												<Property Name="LoopBegin" Type="Real64" Value="0.00903836245666431"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.00903836245666431"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>insect_dying_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="737689727"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="insect_dying_01" ID="{2B131E94-84FE-4FF8-BF83-44D6904646A2}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="insect_dying_03" ID="{97E07ABD-B9F2-41CA-941E-A7442A7706F6}" ShortID="294464550">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC6BBD8C-D469-4ABF-8A3A-5C105B3AF631}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20005636-939D-4810-A8B7-C18E7CF2C5CC}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="insect_dying_03" ID="{757CF1AD-C829-4EB3-B88F-719826A0AD40}">
+											<PropertyList>
+												<Property Name="LoopBegin" Type="Real64" Value="0.192333446857562"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.043244784434955"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>insect_dying_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="132962122"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="insect_dying_03" ID="{757CF1AD-C829-4EB3-B88F-719826A0AD40}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="insect_dying_04" ID="{240374DF-2EBF-40A7-B58E-4A51319C9964}" ShortID="574244940">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC6BBD8C-D469-4ABF-8A3A-5C105B3AF631}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20005636-939D-4810-A8B7-C18E7CF2C5CC}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="insect_dying_04" ID="{D0C20527-9D18-4B06-926C-3F58D8BAFD94}">
+											<PropertyList>
+												<Property Name="LoopBegin" Type="Real64" Value="0.0867919799498747"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.045361661994708"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>insect_dying_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="399555693"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="insect_dying_04" ID="{D0C20527-9D18-4B06-926C-3F58D8BAFD94}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="insect_dying_02" ID="{75453C53-E475-4F63-B769-B193DC55DD22}" ShortID="500998577">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC6BBD8C-D469-4ABF-8A3A-5C105B3AF631}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20005636-939D-4810-A8B7-C18E7CF2C5CC}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="insect_dying_02" ID="{65D101B5-941C-44F5-89D0-3D0806F86A9C}">
+											<PropertyList>
+												<Property Name="LoopBegin" Type="Real64" Value="0.0163301983180949"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.0163301983180949"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>insect_dying_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1054644850"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="insect_dying_02" ID="{65D101B5-941C-44F5-89D0-3D0806F86A9C}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

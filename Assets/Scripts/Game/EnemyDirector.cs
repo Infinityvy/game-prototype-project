@@ -45,9 +45,10 @@ public class EnemyDirector : MonoBehaviour
 
         waveCount++;
 
-        int waveBalance = 1 + (waveCount % 2 == 0 ? waveCount : waveCount - 1);
+        int waveBalance = 1 + waveCount / 2;
 
-        float multiplierBalance = (waveCount % 5 == 0 ? 2.5f : 1f);
+        // every 5 waves, the balance is doubled; however since every 10th wave spawns nothing, only every other 10th wave is doubled
+        float multiplierBalance = (waveCount % 5 == 0 ? 2f : 1f);
 
         int balance = (int)(waveBalance * multiplierBalance);
 
@@ -62,9 +63,6 @@ public class EnemyDirector : MonoBehaviour
         float randomSpawnInterval = Random.Range(minSpawnInterval, maxSpawnInterval);
         float spawnInterval = randomSpawnInterval + averageSpawnInterval - lastSpawnInterval;
 
-        // reduce time till next wave for first 2 waves
-        spawnInterval /= Mathf.Clamp(4 - waveCount, 1, 3);
-
         Debug.Log("Wave: " + waveCount + " || Balance: " + balance + " || Next wave in: " + spawnInterval + " seconds");
 
         Invoke(nameof(spawnWave), spawnInterval);
@@ -78,7 +76,7 @@ public class EnemyDirector : MonoBehaviour
         switch (type) 
         {
             case EnemyType.IMP:
-                enemies.Add(Instantiate(ImpEnemy.getPrefab(), findSpawnLocation(), Quaternion.identity).AddComponent<ImpEnemy>());
+                enemies.Add(Instantiate(ImpEnemy.getPrefab(), findSpawnLocation(), Quaternion.identity).GetComponent<ImpEnemy>());
                 break;
             default:
                 throw new System.Exception("Unkown EnemyType");

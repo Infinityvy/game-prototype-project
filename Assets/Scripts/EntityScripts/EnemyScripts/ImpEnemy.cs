@@ -6,13 +6,14 @@ using UnityEngine.Events;
 public class ImpEnemy : MonoBehaviour, IEnemy, IEntity
 {
     // public:
-    public EnemyState state;
+    public EnemyState state = EnemyState.SPAWNING;
     public UnityEvent deathEvent { get { return _deathEvent; } }
     public UnityEvent _deathEvent;
 
     // private:
     private readonly float maxHealth = 20f;
     private float currentHealth;
+    private bool isDead = false;
 
     private readonly float movementSpeed = 2.5f;
     private readonly float altitude = 1.6f;
@@ -61,6 +62,8 @@ public class ImpEnemy : MonoBehaviour, IEnemy, IEntity
 
     void Update()
     {
+        if(isDead) return;
+
         switch (state)
         {
             case EnemyState.ATTACKING:
@@ -99,6 +102,8 @@ public class ImpEnemy : MonoBehaviour, IEnemy, IEntity
 
     private void die()
     {
+        isDead = true;
+
         ResourceBlock drops = new ResourceBlock(0, 0);
 
         if (GameUtility.runProbability(0.5f)) drops.wood = 1;
@@ -107,11 +112,17 @@ public class ImpEnemy : MonoBehaviour, IEnemy, IEntity
         if (!drops.isEmpty()) ResourceEntity.create(drops, transform.position);
 
         ScoreController.currentScore += 10;
+        AkSoundEngine.PostEvent("insect_death", gameObject);
+
+        GetComponentInChildren<MeshRenderer>().enabled = false;
+        GetComponent<SphereCollider>().enabled = false;
 
         EnemyDirector.instance.enemies.Remove(this);
         _deathEvent.Invoke();
-        Destroy(gameObject);
+
+        Invoke(nameof(destroySelf), 1);
     }
+    private void destroySelf() { Destroy(gameObject); }
 
     private void findTargetDestination()
     {

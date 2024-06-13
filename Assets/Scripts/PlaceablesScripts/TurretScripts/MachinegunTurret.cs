@@ -13,23 +13,16 @@ public class MachinegunTurret : Turret, IPlaceable
     PlaceableType IPlaceable.type { get; set; } = PlaceableType.MACHINEGUN;
     Transform IPlaceable.transform { get { return transform; } }
 
-    private float accuracyTolerance = 2f;
-    private float maxFiringAngle = 3f;
+    private float accuracyTolerance = 1f;
+    private float maxFiringAngle = 2.5f;
 
     private Transform projectilePrefab;
     private readonly float attackCooldownInSeconds = 0.1f;
     private float lastTimeAttacked = 0;
 
-    private Sound[] sounds;
-
     void Start()
     {
         projectilePrefab = Resources.Load<Transform>("MGBulletProjectile");
-
-        sounds = GameUtility.loadSounds("Machinegun", VolumeManager.machinegunBaseVolume, 1);
-
-        gameObject.createAudioSources(sounds);
-        VolumeManager.addEffects(sounds);
     }
 
     private float timeAtLastFindTarget = 0;
@@ -60,6 +53,7 @@ public class MachinegunTurret : Turret, IPlaceable
         {
             state = TurretState.IDLING;
             machinegun.rotation = Quaternion.Euler(0, machinegun.rotation.eulerAngles.y, machinegun.rotation.eulerAngles.z);
+            targetPositionAtImpactTime = transform.position;
             return;
         }
 
@@ -90,6 +84,7 @@ public class MachinegunTurret : Turret, IPlaceable
         {
             state = TurretState.IDLING;
             machinegun.rotation = Quaternion.Euler(0, machinegun.rotation.eulerAngles.y, machinegun.rotation.eulerAngles.z);
+            targetPositionAtImpactTime = transform.position;
             return;
         }
 
@@ -105,7 +100,6 @@ public class MachinegunTurret : Turret, IPlaceable
         lastTimeAttacked = Time.time;
 
         Instantiate(projectilePrefab, machinegun.position + machinegun.forward, machinegun.rotation * Quaternion.Euler(Random.Range(0f, 1f), Random.Range(0f, 1f), 0));
-        //sounds[3].play();
         AkSoundEngine.PostEvent("machinegun_shot", gameObject);
         muzzleFlash.enabled = true;
         muzzleFlash.transform.Rotate(Random.Range(0f, 360f), 0, 0);
@@ -120,7 +114,7 @@ public class MachinegunTurret : Turret, IPlaceable
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
-        Gizmos.DrawLine(machinegun.position, machinegun.forward * range);
+        Gizmos.DrawLine(machinegun.position, machinegun.position + machinegun.forward * range);
         Gizmos.color = Color.red;
         Gizmos.DrawLine(machinegun.position, targetPositionAtImpactTime);
     }

@@ -27,13 +27,9 @@ public class PlayerMovement : MonoBehaviour
     private float timeWhenLastJumped = 0f;
     private readonly float timeBeforeNextJump = 0.1f;
 
-    private Sound[] splashSounds;
-
     void Start()
     {
-        splashSounds = GameUtility.loadSounds("Watersplash", VolumeManager.splashBaseVolume, 1);
-        gameObject.createAudioSources(splashSounds);
-        VolumeManager.addEffects(splashSounds);
+
     }
 
     void Update()

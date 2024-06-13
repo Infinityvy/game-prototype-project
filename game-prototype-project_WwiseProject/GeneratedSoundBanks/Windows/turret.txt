@@ -1,6 +1,9 @@
 Event	ID	Name			Wwise Object Path	Notes
 	1143638809	machinegun_shot			\Default Work Unit\turret\machinegun_shot	
+	1278923400	crossbow_shot_reload			\Default Work Unit\turret\crossbow_shot_reload	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	310616471	machinegun_fire_02	C:\Users\benoo\Documents\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\machinegun_fire_02_D889BFD7.wem		\Actor-Mixer Hierarchy\Default Work Unit\turret\machinegun_fire_02		22336
+	44739622	arrow_shoot	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\arrow_shoot_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\turret\crossbow\arrow_shoot		192608
+	48357522	machinegun_fire_01	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\machinegun_fire_01_E4196EB3.wem		\Actor-Mixer Hierarchy\Default Work Unit\turret\machinegun_fire_01		23696
+	428222757	arrow_charge	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\arrow_charge_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\turret\crossbow\arrow_charge		308796
 

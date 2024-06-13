@@ -15,7 +15,7 @@ public class ResourceEntity : MonoBehaviour, IEntity
 
     public static ResourceEntity create(ResourceBlock contents, Vector3 pos)
     {
-        GameObject gameObject = new GameObject();
+        GameObject gameObject = new GameObject("ResourceEntity");
         gameObject.transform.position = pos;
 
         ResourceEntity entity = gameObject.AddComponent<ResourceEntity>();
@@ -113,6 +113,8 @@ public class ResourceEntity : MonoBehaviour, IEntity
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer != LayerMask.NameToLayer("Player")) return;
+
+        AkSoundEngine.PostEvent("player_pickup", other.gameObject);
 
         PlayerBuildModeState.resourceInventory.addResources(contents);
         GetComponent<SphereCollider>().enabled = false;

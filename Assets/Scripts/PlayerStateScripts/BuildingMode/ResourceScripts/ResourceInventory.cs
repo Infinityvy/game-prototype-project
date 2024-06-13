@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ResourceInventory
 {
-    ResourceBlock resources = new ResourceBlock(200, 50);
+    ResourceBlock resources = new ResourceBlock(20, 5);
 
     private Text metalAmountDisplay;
     private Text woodAmountDisplay;

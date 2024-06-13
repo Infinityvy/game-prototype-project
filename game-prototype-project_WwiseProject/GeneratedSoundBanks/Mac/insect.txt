@@ -1,0 +1,20 @@
+Event	ID	Name			Wwise Object Path	Notes
+	3627992110	insect_death			\Default Work Unit\insect\insect_death	
+	4138165138	wing_flap			\Default Work Unit\insect\wing_flap	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	132962122	insect_dying_03	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Mac\SFX\insect_dying_03_5374B6B9.wem		\Actor-Mixer Hierarchy\Default Work Unit\insect\insect_death\insect_dying_03		75580
+	237547947	flap_00	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Mac\SFX\flying_loop_01_1430EFD9.wem		\Actor-Mixer Hierarchy\Default Work Unit\insect\wing_flaps\flap_00		52096
+	260914020	flap_01	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Mac\SFX\flying_loop_01_2E6C8364.wem		\Actor-Mixer Hierarchy\Default Work Unit\insect\wing_flaps\flap_01		128296
+	279163914	flap_04	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Mac\SFX\flying_loop_01_18C745FC.wem		\Actor-Mixer Hierarchy\Default Work Unit\insect\wing_flaps\flap_04		99608
+	399555693	insect_dying_04	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Mac\SFX\insect_dying_04_C829CF5E.wem		\Actor-Mixer Hierarchy\Default Work Unit\insect\insect_death\insect_dying_04		75208
+	456677108	flap_05	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Mac\SFX\flying_loop_01_9F786FB7.wem		\Actor-Mixer Hierarchy\Default Work Unit\insect\wing_flaps\flap_05		99608
+	542641353	flap_02	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Mac\SFX\flying_loop_01_8515D5EE.wem		\Actor-Mixer Hierarchy\Default Work Unit\insect\wing_flaps\flap_02		120232
+	619816653	flap_03	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Mac\SFX\flying_loop_01_FC98AFF1.wem		\Actor-Mixer Hierarchy\Default Work Unit\insect\wing_flaps\flap_03		111268
+	693282797	flap_08	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Mac\SFX\flying_loop_01_770E3499.wem		\Actor-Mixer Hierarchy\Default Work Unit\insect\wing_flaps\flap_08		91544
+	737689727	insect_dying_01	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Mac\SFX\insect_dying_01_D586BB8A.wem		\Actor-Mixer Hierarchy\Default Work Unit\insect\insect_death\insect_dying_01		84156
+	1027415851	flap_06	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Mac\SFX\flying_loop_01_0A645977.wem		\Actor-Mixer Hierarchy\Default Work Unit\insect\wing_flaps\flap_06		81680
+	1028353245	flap_09	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Mac\SFX\flying_loop_01_EE6C4F1C.wem		\Actor-Mixer Hierarchy\Default Work Unit\insect\wing_flaps\flap_09		76300
+	1054644850	insect_dying_02	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Mac\SFX\insect_dying_02_5BD35CCA.wem		\Actor-Mixer Hierarchy\Default Work Unit\insect\insect_death\insect_dying_02		80328
+	1058269355	flap_07	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Mac\SFX\flying_loop_01_45EDAB3E.wem		\Actor-Mixer Hierarchy\Default Work Unit\insect\wing_flaps\flap_07		131884
+

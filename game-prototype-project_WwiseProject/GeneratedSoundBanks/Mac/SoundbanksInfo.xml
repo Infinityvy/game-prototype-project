@@ -30,24 +30,124 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="2674766611" Type="User" Language="SFX" Hash="{96374F20-5E5B-8A70-2C31-5B4B5213DE96}">
+		<SoundBank Id="2674766611" Type="User" Language="SFX" Hash="{23E73FCE-6749-C8E9-4A42-F79631E79D7E}">
 			<ShortName>turret</ShortName>
 			<Path>turret.bnk</Path>
 			<Media>
-				<File Id="310616471" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>machinegun_fire_02.wav</ShortName>
-					<CachePath>SFX/machinegun_fire_02_D889BFD7.wem</CachePath>
+				<File Id="44739622" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>arrow_shoot.wav</ShortName>
+					<CachePath>SFX/arrow_shoot_818F3B66.wem</CachePath>
+				</File>
+				<File Id="48357522" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>machinegun_fire_01.wav</ShortName>
+					<CachePath>SFX/machinegun_fire_01_E4196EB3.wem</CachePath>
+				</File>
+				<File Id="428222757" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>arrow_charge.wav</ShortName>
+					<CachePath>SFX/arrow_charge_818F3B66.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
-				<Event Id="1143638809" Name="machinegun_shot" DurationType="OneShot" DurationMin="0.12607203" DurationMax="0.12607203">
+				<Event Id="1278923400" Name="crossbow_shot_reload" DurationType="OneShot" DurationMin="2.75" DurationMax="2.75">
 					<MediaRefs>
-						<MediaRef Id="310616471"/>
+						<MediaRef Id="44739622"/>
+						<MediaRef Id="428222757"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1143638809" Name="machinegun_shot" DurationType="OneShot" DurationMin="0.13379404" DurationMax="0.13379404">
+					<MediaRefs>
+						<MediaRef Id="48357522"/>
 					</MediaRefs>
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="4083419649" Type="User" Language="SFX" Hash="{8C0B2887-CF30-3E50-2E3F-9D961A02E5FE}">
+		<SoundBank Id="3534600765" Type="User" Language="SFX" Hash="{29B8A39E-3D7A-9BE2-A232-07EE98DCB4FB}">
+			<ShortName>insect</ShortName>
+			<Path>insect.bnk</Path>
+			<Media>
+				<File Id="132962122" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>insect_dying_03.wav</ShortName>
+					<CachePath>SFX/insect_dying_03_5374B6B9.wem</CachePath>
+				</File>
+				<File Id="237547947" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>flying_loop_01.wav</ShortName>
+					<CachePath>SFX/flying_loop_01_1430EFD9.wem</CachePath>
+				</File>
+				<File Id="260914020" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>flying_loop_01.wav</ShortName>
+					<CachePath>SFX/flying_loop_01_2E6C8364.wem</CachePath>
+				</File>
+				<File Id="279163914" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>flying_loop_01.wav</ShortName>
+					<CachePath>SFX/flying_loop_01_18C745FC.wem</CachePath>
+				</File>
+				<File Id="399555693" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>insect_dying_04.wav</ShortName>
+					<CachePath>SFX/insect_dying_04_C829CF5E.wem</CachePath>
+				</File>
+				<File Id="456677108" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>flying_loop_01.wav</ShortName>
+					<CachePath>SFX/flying_loop_01_9F786FB7.wem</CachePath>
+				</File>
+				<File Id="542641353" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>flying_loop_01.wav</ShortName>
+					<CachePath>SFX/flying_loop_01_8515D5EE.wem</CachePath>
+				</File>
+				<File Id="619816653" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>flying_loop_01.wav</ShortName>
+					<CachePath>SFX/flying_loop_01_FC98AFF1.wem</CachePath>
+				</File>
+				<File Id="693282797" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>flying_loop_01.wav</ShortName>
+					<CachePath>SFX/flying_loop_01_770E3499.wem</CachePath>
+				</File>
+				<File Id="737689727" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>insect_dying_01.wav</ShortName>
+					<CachePath>SFX/insect_dying_01_D586BB8A.wem</CachePath>
+				</File>
+				<File Id="1027415851" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>flying_loop_01.wav</ShortName>
+					<CachePath>SFX/flying_loop_01_0A645977.wem</CachePath>
+				</File>
+				<File Id="1028353245" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>flying_loop_01.wav</ShortName>
+					<CachePath>SFX/flying_loop_01_EE6C4F1C.wem</CachePath>
+				</File>
+				<File Id="1054644850" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>insect_dying_02.wav</ShortName>
+					<CachePath>SFX/insect_dying_02_5BD35CCA.wem</CachePath>
+				</File>
+				<File Id="1058269355" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>flying_loop_01.wav</ShortName>
+					<CachePath>SFX/flying_loop_01_45EDAB3E.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="3627992110" Name="insect_death" DurationType="OneShot" DurationMin="0.4257948" DurationMax="0.47653988">
+					<MediaRefs>
+						<MediaRef Id="132962122"/>
+						<MediaRef Id="399555693"/>
+						<MediaRef Id="737689727"/>
+						<MediaRef Id="1054644850"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="4138165138" Name="wing_flap" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="237547947"/>
+						<MediaRef Id="260914020"/>
+						<MediaRef Id="279163914"/>
+						<MediaRef Id="456677108"/>
+						<MediaRef Id="542641353"/>
+						<MediaRef Id="619816653"/>
+						<MediaRef Id="693282797"/>
+						<MediaRef Id="1027415851"/>
+						<MediaRef Id="1028353245"/>
+						<MediaRef Id="1058269355"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="4083419649" Type="User" Language="SFX" Hash="{D73F56BD-1C85-73DC-9BAD-89EFEA8462EA}">
 			<ShortName>player_sounds</ShortName>
 			<Path>player_sounds.bnk</Path>
 			<Media>
@@ -77,7 +177,7 @@
 				</File>
 				<File Id="204128061" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>splash_01.wav</ShortName>
-					<CachePath>SFX/splash_01_E625D9EE.wem</CachePath>
+					<CachePath>SFX/splash_01_65671EC4.wem</CachePath>
 				</File>
 				<File Id="205262316" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>step_08.wav</ShortName>
@@ -103,6 +203,10 @@
 					<ShortName>step_07.wav</ShortName>
 					<CachePath>SFX/step_07_818F3B66.wem</CachePath>
 				</File>
+				<File Id="311452715" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>pick-up_wood.wav</ShortName>
+					<CachePath>SFX/pick-up_wood_DF03A713.wem</CachePath>
+				</File>
 				<File Id="335963773" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>step_13.wav</ShortName>
 					<CachePath>SFX/step_13_818F3B66.wem</CachePath>
@@ -127,13 +231,21 @@
 					<ShortName>step_06.wav</ShortName>
 					<CachePath>SFX/step_06_818F3B66.wem</CachePath>
 				</File>
+				<File Id="435057683" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player_death_only_vox.wav</ShortName>
+					<CachePath>SFX/player_death_only_vox_818F3B66.wem</CachePath>
+				</File>
 				<File Id="447909178" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>splash_02.wav</ShortName>
-					<CachePath>SFX/splash_02_818F3B66.wem</CachePath>
+					<CachePath>SFX/splash_02_3214441B.wem</CachePath>
 				</File>
 				<File Id="477919486" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>swim_02.wav</ShortName>
 					<CachePath>SFX/swim_02_818F3B66.wem</CachePath>
+				</File>
+				<File Id="486542168" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>upgrade.wav</ShortName>
+					<CachePath>SFX/upgrade_224B7089.wem</CachePath>
 				</File>
 				<File Id="521002281" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>swim_03.wav</ShortName>
@@ -169,7 +281,7 @@
 				</File>
 				<File Id="875158352" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>player_landing.wav</ShortName>
-					<CachePath>SFX/player_landing_EB83D796.wem</CachePath>
+					<CachePath>SFX/player_landing_2986A5D0.wem</CachePath>
 				</File>
 				<File Id="933438271" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>player_hurt_03.wav</ShortName>
@@ -177,7 +289,7 @@
 				</File>
 				<File Id="952503057" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>player_jump.wav</ShortName>
-					<CachePath>SFX/player_jump_818F3B66.wem</CachePath>
+					<CachePath>SFX/player_jump_DE08C314.wem</CachePath>
 				</File>
 				<File Id="995425770" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>swim_04.wav</ShortName>
@@ -219,7 +331,17 @@
 						<MediaRef Id="666595011"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1068092414" Name="player_hurt" DurationType="OneShot" DurationMin="0.3247673" DurationMax="0.333958">
+				<Event Id="1780709731" Name="player_build" DurationType="OneShot" DurationMin="2.5935724" DurationMax="2.5935724">
+					<MediaRefs>
+						<MediaRef Id="486542168"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3083087645" Name="player_death" DurationType="OneShot" DurationMin="7.7740364" DurationMax="7.7740364">
+					<MediaRefs>
+						<MediaRef Id="435057683"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1068092414" Name="player_hurt" DurationType="OneShot" DurationMin="0.3362202" DurationMax="0.345735">
 					<MediaRefs>
 						<MediaRef Id="133726927"/>
 						<MediaRef Id="162845914"/>
@@ -231,28 +353,33 @@
 						<MediaRef Id="1006178185"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="56442844" Name="player_jumping_from_raft" DurationType="OneShot" DurationMin="0.59133786" DurationMax="0.59133786">
+				<Event Id="56442844" Name="player_jumping_from_raft" DurationType="OneShot" DurationMin="0.5378214" DurationMax="0.5378214">
 					<MediaRefs>
 						<MediaRef Id="952503057"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3191879790" Name="player_jumping_from_water" DurationType="OneShot" DurationMin="2.39117" DurationMax="2.39117">
+				<Event Id="3191879790" Name="player_jumping_from_water" DurationType="OneShot" DurationMin="1.4595159" DurationMax="1.4595159">
 					<MediaRefs>
 						<MediaRef Id="204128061"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1202382412" Name="player_landing_in_water" DurationType="OneShot" DurationMin="2.7932653" DurationMax="2.7932653">
+				<Event Id="1202382412" Name="player_landing_in_water" DurationType="OneShot" DurationMin="1.3840827" DurationMax="1.3840827">
 					<MediaRefs>
 						<MediaRef Id="447909178"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2578715888" Name="player_landing_on_raft" DurationType="OneShot" DurationMin="0.58326906" DurationMax="0.58326906">
+				<Event Id="2578715888" Name="player_landing_on_raft" DurationType="OneShot" DurationMin="0.5516394" DurationMax="0.5516394">
 					<MediaRefs>
 						<MediaRef Id="875158352"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1627434233" Name="player_pickup" DurationType="OneShot" DurationMin="0.95042133" DurationMax="0.95042133">
+					<MediaRefs>
+						<MediaRef Id="311452715"/>
 					</MediaRefs>
 				</Event>
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{52777D46-7E29-CCC4-EE98-3725D447DD6B}</FileHash>
+	<FileHash>{7A8EB55C-65D4-3DF5-D85A-5DD5AF482EF2}</FileHash>
 </SoundBanksInfo>

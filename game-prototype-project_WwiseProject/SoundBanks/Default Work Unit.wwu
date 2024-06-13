@@ -6,11 +6,14 @@
 				<SoundBank Name="player_sounds" ID="{1AE1BFBD-3774-4F29-AC6E-2FB93E93830E}">
 					<ObjectInclusionList>
 						<ObjectRef Name="player_jumping_from_water" ID="{2A0233BA-959E-439A-96D2-1622CCEA0826}" WorkUnitID="{8EAF90F5-1EFD-4720-896B-638D3BEA5FA1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="player_build" ID="{678D8324-8D70-43D0-9072-C31B1F50CA3D}" WorkUnitID="{8EAF90F5-1EFD-4720-896B-638D3BEA5FA1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="footsteps_wood" ID="{63AA8970-15D1-4443-9090-045F8C0B218F}" WorkUnitID="{8EAF90F5-1EFD-4720-896B-638D3BEA5FA1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="player_landing_on_raft" ID="{3FCA347E-3E1B-453C-9A8E-199C1B92C1E8}" WorkUnitID="{8EAF90F5-1EFD-4720-896B-638D3BEA5FA1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="player_jumping_from_raft" ID="{D4A3D184-27A9-48D1-91E5-ECA0256B682C}" WorkUnitID="{8EAF90F5-1EFD-4720-896B-638D3BEA5FA1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="player_hurt" ID="{EE3D5C71-BE24-4988-A15A-0776B3BD3F11}" WorkUnitID="{8EAF90F5-1EFD-4720-896B-638D3BEA5FA1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="player_landing_in_water" ID="{C2EC025A-571C-4B34-B887-CD8FBFA8D21A}" WorkUnitID="{8EAF90F5-1EFD-4720-896B-638D3BEA5FA1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="player_death" ID="{2CB2B541-CBCE-4B3F-8834-C13C7316C609}" WorkUnitID="{8EAF90F5-1EFD-4720-896B-638D3BEA5FA1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="player_pickup" ID="{E033D61E-9142-4BAA-AA0C-89CE5EB15C98}" WorkUnitID="{8EAF90F5-1EFD-4720-896B-638D3BEA5FA1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="footsteps_water" ID="{EAB668B5-1307-4CC5-8336-201610589D5C}" WorkUnitID="{8EAF90F5-1EFD-4720-896B-638D3BEA5FA1}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
@@ -18,7 +21,16 @@
 				</SoundBank>
 				<SoundBank Name="turret" ID="{3399EA73-2272-4F49-AF4E-3D0DA65113EC}">
 					<ObjectInclusionList>
+						<ObjectRef Name="crossbow_shot_reload" ID="{0564406A-7511-4065-821A-ACA4F70EEC0D}" WorkUnitID="{8EAF90F5-1EFD-4720-896B-638D3BEA5FA1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="machinegun_shot" ID="{70E97710-317D-4ADC-B25E-8B830FCBE5D3}" WorkUnitID="{8EAF90F5-1EFD-4720-896B-638D3BEA5FA1}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+				<SoundBank Name="insect" ID="{0D7595D7-0BF9-43E2-8247-4BAF9601AB6E}">
+					<ObjectInclusionList>
+						<ObjectRef Name="insect_death" ID="{475705B9-5A42-4549-992B-C888C5F7C735}" WorkUnitID="{8EAF90F5-1EFD-4720-896B-638D3BEA5FA1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="wing_flap" ID="{51045776-07DB-4622-912E-AF248DC4F86A}" WorkUnitID="{8EAF90F5-1EFD-4720-896B-638D3BEA5FA1}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>

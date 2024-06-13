@@ -13,23 +13,16 @@ public class CrossbowTurret : Turret, IPlaceable
     protected override float range { get; set; } = 15f;
     protected override float turnSpeed { get; set; } = 4f;
 
-    private float accuracyTolerance = 1f;
-    private float maxFiringAngle = 3f;
+    private float accuracyTolerance = 0.5f;
+    private float maxFiringAngle = 1f;
 
     private Transform projectilePrefab;
     private readonly float attackCooldownInSeconds = 1.5f;
     private float lastTimeAttacked = 0;
 
-    private Sound[] sounds;
-
     public void Start()
     {
         projectilePrefab = Resources.Load<Transform>("ArrowProjectile");
-
-        sounds = GameUtility.loadSounds("Arrow", VolumeManager.arrowBaseVolume, 1);
-
-        gameObject.createAudioSources(sounds);
-        VolumeManager.addEffects(sounds);
 
         direction = (Random.Range(0f, 1f) < 0.5f ? 1 : -1);
     }
@@ -59,6 +52,8 @@ public class CrossbowTurret : Turret, IPlaceable
         if (target == null)
         {
             state = TurretState.IDLING;
+            crossbow.rotation = Quaternion.Euler(0, crossbow.rotation.eulerAngles.y, crossbow.rotation.eulerAngles.z);
+            targetPositionAtImpactTime = transform.position;
             return;
         }
 
@@ -88,6 +83,7 @@ public class CrossbowTurret : Turret, IPlaceable
         if (target == null)
         {
             state = TurretState.IDLING;
+            targetPositionAtImpactTime = transform.position;
             return;
         }
 
@@ -103,19 +99,13 @@ public class CrossbowTurret : Turret, IPlaceable
         lastTimeAttacked = Time.time;
 
         Instantiate(projectilePrefab, crossbow.position, crossbow.rotation);
-        sounds[1].play();
-        Invoke(nameof(playChrageSound), attackCooldownInSeconds * 0.25f);
-    }
-
-    private void playChrageSound()
-    {
-        sounds[0].play();
+        AkSoundEngine.PostEvent("crossbow_shot_reload", gameObject);
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
-        Gizmos.DrawLine(crossbow.position, crossbow.forward * range);
+        Gizmos.DrawLine(crossbow.position, crossbow.position + crossbow.forward * range);
         Gizmos.color = Color.red;
         Gizmos.DrawLine(crossbow.position, targetPositionAtImpactTime);
     }
