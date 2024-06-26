@@ -30,7 +30,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="2674766611" Type="User" Language="SFX" Hash="{23E73FCE-6749-C8E9-4A42-F79631E79D7E}">
+		<SoundBank Id="2674766611" Type="User" Language="SFX" Hash="{041FF83F-BEE7-A14E-D928-2BC8462B570C}">
 			<ShortName>turret</ShortName>
 			<Path>turret.bnk</Path>
 			<Media>
@@ -40,7 +40,7 @@
 				</File>
 				<File Id="48357522" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>machinegun_fire_01.wav</ShortName>
-					<CachePath>SFX/machinegun_fire_01_E4196EB3.wem</CachePath>
+					<CachePath>SFX/machinegun_fire_01_A206A840.wem</CachePath>
 				</File>
 				<File Id="428222757" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>arrow_charge.wav</ShortName>
@@ -61,65 +61,65 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="3534600765" Type="User" Language="SFX" Hash="{29B8A39E-3D7A-9BE2-A232-07EE98DCB4FB}">
+		<SoundBank Id="3534600765" Type="User" Language="SFX" Hash="{A18766D6-A45D-44B3-08F6-777041CDB54D}">
 			<ShortName>insect</ShortName>
 			<Path>insect.bnk</Path>
 			<Media>
 				<File Id="132962122" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>insect_dying_03.wav</ShortName>
-					<CachePath>SFX/insect_dying_03_5374B6B9.wem</CachePath>
+					<CachePath>SFX/insect_dying_03_43DF33E5.wem</CachePath>
 				</File>
 				<File Id="237547947" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>flying_loop_01.wav</ShortName>
-					<CachePath>SFX/flying_loop_01_1430EFD9.wem</CachePath>
+					<CachePath>SFX/flying_loop_01_5FF8F824.wem</CachePath>
 				</File>
 				<File Id="260914020" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>flying_loop_01.wav</ShortName>
-					<CachePath>SFX/flying_loop_01_2E6C8364.wem</CachePath>
+					<CachePath>SFX/flying_loop_01_9CEB9F15.wem</CachePath>
 				</File>
 				<File Id="279163914" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>flying_loop_01.wav</ShortName>
-					<CachePath>SFX/flying_loop_01_18C745FC.wem</CachePath>
+					<CachePath>SFX/flying_loop_01_704CC936.wem</CachePath>
 				</File>
 				<File Id="399555693" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>insect_dying_04.wav</ShortName>
-					<CachePath>SFX/insect_dying_04_C829CF5E.wem</CachePath>
+					<CachePath>SFX/insect_dying_04_548617AD.wem</CachePath>
 				</File>
 				<File Id="456677108" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>flying_loop_01.wav</ShortName>
-					<CachePath>SFX/flying_loop_01_9F786FB7.wem</CachePath>
+					<CachePath>SFX/flying_loop_01_99F6B991.wem</CachePath>
 				</File>
 				<File Id="542641353" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>flying_loop_01.wav</ShortName>
-					<CachePath>SFX/flying_loop_01_8515D5EE.wem</CachePath>
+					<CachePath>SFX/flying_loop_01_924D6304.wem</CachePath>
 				</File>
 				<File Id="619816653" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>flying_loop_01.wav</ShortName>
-					<CachePath>SFX/flying_loop_01_FC98AFF1.wem</CachePath>
+					<CachePath>SFX/flying_loop_01_425DE952.wem</CachePath>
 				</File>
 				<File Id="693282797" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>flying_loop_01.wav</ShortName>
-					<CachePath>SFX/flying_loop_01_770E3499.wem</CachePath>
+					<CachePath>SFX/flying_loop_01_687F12AF.wem</CachePath>
 				</File>
 				<File Id="737689727" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>insect_dying_01.wav</ShortName>
-					<CachePath>SFX/insect_dying_01_D586BB8A.wem</CachePath>
+					<CachePath>SFX/insect_dying_01_C4C0F1FC.wem</CachePath>
 				</File>
 				<File Id="1027415851" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>flying_loop_01.wav</ShortName>
-					<CachePath>SFX/flying_loop_01_0A645977.wem</CachePath>
+					<CachePath>SFX/flying_loop_01_46DF07C6.wem</CachePath>
 				</File>
 				<File Id="1028353245" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>flying_loop_01.wav</ShortName>
-					<CachePath>SFX/flying_loop_01_EE6C4F1C.wem</CachePath>
+					<CachePath>SFX/flying_loop_01_EE63132E.wem</CachePath>
 				</File>
 				<File Id="1054644850" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>insect_dying_02.wav</ShortName>
-					<CachePath>SFX/insect_dying_02_5BD35CCA.wem</CachePath>
+					<CachePath>SFX/insect_dying_02_3D25F759.wem</CachePath>
 				</File>
 				<File Id="1058269355" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>flying_loop_01.wav</ShortName>
-					<CachePath>SFX/flying_loop_01_45EDAB3E.wem</CachePath>
+					<CachePath>SFX/flying_loop_01_044DB8DA.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
@@ -147,7 +147,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="4083419649" Type="User" Language="SFX" Hash="{D73F56BD-1C85-73DC-9BAD-89EFEA8462EA}">
+		<SoundBank Id="4083419649" Type="User" Language="SFX" Hash="{6408DE41-46AF-C1BD-5B58-EE6B0A6B2D87}">
 			<ShortName>player_sounds</ShortName>
 			<Path>player_sounds.bnk</Path>
 			<Media>
@@ -177,7 +177,7 @@
 				</File>
 				<File Id="204128061" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>splash_01.wav</ShortName>
-					<CachePath>SFX/splash_01_65671EC4.wem</CachePath>
+					<CachePath>SFX/splash_01_C76CA013.wem</CachePath>
 				</File>
 				<File Id="205262316" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>step_08.wav</ShortName>
@@ -205,7 +205,7 @@
 				</File>
 				<File Id="311452715" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>pick-up_wood.wav</ShortName>
-					<CachePath>SFX/pick-up_wood_DF03A713.wem</CachePath>
+					<CachePath>SFX/pick-up_wood_8A28BA15.wem</CachePath>
 				</File>
 				<File Id="335963773" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>step_13.wav</ShortName>
@@ -237,7 +237,7 @@
 				</File>
 				<File Id="447909178" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>splash_02.wav</ShortName>
-					<CachePath>SFX/splash_02_3214441B.wem</CachePath>
+					<CachePath>SFX/splash_02_010C4CD9.wem</CachePath>
 				</File>
 				<File Id="477919486" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>swim_02.wav</ShortName>
@@ -245,7 +245,7 @@
 				</File>
 				<File Id="486542168" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>upgrade.wav</ShortName>
-					<CachePath>SFX/upgrade_224B7089.wem</CachePath>
+					<CachePath>SFX/upgrade_B2BEDCCC.wem</CachePath>
 				</File>
 				<File Id="521002281" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>swim_03.wav</ShortName>
@@ -289,7 +289,7 @@
 				</File>
 				<File Id="952503057" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>player_jump.wav</ShortName>
-					<CachePath>SFX/player_jump_DE08C314.wem</CachePath>
+					<CachePath>SFX/player_jump_6BD2212E.wem</CachePath>
 				</File>
 				<File Id="995425770" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>swim_04.wav</ShortName>
@@ -334,6 +334,11 @@
 				<Event Id="1780709731" Name="player_build" DurationType="OneShot" DurationMin="2.5935724" DurationMax="2.5935724">
 					<MediaRefs>
 						<MediaRef Id="486542168"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2394582229" Name="player_dash" DurationType="OneShot" DurationMin="0.39370832" DurationMax="0.39370832">
+					<MediaRefs>
+						<MediaRef Id="952503057"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="3083087645" Name="player_death" DurationType="OneShot" DurationMin="7.7740364" DurationMax="7.7740364">
@@ -381,5 +386,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{7A8EB55C-65D4-3DF5-D85A-5DD5AF482EF2}</FileHash>
+	<FileHash>{CDE500FA-318C-EE1F-D335-3225F8703735}</FileHash>
 </SoundBanksInfo>

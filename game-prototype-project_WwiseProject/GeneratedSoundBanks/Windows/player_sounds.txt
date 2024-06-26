@@ -5,6 +5,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	1627434233	player_pickup			\Default Work Unit\player\player_pickup	
 	1732241522	footsteps_wood			\Default Work Unit\player\footsteps_wood	
 	1780709731	player_build			\Default Work Unit\player\player_build	
+	2394582229	player_dash			\Default Work Unit\player\player_dash	
 	2578715888	player_landing_on_raft			\Default Work Unit\player\player_landing_on_raft	
 	3083087645	player_death			\Default Work Unit\player\player_death	
 	3191879790	player_jumping_from_water			\Default Work Unit\player\player_jumping_from_water	
@@ -17,14 +18,14 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	133726927	player_hurt_05	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\player_hurt_05_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\hurt\player_hurt_05		89992
 	145394794	step_10	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\step_10_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\footsteps_wood\step_10		85752
 	162845914	player_hurt_01	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\player_hurt_01_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\hurt\player_hurt_01		89992
-	204128061	splash_01	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\splash_01_65671EC4.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\splash_01		257604
+	204128061	splash_01	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\splash_01_C76CA013.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\splash_01		257604
 	205262316	step_08	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\step_08_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\footsteps_wood\step_08		85752
 	274852443	player_hurt_08	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\player_hurt_08_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\hurt\player_hurt_08		89992
 	281625812	step_14	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\step_14_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\footsteps_wood\step_14		84904
 	295666557	player_hurt_02	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\player_hurt_02_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\hurt\player_hurt_02		92536
 	300566642	step_03	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\step_03_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\footsteps_wood\step_03		86600
 	301347646	step_07	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\step_07_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\footsteps_wood\step_07		87448
-	311452715	pick-up_wood	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\pick-up_wood_DF03A713.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\pick-up_wood		167752
+	311452715	pick-up_wood	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\pick-up_wood_8A28BA15.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\pick-up_wood		167752
 	335963773	step_13	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\step_13_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\footsteps_wood\step_13		86600
 	344063261	step_15	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\step_15_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\footsteps_wood\step_15		84904
 	356337697	step_02	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\step_02_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\footsteps_wood\step_02		86600
@@ -32,9 +33,9 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	393047000	player_hurt_04	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\player_hurt_04_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\hurt\player_hurt_04		89992
 	429592434	step_06	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\step_06_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\footsteps_wood\step_06		84904
 	435057683	player_death_only_vox	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\player_death_only_vox_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\player_death_only_vox		1371436
-	447909178	splash_02	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\splash_02_3214441B.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\splash_02		244248
+	447909178	splash_02	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\splash_02_010C4CD9.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\splash_02		244248
 	477919486	swim_02	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\swim_02_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\footsteps_water\swim_02		193456
-	486542168	upgrade	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\upgrade_224B7089.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\upgrade		457652
+	486542168	upgrade	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\upgrade_B2BEDCCC.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\upgrade		457652
 	521002281	swim_03	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\swim_03_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\footsteps_water\swim_03		191760
 	577004465	step_11	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\step_11_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\footsteps_wood\step_11		84904
 	581575218	step_05	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\step_05_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\footsteps_wood\step_05		84904
@@ -45,7 +46,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	697382900	player_hurt_06	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\player_hurt_06_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\hurt\player_hurt_06		89992
 	875158352	player_landing	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\player_landing_2986A5D0.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\player_landing		97404
 	933438271	player_hurt_03	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\player_hurt_03_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\hurt\player_hurt_03		89992
-	952503057	player_jump	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\player_jump_DE08C314.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\player_jump		94968
+	952503057	player_jump	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\player_jump_6BD2212E.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\player_jump		94968
 	995425770	swim_04	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\swim_04_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\footsteps_water\swim_04		191760
 	1006178185	player_hurt_07	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Windows\SFX\player_hurt_07_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\player\hurt\player_hurt_07		89992
 

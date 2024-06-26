@@ -79,7 +79,7 @@ public class PlayerEntity : MonoBehaviour, IEntity
     {
         isDead = true;
 
-        movement.rigidbody.velocity = Vector3.zero;
+        movement.GetComponent<Rigidbody>().velocity = Vector3.zero;
 
         Time.timeScale = 0.2f;
 

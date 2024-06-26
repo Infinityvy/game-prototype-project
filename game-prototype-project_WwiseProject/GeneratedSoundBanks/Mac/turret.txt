@@ -4,6 +4,6 @@ Event	ID	Name			Wwise Object Path	Notes
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	44739622	arrow_shoot	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Mac\SFX\arrow_shoot_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\turret\crossbow\arrow_shoot		192608
-	48357522	machinegun_fire_01	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Mac\SFX\machinegun_fire_01_E4196EB3.wem		\Actor-Mixer Hierarchy\Default Work Unit\turret\machinegun_fire_01		23696
+	48357522	machinegun_fire_01	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Mac\SFX\machinegun_fire_01_A206A840.wem		\Actor-Mixer Hierarchy\Default Work Unit\turret\machinegun_fire_01		23696
 	428222757	arrow_charge	E:\Games\Unity Projects\game-prototype-project\game-prototype-project_WwiseProject\.cache\Mac\SFX\arrow_charge_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\turret\crossbow\arrow_charge		308796
 

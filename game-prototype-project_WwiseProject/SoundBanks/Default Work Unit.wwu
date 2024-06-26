@@ -15,6 +15,7 @@
 						<ObjectRef Name="player_death" ID="{2CB2B541-CBCE-4B3F-8834-C13C7316C609}" WorkUnitID="{8EAF90F5-1EFD-4720-896B-638D3BEA5FA1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="player_pickup" ID="{E033D61E-9142-4BAA-AA0C-89CE5EB15C98}" WorkUnitID="{8EAF90F5-1EFD-4720-896B-638D3BEA5FA1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="footsteps_water" ID="{EAB668B5-1307-4CC5-8336-201610589D5C}" WorkUnitID="{8EAF90F5-1EFD-4720-896B-638D3BEA5FA1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="player_dash" ID="{9DC6576B-89F2-4D9E-AF72-CBF60743BCD6}" WorkUnitID="{8EAF90F5-1EFD-4720-896B-638D3BEA5FA1}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>

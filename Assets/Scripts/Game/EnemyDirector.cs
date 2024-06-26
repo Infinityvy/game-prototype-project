@@ -1,7 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Net.NetworkInformation;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyDirector : MonoBehaviour
@@ -45,7 +43,7 @@ public class EnemyDirector : MonoBehaviour
 
         waveCount++;
 
-        int waveBalance = 1 + waveCount / 2;
+        int waveBalance = 1 + waveCount;
 
         // every 5 waves, the balance is doubled; however since every 10th wave spawns nothing, only every other 10th wave is doubled
         float multiplierBalance = (waveCount % 5 == 0 ? 2f : 1f);
@@ -62,6 +60,8 @@ public class EnemyDirector : MonoBehaviour
 
         float randomSpawnInterval = Random.Range(minSpawnInterval, maxSpawnInterval);
         float spawnInterval = randomSpawnInterval + averageSpawnInterval - lastSpawnInterval;
+
+        spawnInterval *= (waveCount < 3 ? 0.75f : 1);
 
         Debug.Log("Wave: " + waveCount + " || Balance: " + balance + " || Next wave in: " + spawnInterval + " seconds");
 

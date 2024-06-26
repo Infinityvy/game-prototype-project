@@ -13,6 +13,7 @@ public static class GameInputs
         keys.TryAdd("Back", KeyCode.S);
         keys.TryAdd("Right", KeyCode.D);
         keys.TryAdd("Jump", KeyCode.Space);
+        keys.TryAdd("Dash", KeyCode.LeftShift);
 
         keys.TryAdd("Reset Camera", KeyCode.Mouse2);
     }

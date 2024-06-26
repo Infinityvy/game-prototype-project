@@ -48,7 +48,7 @@ public class ImpEnemy : MonoBehaviour, IEnemy, IEntity
 
         currentHealth = maxHealth;
 
-        targetDestination = transform.position;
+        targetDestination = transform.position + Vector3.up * altitude;
         player = GameObject.Find("Player").transform;
         projectilePrefab = Resources.Load<Transform>("MudProjectile");
 

@@ -115,6 +115,17 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="player_dash" ID="{9DC6576B-89F2-4D9E-AF72-CBF60743BCD6}">
+							<ChildrenList>
+								<Action Name="" ID="{BB554E96-1222-4DFD-A0BA-F140C673820E}" ShortID="75342011">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="player_dash" ID="{59BD46AB-F16A-450C-A7D0-EFE0B0D6EB60}" WorkUnitID="{B85A01B8-0CD4-4C99-951A-35EE4555F6EB}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="turret" ID="{5DE23123-3CDD-4E3C-9E02-40259D6A6DF7}" ShortID="497948807">
