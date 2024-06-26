@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -34,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
 
     private float dashForce = 8.5f;
     private float timeWhenLastDashed = 0f;
-    private float timeBeforeNextDash = 1f;
+    private float timeBeforeNextDash = 0.8f;
     private float dashDuration = 0.2f;
 
     private Transform waterSplashPrefab;
@@ -118,7 +119,8 @@ public class PlayerMovement : MonoBehaviour
             rigidbody.AddForce(reductionVector);
         }
 
-        if(rigidbody.velocity.magnitude > 0) stepUp(new Vector3(rigidbody.velocity.x, 0, rigidbody.velocity.z));
+        if (rigidbody.velocity.magnitude > direction.magnitude) stepUp(new Vector3(rigidbody.velocity.x, 0, rigidbody.velocity.z));
+        else if(direction.magnitude > 0) stepUp(direction);
     }
 
     private void jump()
@@ -174,41 +176,56 @@ public class PlayerMovement : MonoBehaviour
         rigidbody.velocity = new Vector3(horizontalVelocity.x, rigidbody.velocity.y, horizontalVelocity.z);
     }
 
+    private Ray ray = new Ray();
     private void stepUp(Vector3 rayVector)
     {
         Vector3 left = new Vector3(-rayVector.z, 0, rayVector.x).normalized;
-        Vector3 right = new Vector3(-rayVector.z, 0, rayVector.x).normalized;
 
-        RaycastHit[] hitsLeft = Physics.RaycastAll(transform.position + Vector3.up * 0.1f + left * 0.5f, rayVector.normalized, rayVector.magnitude * Time.deltaTime + 0.5f, layerMaskStep);
-        RaycastHit[] hitsRight = Physics.RaycastAll(transform.position + Vector3.up * 0.1f + right * 0.5f, rayVector.normalized, rayVector.magnitude * Time.deltaTime + 0.5f, layerMaskStep);
+        ray = new Ray(transform.position + Vector3.up * 0.05f + left * 0.5f + rayVector.normalized * 0.5f + rayVector * Time.deltaTime, -left);
 
-        foreach (RaycastHit hit in hitsLeft)
+        RaycastHit[] hits = Physics.RaycastAll(ray, 1f, layerMaskStep);
+
+        foreach (RaycastHit hit in hits)
         {
-            Vector3 tilePos = hit.transform.position;
-            Vector3 playerToTile = tilePos - transform.position;
-            transform.position = playerToTile.normalized * 0.6f + new Vector3(transform.position.x, 0.3f, transform.position.z);
+            movePlayerOnTile(hit.transform);
             return;
         }
 
-        foreach (RaycastHit hit in hitsRight)
+        // same ray as before but starting from the other direction. for some reason this fixes the rays detection being really bad on the left side of the ray
+        ray = new Ray(transform.position + Vector3.up * 0.05f + -left * 0.5f + rayVector.normalized * 0.5f + rayVector * Time.deltaTime, left);
+
+        hits = Physics.RaycastAll(ray, 1f, layerMaskStep);
+
+        foreach (RaycastHit hit in hits)
         {
-            Vector3 tilePos = hit.transform.position;
-            Vector3 playerToTile = tilePos - transform.position;
-            transform.position = playerToTile.normalized * 0.6f + new Vector3(transform.position.x, 0.3f, transform.position.z);
+            movePlayerOnTile(hit.transform);
             return;
         }
     }
 
+    // since i still wasn't able to eliminate all issues with stepUp, this is the backup to avoid frustration
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.CompareTag("RaftTile")
+            && transform.position.y < 0.29f)
+        {
+            movePlayerOnTile(collision.transform);
+        }
+    }
+
+    private void movePlayerOnTile(Transform tile)
+    {
+        Vector3 tilePos = tile.position;
+        Vector3 playerToTile = tilePos - transform.position;
+        transform.position = playerToTile.normalized * 0.6f + new Vector3(transform.position.x, 0.3f, transform.position.z);
+    }
+
     private void OnDrawGizmos()
     {
+        Gizmos.color = Color.blue;
         Gizmos.DrawLine(transform.position, transform.position + rigidbody.velocity);
 
-
-        Vector3 left = new Vector3(-rigidbody.velocity.z, 0, rigidbody.velocity.x).normalized;
-        Vector3 right = new Vector3(-rigidbody.velocity.z, 0, rigidbody.velocity.x).normalized;
-
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(transform.position + Vector3.up * 0.1f, transform.position + Vector3.up * 0.1f + left * 0.5f);
-        Gizmos.DrawLine(transform.position + Vector3.up * 0.1f, transform.position + Vector3.up * 0.1f + right * 0.5f);
+        Gizmos.color = Color.green;
+        Gizmos.DrawRay(ray.origin, ray.direction);
     }
 }
