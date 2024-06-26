@@ -176,8 +176,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void stepUp(Vector3 rayVector)
     {
-        RaycastHit[] hitsLeft = Physics.RaycastAll(transform.position + Vector3.up * 0.1f + transform.rotation * Vector3.left * 0.5f, rayVector.normalized, rayVector.magnitude * Time.deltaTime + 0.5f, layerMaskStep);
-        RaycastHit[] hitsRight = Physics.RaycastAll(transform.position + Vector3.up * 0.1f + transform.rotation * Vector3.right * 0.5f, rayVector.normalized, rayVector.magnitude * Time.deltaTime + 0.5f, layerMaskStep);
+        Vector3 left = new Vector3(-rayVector.z, 0, rayVector.x).normalized;
+        Vector3 right = new Vector3(-rayVector.z, 0, rayVector.x).normalized;
+
+        RaycastHit[] hitsLeft = Physics.RaycastAll(transform.position + Vector3.up * 0.1f + left * 0.5f, rayVector.normalized, rayVector.magnitude * Time.deltaTime + 0.5f, layerMaskStep);
+        RaycastHit[] hitsRight = Physics.RaycastAll(transform.position + Vector3.up * 0.1f + right * 0.5f, rayVector.normalized, rayVector.magnitude * Time.deltaTime + 0.5f, layerMaskStep);
 
         foreach (RaycastHit hit in hitsLeft)
         {
@@ -199,5 +202,13 @@ public class PlayerMovement : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.DrawLine(transform.position, transform.position + rigidbody.velocity);
+
+
+        Vector3 left = new Vector3(-rigidbody.velocity.z, 0, rigidbody.velocity.x).normalized;
+        Vector3 right = new Vector3(-rigidbody.velocity.z, 0, rigidbody.velocity.x).normalized;
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position + Vector3.up * 0.1f, transform.position + Vector3.up * 0.1f + left * 0.5f);
+        Gizmos.DrawLine(transform.position + Vector3.up * 0.1f, transform.position + Vector3.up * 0.1f + right * 0.5f);
     }
 }
