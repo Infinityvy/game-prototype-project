@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public static class GameUtility
@@ -56,5 +57,31 @@ public static class GameUtility
     public static bool runProbability(float  probability)
     {
         return Random.Range(0f, 1f) <= probability;
+    }
+
+    public static void takeScreenshot()
+    {
+        string exeDirectory = Directory.GetParent(Application.dataPath).FullName;
+
+        string screenshotsDirectory = Path.Combine(exeDirectory, "Screenshots");
+
+        if (!Directory.Exists(screenshotsDirectory))
+        {
+            Directory.CreateDirectory(screenshotsDirectory);
+        }
+
+        string screenshotPath = Path.Combine(screenshotsDirectory, "Screenshot_" + getFormattedDateTime() + ".png");
+        ScreenCapture.CaptureScreenshot(screenshotPath);
+
+        Debug.Log("Screenshot saved to: " + screenshotPath);
+    }
+
+    public static string getFormattedDateTime()
+    {
+        System.DateTime now = System.DateTime.Now;
+
+        string formattedDateTime = now.ToString("yyyyMMddHHmmss");
+
+        return formattedDateTime;
     }
 }

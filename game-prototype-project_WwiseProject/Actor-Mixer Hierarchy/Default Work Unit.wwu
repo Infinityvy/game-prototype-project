@@ -1602,7 +1602,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
-									<ObjectRef Name="Default Attenuation" ID="{1B3030CC-781B-4268-85BB-DF351C28EACA}" WorkUnitID="{543FEF3B-879B-4790-B1A6-584042639397}"/>
+									<ObjectRef Name="WingFlap Attenuation" ID="{48CF692C-AB5C-4B00-927B-53918BC83001}" WorkUnitID="{543FEF3B-879B-4790-B1A6-584042639397}"/>
 								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC6BBD8C-D469-4ABF-8A3A-5C105B3AF631}"/>

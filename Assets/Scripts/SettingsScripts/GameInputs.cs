@@ -16,5 +16,6 @@ public static class GameInputs
         keys.TryAdd("Dash", KeyCode.LeftShift);
 
         keys.TryAdd("Reset Camera", KeyCode.Mouse2);
+        keys.TryAdd("Take Screenshot", KeyCode.F12);
     }
 }

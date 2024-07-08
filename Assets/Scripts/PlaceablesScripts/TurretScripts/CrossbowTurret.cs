@@ -83,6 +83,7 @@ public class CrossbowTurret : Turret, IPlaceable
         if (target == null)
         {
             state = TurretState.IDLING;
+            crossbow.rotation = Quaternion.Euler(0, crossbow.rotation.eulerAngles.y, crossbow.rotation.eulerAngles.z);
             targetPositionAtImpactTime = transform.position;
             return;
         }

@@ -30,7 +30,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="2674766611" Type="User" Language="SFX" Hash="{041FF83F-BEE7-A14E-D928-2BC8462B570C}">
+		<SoundBank Id="2674766611" Type="User" Language="SFX" Hash="{18FE9C84-C96C-49E8-B237-B2B7C8718114}">
 			<ShortName>turret</ShortName>
 			<Path>turret.bnk</Path>
 			<Media>
@@ -61,7 +61,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="3534600765" Type="User" Language="SFX" Hash="{A18766D6-A45D-44B3-08F6-777041CDB54D}">
+		<SoundBank Id="3534600765" Type="User" Language="SFX" Hash="{414E37BF-C29E-4C73-7618-9CC3534D2EA5}">
 			<ShortName>insect</ShortName>
 			<Path>insect.bnk</Path>
 			<Media>
@@ -147,7 +147,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="4083419649" Type="User" Language="SFX" Hash="{6408DE41-46AF-C1BD-5B58-EE6B0A6B2D87}">
+		<SoundBank Id="4083419649" Type="User" Language="SFX" Hash="{D8301E2A-1437-F129-D521-07955773BE35}">
 			<ShortName>player_sounds</ShortName>
 			<Path>player_sounds.bnk</Path>
 			<Media>
@@ -386,5 +386,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{0D72BE10-ECDC-2039-3290-CFEB88B8FACF}</FileHash>
+	<FileHash>{2C9E56DA-7039-DAC5-0FD8-008C04EAA195}</FileHash>
 </SoundBanksInfo>

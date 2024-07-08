@@ -120,7 +120,7 @@ public class ImpEnemy : MonoBehaviour, IEnemy, IEntity
         EnemyDirector.instance.enemies.Remove(this);
         _deathEvent.Invoke();
 
-        Invoke(nameof(destroySelf), 1);
+        Invoke(nameof(destroySelf), 0.2f);
     }
     private void destroySelf() { Destroy(gameObject); }
 

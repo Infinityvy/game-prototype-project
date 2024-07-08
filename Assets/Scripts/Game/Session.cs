@@ -36,6 +36,12 @@ public class Session : MonoBehaviour
     private void Update()
     {
         playerState.update();
+
+        if (Input.GetKeyDown(GameInputs.keys["Take Screenshot"]))
+        {
+            GameUtility.takeScreenshot();
+            Debug.Log("Screenshot taken.");
+        }
     }
 
     public void setPaused(bool state)
